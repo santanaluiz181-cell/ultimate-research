@@ -1,231 +1,149 @@
 <p align="center">
-  <img src="./assets/hero-banner.svg" alt="deslop-search hero banner" width="100%" />
+  <img src="./assets/hero-banner.svg" alt="ultimate-research hero banner" width="100%" />
 </p>
 
-# `deslop-search` — Split-Horizon Temporal Firewall & Anti-Slop Search Skill
+# `ultimate-research` v2.0 — The Unified Autonomous Investigation, ARS Verification, Elephant-Goldfish & Google Harness² Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](./package.json)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](./package.json)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0-339933?logo=node.js&logoColor=white)](./package.json)
 [![Python](https://img.shields.io/badge/Python-%3E%3D3.10-3776AB?logo=python&logoColor=white)](./pyproject.toml)
-[![Agent Skill](https://img.shields.io/badge/AI_Skill-MCP_%7C_Claude_%7C_Antigravity_%7C_Cursor-6B46C1)](./SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/AI_Skill-Antigravity_%7C_MCP_%7C_Claude_Code-6B46C1)](./SKILL.md)
+[![Status: Produção Assistida](https://img.shields.io/badge/Auditoria_3.0-Aprovado_Produção_Assistida-brightgreen.svg)](./PRODUCTION_READINESS_DECISION.md)
+[![Factual Accuracy](https://img.shields.io/badge/Scorecard-9.88%2F10.0-success.svg)](./BLIND_EVALUATION_SCORECARD.md)
 
-> **Confront canonical human knowledge with audited contemporary reality.** Strip programmatic SEO farms, machine-translated Q&A clones, and synthetic LLM filler from developer and investigative journalism workflows—via CLI, TypeScript SDK, Python library, and AI Agent Skill.
-
----
-
-## 1. The Dead Internet Thesis & The `before:2023` Dilemma
-
-On November 30, 2022, the marginal cost of generating plausible-sounding prose collapsed to near zero. Within months, programmatic content mills flooded search indices with millions of synthetic tutorials, hallucinated CLI flags, and SEO-optimized rewrites of Stack Overflow threads.
-
-The viral `before:2023` search heuristic (popularized by Grant Gulovsen) exposed an uncomfortable empirical truth: **slicing off everything indexed after 2022 immediately restores human post-mortems, battle-tested forum threads, and authentic engineering blogs.**
-
-Yet relying on a static `before:2023` cut creates a second trap: **temporal blindness.**
-- If an investigative journalist or staff engineer queries only `before:2023`, they miss `CVE-2023-44487` (HTTP/2 Rapid Reset), deprecated stdlib APIs (`ssl.wrap_socket` removed in Python 3.12), regulatory shifts, and post-2023 releases (`React 19`, `Tailwind v4`).
-- Conversely, querying the raw post-2023 web exposes RAG pipelines and human researchers to recursive AI hallucinations ("Model Autophagy Disorder") and SEO scraper clones (`copyprogramming`, `codegrepper`, `stackoom`, `qastack`).
+> **O Mecanismo Supremo de Pesquisa e Investigação Digital.** Uma arquitetura unificada de 5 camadas que funde engenharia de consultas, busca sem slop via Split-Horizon, auditoria documental determinística (ARS), teste de estresse adversarial de contexto zero (Elephant-Goldfish) e auto-otimização recursiva de prompts e ferramentas (Google Research Harness²).
 
 ---
 
-## 2. The Split-Horizon Thesis (`--split` / `split_horizon`)
-
-Inspired by Split-Horizon DNS, **`deslop-search` v1.1 introduces Dual Temporal Split-Horizon Search**: instead of choosing between *outdated human truth* and *polluted modern results*, the engine fires **two asynchronous search lanes in parallel** and computes a deterministic **Differential & Conflict Synthesis**:
+## 1. A Arquitetura das 5 Camadas Unificadas
 
 ```mermaid
 flowchart TD
-    Q["Query / Investigative Prompt"] --> S{"Split-Horizon Engine<br/>(--split / split_horizon=true)"}
-    S -->|"Parallel Lane A"| LA["[HORIZONTE CANÔNICO: PRÉ-2023]<br/>after:2010 before:2023<br/>Reddit + Stack Overflow + Archived GitHub + Indie Blogs"]
-    S -->|"Parallel Lane B"| LB["[HORIZONTE CONTEMPORÂNEO: PÓS-2023]<br/>after:2023<br/>blocklist.json (60+ domains) + Heuristic SlopClassifier"]
-    LA --> DIFF["[DIFERENCIAL E CONFLITOS]<br/>Deprecations / CVEs • Version Drift • Anachronism • Slop Saturation"]
-    LB --> DIFF
-```
+    User["Operador: /ultimate-research [Demanda / Pauta]"] --> Dispatcher["Orquestrador Central Ultimate Research 2.0"]
 
-| Horizon Lane | Temporal Bound | Routing & Defense Strategy | Epistemic Role |
-|---|---|---|---|
-| **Lane A — Canonical Human Archive** | `after:2010 before:2023` | Priority routing to Reddit, Stack Overflow, archived/canonical GitHub repos, HN, Lobste.rs, and indie engineering blogs. | Establishes pre-LLM human consensus, foundational mechanics, and first-principles war stories. |
-| **Lane B — Audited Contemporary** | `after:2023` | Open contemporary web guarded by inline `-site:` operator budgeting, 60+ domain `blocklist.json`, and $O(N)$ `SlopClassifier`. | Captures recent breaking changes, CVEs, patches, and news purged of synthetic SEO content farms. |
-| **Differential & Conflicts** | Cross-Epoch $\Delta$ | Extracts exclusive technical identifiers/versions per epoch, breaking/deprecation markers, and slop purge ratios. | Alerts humans and AI agents when modern reality invalidates legacy patterns—or when post-2023 SERPs are pure slop. |
+    subgraph CAMADA_1["1. GOOGLE RESEARCH HARNESS² (Pré-Voo & Poda)"]
+        Dispatcher --> Pruning["Dynamic Tool Pruner (skills-pruner)"]
+        Pruning --> ActiveTools["Poda ferramentas ociosas (Economiza até 50% de tokens)"]
+    end
 
----
+    subgraph CAMADA_2["2. PERPLEXITY PROMPTING & SUPER DESLOP (Busca Limpa)"]
+        ActiveTools --> Dorking["Query Engineering (Sem few-shot, âncoras temporais)"]
+        Dorking --> Split["Split-Horizon 3-Lanes (Canônico pré-2023 vs Contemporâneo pós-2023)"]
+        Split --> SlopFilter["SlopClassifier O(N) (Exclui SEO farms e preserva fontes primárias)"]
+    end
 
-## 3. Core Architecture
+    subgraph CAMADA_3["3. DEEP RESEARCH (Onda Construtiva do Elefante)"]
+        SlopFilter --> Subagents["Enxame de Subagentes em Ondas Isoladas"]
+        Subagents --> Triangulation["Triangulação Anti-Eco (origin_fingerprint)"]
+        Triangulation --> ElephantDraft["Gera Minuta Completa com 100% de Contexto (Elefante)"]
+    end
 
-| Module | Implementation | What It Solves |
-|---|---|---|
-| **1. Temporal Dork Injector** | `src/dorks.ts` / `deslop_search/dorks.py` | Injects `after:2010 before:2023` idempotently, strips zero-width tracking chars, enforces per-engine operator caps (`32` Google / `24` DDG), appends `udm=14` (kills Google AI Overviews), and detects post-2022 subjects (`--smart`). |
-| **2. Community Source Router** | `src/router.ts` / `deslop_search/router.py` | Targets high-density human hubs (`qa`, `discussions`, `code`, `blogs`, `forums`) and builds native pre-2023 archive URLs (`hn.algolia.com` `dateEnd=1672531200`, Stack Overflow `created:..2022-12-31`, GitHub `archived:true created:<2023-01-01`). |
-| **3. Heuristic Slop Classifier** | `src/classifier.ts` / `deslop_search/classifier.py` | Linear-time $O(N)$ analyzer scoring pages `0.0–1.0` (`AUTHENTIC`, `SUSPICIOUS`, `SLOP`) via EN/PT-BR LLM cliches, `**Bold:**` listicle symmetry, paragraph uniformity ($\text{CV} = \sigma/\mu < 0.18$), sentence burstiness, and a technical-density counter-weight for real code/stack traces. |
-| **4. Split-Horizon Engine** | `src/split-horizon.ts` / `deslop_search/split_horizon.py` | Concurrent dual-lane execution (`Promise.all` / `ThreadPoolExecutor`), epoch-exclusive term extraction, and conflict classification (`CONVERGENT`, `DIVERGENT`, `ANACHRONISTIC`, `SLOP_CONTAMINATED`). |
+    subgraph CAMADA_4["4. ARS EPISTÊMICO & ELEPHANT-GOLDFISH (Destruição e Estresse)"]
+        ElephantDraft --> ARS["Módulo ARS: Checagem de DOI, ISBN, CNJ Mod97 e Leis"]
+        ARS --> PurgeContext["Corte Sanitário de Contexto (Zero Context)"]
+        PurgeContext --> Goldfish["Cardume Goldfish (3x flash_lite caçam furos, nulidades e contradições)"]
+    end
 
----
+    subgraph CAMADA_5["5. FECHAMENTO & REASONINGBANK"]
+        Goldfish --> Convergence{"Aprovado pelos Goldfish?"}
+        Convergence -- "Com Furos" --> ReOptimize["Harness² ajusta regras + Salva no claude-mem + Corrige Minuta"]
+        ReOptimize --> ElephantDraft
+        Convergence -- "100% Aprovado" --> FinalReport["Relatório com Certidão ARS de Conformidade de Fontes"]
+    end
 
-## 4. Installation
-
-### Node.js / TypeScript (CLI + SDK)
-
-```bash
-git clone https://github.com/your-org/deslop-search.git
-cd deslop-search
-npm install
-npm run build
-
-# Run directly or link globally
-npx deslop --help
-npm link
-```
-
-### Python 3.10+ (Zero External Dependencies)
-
-```bash
-pip install .
-
-# Verify CLI
-deslop-py --help
-python -m deslop_search --help
-```
-
-### AI Coding Agents (Claude Code, Antigravity, Cursor, MCP)
-
-- **Skill Discovery:** Copy this repository into `.agents/skills/deslop-search/` or `~/.gemini/config/skills/deslop-search/` ([`SKILL.md`](./SKILL.md) + [`skill.json`](./skill.json)).
-- **Tool Calling / MCP:** Import `DESLOP_AGENT_TOOLS`, `executeDeslopTool`, and `executeDeslopToolAsync` from `deslop-search/mcp` (`./dist/mcp-tools.js`). Pass `"split_horizon": true` to `deslop_build_query` or invoke `deslop_split_horizon` directly.
-
----
-
-## 5. Practical Execution Examples
-
-### 1. CLI — Parallel Live Split-Horizon Search (`--split` / `--split-horizon`)
-
-```bash
-# Execute simultaneous Lane A (Pre-2023) + Lane B (Post-2023 Audited) live search
-deslop live "http2 rapid reset" --split --limit 3
-# Equivalent shorthand subcommand:
-deslop split "http2 rapid reset" --limit 3
-```
-
-Demarcated terminal output:
-```text
-========================================================================
-[HORIZONTE CANÔNICO: PRÉ-2023]
-========================================================================
-Dork    : http2 rapid reset after:2010 before:2023 (site:reddit.com OR site:stackoverflow.com OR site:github.com OR site:news.ycombinator.com OR site:lobste.rs ...)
-Archive : Kept 3/3 human canonical result(s)
-  * [stackoverflow | rank=1 | slop=0] HTTP/2 stream reset handling in nghttp2
-    URL: https://stackoverflow.com/questions/...
-
-========================================================================
-[HORIZONTE CONTEMPORÂNEO: PÓS-2023]
-========================================================================
-Dork    : http2 rapid reset after:2023 -site:copyprogramming.com -site:codegrepper.com -site:stackoom.com ...
-Audited : Kept 4/5 | Purged 1 (1 blocked domain(s), 1 slop)
-  * [hackernews | rank=1 | slop=0] HTTP/2 Rapid Reset Attack (CVE-2023-44487)
-    URL: https://cloud.google.com/blog/products/identity-security/how-it-works-the-novel-http2-rapid-reset-ddos-attack
-
-========================================================================
-[DIFERENCIAL E CONFLITOS]
-========================================================================
-Status    : DIVERGENT
-Synthesis : Conceptual divergence detected between pre-2023 human consensus (3 hit(s)) and post-2023 audited updates (4 hit(s)); reconcile deprecations/CVEs before adopting legacy recipes.
-Post-2023 Exclusive Terms : CVE-2023-44487, HTTP/2
-  - [HIGH | deprecation_or_breaking_shift] Post-2023 sources flag breaking shifts, deprecations, or advisories (cve-2023-44487, vulnerability) that may invalidate pre-2023 patterns.
-```
-
-### 2. CLI — Dual Split-Horizon Dork Compilation (Zero Network Calls)
-
-```bash
-# Node CLI
-deslop query "postgres logical replication failover" --split
-
-# Python CLI
-python -m deslop_search query "postgres logical replication failover" --split-horizon
-```
-
-### 3. CLI — Single-Lane Dork, Community Routes & Slop Classifier
-
-```bash
-# Standard human-classic dork + Google udm=14 clean Web URL
-deslop query "postgres vacuum freeze wraparound" --profile qa
-
-# Inspect suspected SEO slop page
-deslop classify \
-  --title "[Updated 2026] Ultimate Guide to Kubernetes" \
-  --url "https://copyprogramming.com/howto/k8s-guide" \
-  --text "In today's fast-paced digital landscape, Kubernetes is a game-changer..." \
-  --json
-```
-
-### 4. TypeScript SDK (Split-Horizon + MCP Agent Integration)
-
-```typescript
-import { DeslopSearch, deslopSplitHorizon } from "deslop-search";
-import { executeDeslopToolAsync } from "deslop-search/mcp";
-
-// 1. Compile dual-lane Split-Horizon query plan
-const plan = deslopSplitHorizon("python ssl wrap_socket");
-console.log(plan.formattedReport);
-
-// 2. Run parallel live Split-Horizon search
-const engine = new DeslopSearch();
-const liveReport = await engine.liveSplitHorizonSearch("sqlite wal checkpoint", {
-  cutoffYear: 2023,
-  limitPerSource: 4
-});
-console.log(liveReport.differential.status, liveReport.differential.conflictSignals);
-
-// 3. Invoke via MCP / Agent tool-calling contract
-const agentResult = await executeDeslopToolAsync("deslop_split_horizon", {
-  query: "http2 rapid reset",
-  split_horizon: true,
-  live: true
-});
-```
-
-### 5. Python SDK (Threaded Parallel Split-Horizon)
-
-```python
-from deslop_search import DeslopSearch, deslop_split_horizon
-
-# 1. Dual query plan
-plan = deslop_split_horizon("linux io_uring sqpoll")
-print(plan.formatted_report)
-
-# 2. Parallel ThreadPoolExecutor live comparison
-engine = DeslopSearch()
-report = engine.live_split_horizon_search("http2 rapid reset", limit_per_source=3)
-print(report.differential.status)
-print(report.formatted_report)
+    FinalReport --> Done["Entrega Pronta para Publicação"]
 ```
 
 ---
 
-## 6. Repository Structure
+## 2. As 5 Camadas Explicadas
+
+| Camada | Tecnologia | O que resolve |
+| :--- | :--- | :--- |
+| **1. Search Intelligence** | *Perplexity Prompting* | Consultas cirúrgicas de 2–3 termos, âncoras temporais numéricas, busca multi-perspectiva e sem ruído de SEO. |
+| **2. Clean Search & Split-Horizon** | *Super Deslop Search* | Restaura a web humana pré-2023 sem cegueira temporal, comparando o horizonte canônico com a realidade auditada contemporânea. |
+| **3. Investigation Intelligence** | *Deep Research (Mitra)* | Decomposição em subproblemas, extração *span-level* por subagentes em ondas paralelas e critério estrito de convergência. |
+| **4. Adversarial Stress & ARS** | *Elephant-Goldfish + ARS* | A Queen (Elefante) cria com memória total; 3 subagentes descartáveis com **contexto zero** (Goldfish) trituram o rascunho. O ARS valida DOIs no CrossRef/OpenAlex, CNJ (Mod 97) no DJEN e leis no LexML. |
+| **5. Meta-Optimization** | *Google Research Harness²* | Poda de ferramentas desnecessárias antes da execução (`skills-pruner`), reescrita de prompts heurísticos e persistência de lições no ReasoningBank (`claude-mem`). |
+
+---
+
+## 3. Instalação e Uso
+
+### Como AI Agent Skill (Google Antigravity / Claude Code / Cursor)
+Dispare diretamente no chat com um único comando:
+```markdown
+/ultimate-research "Investigar a crise da concessão da Enel SP e o rito de caducidade"
+```
+*O motor executa o Elefante, os Goldfish e o Harness² automaticamente nos bastidores.*
+
+### Via Linha de Comando (CLI)
+```bash
+# Execução da pesquisa
+npx ultimate-research query "Reforma tributária impactos no setor de serviços"
+
+# Split-Horizon comparativo
+npx ultimate-research split "React Server Components architecture"
+
+# Auditoria epistêmica determinística de citações (ARS)
+npx ultimate-research verify --file "relatorio.md" --strict
+```
+*(Nota: O comando legado `npx deslop` permanece disponível como alias de compatibilidade).*
+
+---
+
+## 4. Auditorias e Benchmarks Oficiais
+
+O motor foi submetido a três ciclos de auditoria epistêmica independente:
+
+- **Auditoria 1.0 (Stress Test):** Nota 9.25/10 — Validação da fusão de ferramentas.
+- **Auditoria 2.2 / 2.3 (Auditoria Adversarial e Integridade de Build):** 144 testes executados, 144 aprovados (100% de sucesso). Máquina de 6 estados documentais (`CONFIRMADO`, `NÃO LOCALIZADO`, `FONTE INDISPONÍVEL`, `ACESSO RESTRITO`, `DIVERGÊNCIA DOCUMENTAL`, `FALSO DOCUMENTO`) e regex universal de precedentes judiciais.
+- **Auditoria 3.0 (Avaliação Cega com Gabarito Independente):**
+  - **Pauta:** Concessão da Enel SP, Apagão de Outubro/2024, Decreto nº 12.068/2024 e Ações Civis Públicas.
+  - **Precisão Factual:** **100% de acerto (20 de 20 afirmações do gabarito cego confirmadas)**.
+  - **Scorecard Global:** **9.88 / 10.0** ([Scorecard Detalhado](./BLIND_EVALUATION_SCORECARD.md)).
+  - **Homologação:** **Aprovado para Produção Assistida** ([Termo de Decisão](./PRODUCTION_READINESS_DECISION.md)).
+
+---
+
+## 5. Estrutura de Diretórios
 
 ```text
-deslop-search/
-├── SKILL.md                        # Agent Skill operational specification
-├── skill.json                      # Universal plugin & MCP tool-calling manifest (split_horizon)
-├── package.json                    # Node/TS package (v1.1.0) & `deslop` CLI binary
-├── pyproject.toml                  # Zero-dependency Python package & `deslop-py` CLI
+ultimate-research/
+├── bin/
 ├── data/
-│   ├── blocklist.json              # 60+ scraper clones, translation mills & AI farms
-│   ├── sources.json                # Curated human forums, Q&A networks & indie blogs
-│   └── slop-lexicon.json           # EN + PT-BR heuristic weights & regex signatures
+│   ├── blocklist.json         # 60+ domínios de content-farms e scrapers de IA
+│   ├── slop-lexicon.json      # Léxico heurístico bilíngue de jargões de IA
+│   └── sources.json           # Rotas comunitárias (Reddit, HN, SO, GitHub)
+├── references/
+│   ├── citation-verification.md
+│   ├── deep-research-methodology.md
+│   ├── deslop-methodology.md
+│   ├── elephant-goldfish-architecture.md  # Arquitetura de teste cego
+│   ├── google-harness-loop.md             # Motor de auto-otimização recursiva
+│   ├── perplexity-prompting.md
+│   ├── report-standards.md
+│   └── research-modes.md
 ├── src/
-│   ├── dorks.ts                    # Temporal Dork Engine & operator budget guard
-│   ├── router.ts                   # Community Source Router & native archive URLs
-│   ├── classifier.ts               # O(N) Heuristic Slop Classifier
-│   ├── split-horizon.ts            # Split-Horizon planner, formatter & conflict analyzer
-│   ├── pipeline.ts                 # Parallel orchestrator & live archive fetchers
-│   ├── mcp-tools.ts                # MCP / Agent sync & async tool dispatchers
-│   └── cli.ts                      # Node CLI (`--split` / `--split-horizon`)
-├── python/deslop_search/           # Full Python 3.10+ parity (`split_horizon.py`, `ThreadPoolExecutor`)
-└── tests/                          # Vitest (TS) & unittest/pytest (Python) suites
+│   ├── classifier.ts          # Classificador estatístico e heurístico O(N)
+│   ├── dorks.ts               # Injetor de operadores temporais e udm=14
+│   ├── pipeline.ts            # Orquestrador de busca e Split-Horizon
+│   ├── router.ts              # Roteador de hubs comunitários
+│   ├── types.ts               # Estados documentais e esquemas
+│   └── verifier.ts            # Módulo de verificação ARS determinístico
+├── test/
+├── tests/
+│   ├── negative-scenarios.test.mjs  # 10 cenários de teste negativo
+│   ├── precedent-regex.test.mjs     # 16 variações formais de jurisprudência
+│   └── temporal-legal.test.mjs      # 20 casos de regressão temporal
+├── package.json
+├── README.md
+└── SKILL.md                   # Manifesto unificado para agentes Antigravity
 ```
 
-## Verification & Quality Gates
+---
 
-```bash
-npm run verify
-```
+## 6. Licença
 
-## License
-
-Released under the [MIT License](./LICENSE).
+Distribuído sob licença MIT. Incorpora metodologias abertas de Perplexity Prompting (Joel Helbling & Nate B. Jones), Deep Research (Ramit Mitra), Elephant-Goldfish Model (Google Open Source) e Google Research Harness² (Apache 2.0).

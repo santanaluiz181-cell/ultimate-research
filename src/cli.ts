@@ -2,7 +2,9 @@
 import { readFileSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { DeslopSearch } from "./pipeline.js";
+import { formatCertificateTerminal } from "./verifier.js";
 import type {
+
   CommunityChannelName,
   CommunityProfile,
   DorkOptions,
@@ -21,8 +23,10 @@ USAGE:
   deslop routes "<search terms>" [options]
   deslop classify [--text "<body|snippet>"] [--file <path>] [--title "<title>"] [--url "<url>"] [--json]
   deslop filter --file <results.json> [--max-slop <0..1>] [--json]
+  deslop verify --file <path.md> [--strict] [--json]
 
 OPTIONS:
+  --strict                  Fail verification (exit code 1) on hallucinated or divergent sources
   --split, --split-horizon  Enable Dual Temporal Horizon (Lane A: Pre-2023 Canonical vs Lane B: Post-2023 Audited)
   --era <preset>            human-classic (default: after:2010 before:2023) | pre-gpt4 | archival | modern-curated | none
   --profile <name>          none (default) | all_community | discussions | qa | code | blogs | forums
@@ -74,6 +78,7 @@ async function runCli(argv: string[]): Promise<number> {
       "max-slop": { type: "string" },
       "before-year": { type: "string" },
       limit: { type: "string" },
+      strict: { type: "boolean", default: false },
       json: { type: "boolean", default: false },
       help: { type: "boolean", short: "h", default: false }
     }
@@ -250,6 +255,22 @@ async function runCli(argv: string[]): Promise<number> {
     }
     return 0;
   }
+
+  if (subcommand === "verify") {
+    if (values.file === undefined) {
+      throw new Error("Missing --file <path.md> for verify subcommand. Usage: deslop verify --file <caminho.md> [--strict]");
+    }
+    const cert = await deslop.verifyFile(values.file, {
+      strict: values.strict === true
+    });
+    if (values.json) {
+      process.stdout.write(`${JSON.stringify(cert, null, 2)}\n`);
+    } else {
+      process.stdout.write(formatCertificateTerminal(cert));
+    }
+    return cert.approved ? 0 : 1;
+  }
+
 
   if (subcommand === "live") {
     if (restQuery.length === 0) {

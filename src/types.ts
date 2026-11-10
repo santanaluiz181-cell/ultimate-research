@@ -248,3 +248,121 @@ export interface SlopLexiconData {
   seoTitleBait: string[];
   fakeTranslationMarkers: string[];
 }
+
+export type EvidenceType =
+  | "academic_doi"
+  | "academic_isbn"
+  | "academic_citation"
+  | "judicial_cnj"
+  | "judicial_statute"
+  | "judicial_precedent";
+
+export interface EvidenceItem {
+  id: string;
+  type: EvidenceType;
+  rawMatch: string;
+  identifier: string;
+  claimText: string;
+  line?: number | undefined;
+  metadata?: {
+    authors?: string[] | undefined;
+    year?: string | undefined;
+    court?: string | undefined;
+    tribunal?: string | undefined;
+    article?: string | undefined;
+    paragraph?: string | undefined;
+    inciso?: string | undefined;
+    statute?: string | undefined;
+    precedentNumber?: string | undefined;
+    [key: string]: unknown;
+  } | undefined;
+}
+
+export type DocumentaryVerificationState =
+  | "CONFIRMADO"
+  | "NÃO LOCALIZADO"
+  | "FONTE INDISPONÍVEL"
+  | "ACESSO RESTRITO"
+  | "DIVERGÊNCIA DOCUMENTAL"
+  | "FALSO DOCUMENTO";
+
+export type VerificationVerdict =
+  | "VERIFICADA"
+  | "DIVERGÊNCIA DE TESE"
+  | "ALUCINAÇÃO DETECTADA"
+  | "FONTE INDISPONÍVEL"
+  | "NÃO LOCALIZADO"
+  | "ACESSO RESTRITO"
+  | "FALSO DOCUMENTO";
+
+export interface VerificationAuditResult {
+  evidence: EvidenceItem;
+  verdict: VerificationVerdict;
+  documentaryState?: DocumentaryVerificationState | undefined;
+  exists: boolean;
+  officialSource: string;
+  title?: string | undefined;
+  officialSummary?: string | undefined;
+  authorsMatched?: boolean | undefined;
+  yearMatched?: boolean | undefined;
+  semanticAlignmentScore?: number | undefined;
+  divergenceReason?: string | undefined;
+  details: string;
+}
+
+export interface EpistemicComplianceCertificate {
+  protocol: string;
+  filePath?: string | undefined;
+  generatedAt: string;
+  approved: boolean;
+  summary: {
+    total: number;
+    verifiedCount: number;
+    divergenceCount: number;
+    hallucinationCount: number;
+    unconfirmedCount?: number;
+    unavailableCount?: number;
+  };
+  audits: VerificationAuditResult[];
+  formattedMarkdown: string;
+}
+
+export interface SourceCheckAdapter {
+  checkDoi(doi: string): Promise<{
+    exists: boolean;
+    state?: DocumentaryVerificationState | undefined;
+    title?: string | undefined;
+    authors?: string[] | undefined;
+    year?: string | undefined;
+    abstract?: string | undefined;
+    source: "CrossRef" | "OpenAlex";
+    error?: string | undefined;
+  }>;
+  checkCnj(cnj: string): Promise<{
+    exists: boolean;
+    state?: DocumentaryVerificationState | undefined;
+    validFormat: boolean;
+    validChecksum: boolean;
+    tribunal?: string | undefined;
+    courtSegment?: string | undefined;
+    source: string;
+    title?: string | undefined;
+    summary?: string | undefined;
+    error?: string | undefined;
+  }>;
+  checkStatute(statuteQuery: string, type: EvidenceType): Promise<{
+    exists: boolean;
+    state?: DocumentaryVerificationState | undefined;
+    source: string;
+    title?: string | undefined;
+    summary?: string | undefined;
+    error?: string | undefined;
+  }>;
+}
+
+export interface VerifierOptions {
+  strict?: boolean | undefined;
+  timeoutMs?: number | undefined;
+  adapter?: SourceCheckAdapter | undefined;
+}
+

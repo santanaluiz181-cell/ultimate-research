@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "name": "deslop-search",
-  "version": "1.1.0",
-  "displayName": "Deslop Search — Human-Era Web Filter, Split-Horizon & Anti-Slop Engine",
-  "description": "Intercepts web search queries to strip synthetic SEO farms and LLM filler via temporal dorks (before:2023, after:2010), parallel Split-Horizon comparative search (Pre-2023 Canonical vs Post-2023 Audited), curated community routing, and deterministic heuristic slop scoring.",
+  "name": "ultimate-research",
+  "version": "2.0.0",
+  "displayName": "Ultimate Research — Unified Autonomous Research & ARS Verification Engine",
+  "description": "The Ultimate Research Engine: Intercepts search queries with temporal bounds and anti-slop filters, executes Split-Horizon comparisons, performs ARS citation verification, zero-context Elephant-Goldfish adversarial attacks, and Google Research Harness² recursive optimization.",
   "license": "MIT",
-  "author": "Deslop Search Contributors",
-  "homepage": "https://github.com/your-org/deslop-search",
+  "author": "Antigravity Engineering / Ultimate Research Contributors",
+  "homepage": "https://github.com/santanaluiz181-cell/ultimate-research",
   "platforms": [
     "antigravity",
     "claude-code",
@@ -177,6 +177,28 @@
           }
         },
         "required": ["results"]
+      }
+    },
+    {
+      "name": "deslop_verify_citations",
+      "description": "Verifies factual claims against primary documents with NLI (entailment/neutral/contradiction), temporal freshness check, and citation accuracy.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "claim": {
+            "type": "string",
+            "description": "The factual statement or assertion to verify."
+          },
+          "evidence": {
+            "type": "string",
+            "description": "The primary source text excerpt or document content."
+          },
+          "sourceUrl": {
+            "type": "string",
+            "description": "Source URL or reference citation."
+          }
+        },
+        "required": ["claim", "evidence"]
       }
     }
   ]

@@ -19,8 +19,12 @@ import type {
   SlopClassification,
   SplitHorizonQueryPlan,
   SplitHorizonSearchReport,
-  VerticalRoute
+  VerticalRoute,
+  EpistemicComplianceCertificate,
+  VerifierOptions
 } from "./types.js";
+import { CitationVerifier } from "./verifier.js";
+
 
 export interface FilterOptions {
   maxSlopScore?: number;
@@ -527,6 +531,22 @@ export class DeslopSearch {
     }
     return mapped;
   }
+
+  public async verifyCitations(
+    text: string,
+    options?: VerifierOptions
+  ): Promise<EpistemicComplianceCertificate> {
+    const verifier = new CitationVerifier(options);
+    return verifier.verifyText(text);
+  }
+
+  public async verifyFile(
+    filePath: string,
+    options?: VerifierOptions
+  ): Promise<EpistemicComplianceCertificate> {
+    const verifier = new CitationVerifier(options);
+    return verifier.verifyFile(filePath);
+  }
 }
 
 const defaultInstance = new DeslopSearch();
@@ -552,4 +572,18 @@ export function filterSearchResults(
   options: FilterOptions = {}
 ): FilterBatchReport {
   return defaultInstance.filterResults(results, options);
+}
+
+export function verifyCitations(
+  text: string,
+  options?: VerifierOptions
+): Promise<EpistemicComplianceCertificate> {
+  return defaultInstance.verifyCitations(text, options);
+}
+
+export function verifyFile(
+  filePath: string,
+  options?: VerifierOptions
+): Promise<EpistemicComplianceCertificate> {
+  return defaultInstance.verifyFile(filePath, options);
 }

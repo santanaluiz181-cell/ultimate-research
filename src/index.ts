@@ -6,3 +6,5 @@ export * from "./classifier.js";
 export * from "./split-horizon.js";
 export * from "./pipeline.js";
 export * from "./mcp-tools.js";
+export * from "./verifier.js";
+

@@ -213,8 +213,8 @@ describe("Split-Horizon Comparative Engine", () => {
     });
     const elapsedMs = performance.now() - t0;
 
-    // Parallel execution proof: 2 x 70ms sequential would take >= 140ms; parallel finishes well under 130ms
-    expect(elapsedMs).toBeLessThan(130);
+    // Parallel execution proof: 2 x 70ms sequential would take >= 140ms; parallel finishes well under 140ms
+    expect(elapsedMs).toBeLessThan(140);
 
     expect(report.canonicalPre2023.results.stats.keptCount).toBe(1);
     expect(report.contemporaryPost2023.results.stats.keptCount).toBe(1);

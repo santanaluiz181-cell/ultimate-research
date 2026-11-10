@@ -1,7 +1,7 @@
 {
-  "name": "deslop-search",
-  "version": "1.1.0",
-  "description": "Clean web search utility, Split-Horizon comparative engine, CLI, TypeScript/Python SDK, and AI Agent Skill that rescues pre-slop human technical results via temporal dorks (before:2023), community source routing, and heuristic AI slop classification.",
+  "name": "ultimate-research",
+  "version": "2.0.0",
+  "description": "The Ultimate Research Engine: Fusion of Perplexity Prompting, Deep Multi-Wave Research, Super Deslop Search (Anti-Slop & Split-Horizon), ARS Epistemic Citation Verification, Elephant-Goldfish Adversarial Auditing, and Google Research Harness² Recursive Optimization.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,6 +16,7 @@
     }
   },
   "bin": {
+    "ultimate-research": "./dist/cli.js",
     "deslop": "./dist/cli.js",
     "deslop-search": "./dist/cli.js"
   },
@@ -25,7 +26,8 @@
     "SKILL.md",
     "skill.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "*.md"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -34,28 +36,34 @@
     "test:watch": "vitest",
     "test:py": "python -m unittest discover -s tests/py -p \"test_*.py\" -v",
     "verify": "npm run typecheck && npm run build && npm run test && npm run test:py",
-    "deslop": "node ./dist/cli.js"
+    "deslop": "node ./dist/cli.js",
+    "research": "node ./dist/cli.js"
   },
   "keywords": [
-    "search",
-    "dorks",
-    "before-2023",
-    "dead-internet",
+    "ultimate-research",
+    "deep-research",
+    "perplexity-prompting",
+    "elephant-goldfish",
+    "google-harness",
     "anti-slop",
-    "seo-filter",
+    "deslop-search",
+    "ars-verification",
+    "epistemic-audit",
+    "split-horizon",
     "ai-agent-skill",
     "mcp",
-    "developer-tools",
-    "cli",
-    "human-web"
+    "fact-checking",
+    "citation-verification",
+    "cli"
   ],
-  "engines": {
-    "node": ">=18.0.0"
-  },
+  "author": "Antigravity Engineering / Ultimate Research Contributors",
   "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1"
+  },
   "devDependencies": {
-    "@types/node": "^22.10.0",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2",
+    "vitest": "^2.1.9"
   }
 }
