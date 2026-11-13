@@ -1,4 +1,4 @@
-# ULTIMATE RESEARCH — STRESS TEST SCORECARD
+# ULTIMATE RESEARCH - STRESS TEST SCORECARD
 
 **Data da Avaliação:** 4 de Novembro de 2026  
 **Avaliador:** Engenharia Principal de Sistemas & Auditoria Epistêmica  

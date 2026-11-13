@@ -153,7 +153,7 @@ TOTAL: 144 testes executados | 144 aprovados | 0 falhas | 0 ignorados | 100% de 
 
 ## 5. BATERIA DE 10 TESTES NEGATIVOS ADICIONAIS (SEÇÃO 4)
 
-A suíte [`tests/negative-scenarios.test.mjs`](file:///C:/Users/tharcio/.gemini/config/skills/ultimate-research/tests/negative-scenarios.test.mjs) foi criada e validada para aferir se o sistema diferencia:
+A suíte [`tests/negative-scenarios.test.mjs`](../../tests/negative-scenarios.test.mjs) foi criada e validada para aferir se o sistema diferencia:
 *(1) Validade Sintática / Matemática* vs. *(2) Existência Documental em Registro Oficial* vs. *(3) Sustentação Semântica da Tese*.
 
 | Nº | Cenário Negativo Testado | Validade Sintática | Existência Documental | Sustentação Semântica | Resultado Obtido |
@@ -173,7 +173,7 @@ A suíte [`tests/negative-scenarios.test.mjs`](file:///C:/Users/tharcio/.gemini/
 
 ## 6. AUDITORIA DE INSTRUÇÕES DO SKILL.MD E ARQUIVOS AUXILIARES
 
-A inspeção detalhada do [`SKILL.md`](file:///C:/Users/tharcio/.gemini/config/skills/ultimate-research/SKILL.md), [`references/citation-verification.md`](file:///C:/Users/tharcio/.gemini/config/skills/ultimate-research/references/citation-verification.md) e [`references/source-credibility.md`](file:///C:/Users/tharcio/.gemini/config/skills/ultimate-research/references/source-credibility.md) confirmou o cumprimento estrito das 7 diretrizes epistêmicas:
+A inspeção detalhada do [`SKILL.md`](../../SKILL.md), [`references/citation-verification.md`](../../references/citation-verification.md) e [`references/source-credibility.md`](../../references/source-credibility.md) confirmou o cumprimento estrito das 7 diretrizes epistêmicas:
 
 1. **Ausência de resultado não é prova de falsidade:** Previsto no Item 3 da Seção 5 do `SKILL.md` (*"Correlação ≠ causalidade e ausência de evidência ≠ evidência de falsidade"*) e implementado no código através do estado `FONTE INDISPONÍVEL` e `NÃO LOCALIZADO`.
 2. **Checksum matemático não se confunde com existência:** O cálculo do Módulo 97 do CNJ e dígito do ISBN validam apenas consistência formal; a atribuição de veracidade documental requer obrigatoriamente a consulta à publicação no DJEN/ComunicaAPI ou base catalogada.
@@ -211,4 +211,4 @@ A versão instalada em `C:\Users\tharcio\.gemini\config\skills\ultimate-research
 Em observância às regras inegociáveis de governança técnica que proíbem o aumento artificial de prontidão decorrente de validações de integridade, a skill permanece sob a classificação **`APROVADO PARA TESTES CONTROLADOS`**, condicionada a exercícios investigativos externos em condições reais de produção.
 
 ---
-*Assinado eletronicamente por NEXUS OMEGA — Engenheiro Principal de Sistemas e Guardião Técnico.*
+*Assinado eletronicamente por NEXUS OMEGA - Engenheiro Principal de Sistemas e Guardião Técnico.*

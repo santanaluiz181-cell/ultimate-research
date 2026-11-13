@@ -1,8 +1,8 @@
 # MATRIZ DE PRECISÃO FACTUAL E CONFRONTO COM O GABARITO (FASE 4)
-**Avaliação:** ULTIMATE RESEARCH 3.0 — Avaliação Cega de Desempenho Jornalístico  
+**Avaliação:** ULTIMATE RESEARCH 3.0 - Avaliação Cega de Desempenho Jornalístico  
 **Pauta:** A Crise da Concessão da Enel Distribuição São Paulo (Apagão de Outubro/2024, Conflito MME x Aneel, Decreto nº 12.068/2024 e Rito de Caducidade)  
-**Documento Auditado:** [`BLIND_RESEARCH_REPORT.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/BLIND_RESEARCH_REPORT.md)  
-**Matriz de Referência Independente:** [`REFERENCE_ANSWER_KEY.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/REFERENCE_ANSWER_KEY.md)  
+**Documento Auditado:** [`BLIND_RESEARCH_REPORT.md`](./BLIND_RESEARCH_REPORT.md)  
+**Matriz de Referência Independente:** [`REFERENCE_ANSWER_KEY.md`](./REFERENCE_ANSWER_KEY.md)  
 **Auditor Responsável:** Gabinete de Avaliação Epistêmica Independente  
 **Data:** 2026-11-04
 

@@ -1,4 +1,4 @@
-# ULTIMATE RESEARCH — STRESS TEST & QUALITY AUDIT REPORT
+# ULTIMATE RESEARCH - STRESS TEST & QUALITY AUDIT REPORT
 
 **Data da Auditoria:** 4 de Novembro de 2026  
 **Ambiente de Execução:** Google Antigravity Workstation (`win32`, Node.js `v24.14.1`, Python `3.12.10`)  
@@ -88,14 +88,14 @@ O plano foi compilado deterministicamente pelo motor da skill:
      * *Sabiá-4 Thinking:* R$ 5,00 (input) / R$ 40,00 (output).
      * *Opção Nuvem Soberana BR-SP:* acréscimo de 30%.
      * *Chat Web Pro:* R$ 59,90/mês.
-2. **Escriba (`escriba.app` — Aos Fatos):**
+2. **Escriba (`escriba.app` - Aos Fatos):**
    - **Solução:** Plataforma SaaS de transcrição e auditoria de áudio/vídeo desenvolvida pela agência investigativa Aos Fatos especificamente para jornalistas e pesquisadores.
    - **Diferencial:** Diarização de locutores em português brasileiro, marcação de *timestamps*, suporte a vocabulário político e garantia de privacidade com política de não utilização dos dados dos usuários para retreinamento de LLMs.
    - **Modelo de Negócio:** Modalidade gratuita para reportagens de interesse público/bolsistas e planos estruturados (plano individual de R$ 50 a R$ 250/mês para 4 a 20 horas de áudio; plano *Escriba Teams* a R$ 650/mês para até 10 membros e 50 horas de áudio mensais).
 3. **Arena (`arena.im`):**
    - **Solução:** Plataforma SaaS de engajamento de audiência e cobertura minuto a minuto (*live blogging*), amplamente adotada por portais de notícias brasileiros (integração nativa com WordPress).
    - **Funcionalidades de IA:** Assistente de redação para plantões, resumos de lances/fatos e moderação automática de comentários em tempo real.
-   - **Precificação:** Plano Gratuito ($0), *Starter* ($49/mês), *Professional* ($349/mês — inclui IA de redação) e *Business* ($999/mês — inclui auto-moderação com IA).
+   - **Precificação:** Plano Gratuito ($0), *Starter* ($49/mês), *Professional* ($349/mês - inclui IA de redação) e *Business* ($999/mês - inclui auto-moderação com IA).
 4. **JOTA PRO (`jota.info/pro`):**
    - **Solução:** Serviço de inteligência jurídica, tributária e política em tempo real para redações especializadas, corporações e escritórios.
    - **IA Aplicada:** Cruzamento preditivo de pautas do STF/STJ, monitoramento automatizado de emendas do Congresso e alertas instantâneos de julgamentos.
@@ -136,7 +136,7 @@ O plano foi compilado deterministicamente pelo motor da skill:
    - *Veredito:* **`[VERIFICADA]`**.
 2. **Afirmação 2 (Privacidade e Recursos do Escriba):**
    - *URL:* `https://escriba.app`
-   - *Data:* 2024–2026.
+   - *Data:* 2024-2026.
    - *Autoria:* Aos Fatos (Tai Nalon / Bruno Fávero).
    - *Trecho Comprobatório:* "Desenvolvido para jornalistas e pesquisadores. Seus arquivos de áudio e dados não são compartilhados nem utilizados para treinar modelos de inteligência artificial."
    - *Independência:* Fonte primária do desenvolvedor.
@@ -150,7 +150,7 @@ O plano foi compilado deterministicamente pelo motor da skill:
    - *Veredito:* **`[VERIFICADA]`**.
 4. **Afirmação 4 (Serviço de Inteligência JOTA PRO):**
    - *URL:* `https://www.jota.info/pro`
-   - *Data:* 2024–2026.
+   - *Data:* 2024-2026.
    - *Autoria:* JOTA Informação e Tecnologia Ltda.
    - *Trecho Comprobatório:* "Plataforma de inteligência jurídica e institucional combinando jornalismo especializado, dados preditivos de tribunais e alertas em tempo real."
    - *Independência:* Página oficial de produto B2B.
@@ -171,7 +171,7 @@ O plano foi compilado deterministicamente pelo motor da skill:
    - *Veredito:* **`[VERIFICADA]`**.
 7. **Afirmação 7 (Posição Sindical da FENAJ):**
    - *URL:* `https://fenaj.org.br`
-   - *Data:* 2024–2026.
+   - *Data:* 2024-2026.
    - *Autoria:* Diretoria Executiva da Federação Nacional dos Jornalistas.
    - *Trecho Comprobatório:* "A FENAJ repudia qualquer tentativa de substituição do trabalho intelectual de repórteres e editores por mecanismos automatizados e orienta os sindicatos a incluírem cláusulas de garantia de emprego e transparência algorítmica nas negociações coletivas."
    - *Independência:* Documento oficial da entidade sindical nacional.
@@ -185,12 +185,12 @@ O plano foi compilado deterministicamente pelo motor da skill:
    - *Veredito:* **`[VERIFICADA]`**.
 9. **Afirmação 9 (Regulação da IA e Remuneração no PL 2338/2023):**
    - *URL:* `https://www.senado.leg.br/atividade/materia/detalhe/156475`
-   - *Data:* 2023–2026.
+   - *Data:* 2023-2026.
    - *Autoria:* Senado Federal (Senador Rodrigo Pacheco / Relatoria Senador Eduardo Gomes).
    - *Trecho Comprobatório:* "Substitutivo apresentado na Comissão Temporária sobre Inteligência Artificial (CTIA) inclui salvaguardas sobre direitos autorais, dever de transparência sobre obras utilizadas em bases de treinamento e mecanismos de remuneração de produtores de conteúdo."
    - *Independência:* Portal oficial legislativo federal.
    - *Veredito:* **`[VERIFICADA]`**.
-10. **Afirmação 10 (Contraste de Modelo de Mercado — Brasil vs Exterior):**
+10. **Afirmação 10 (Contraste de Modelo de Mercado - Brasil vs Exterior):**
     - *URL:* `https://www.meioemensagem.com.br` / ECA-USP COM+.
     - *Data:* 2025/2026.
     - *Autoria:* Análise setorial de comunicação.
@@ -254,7 +254,7 @@ Durante o stress test, observou-se uma vulnerabilidade metodológica:
 - Se uma investigação atinge 10 fontes na Onda 2 e a novidade matemática de termos cai abaixo de 15%, mas **emerge uma contradição fática ou jurídica relevante** (por exemplo, a divergência sobre a licitude da raspagem de dados entre a Meta e a ANJ), o algoritmo declarava convergência precoce (`converged: true`) e sugeria a síntese final antes que a discrepância fosse contextualizada ou submetida a uma busca adversarial específica.
 
 ### A Correção Implementada no Código:
-O método `evaluateConvergence` em [`scripts/validate-schemas.mjs`](file:///C:/Users/tharcio/.gemini/config/skills/ultimate-research/scripts/validate-schemas.mjs#L169-L215) foi aperfeiçoado para incluir o parâmetro de controle `unresolvedContradictions`:
+O método `evaluateConvergence` em [`scripts/validate-schemas.mjs`](../../scripts/validate-schemas.mjs#L169-L215) foi aperfeiçoado para incluir o parâmetro de controle `unresolvedContradictions`:
 
 ```javascript
   // Trava de segurança epistêmica contra encerramento prematuro
@@ -268,7 +268,7 @@ O método `evaluateConvergence` em [`scripts/validate-schemas.mjs`](file:///C:/U
   }
 ```
 
-A alteração foi coberta por teste automatizado em [`tests/integration-tests/integration.test.mjs`](file:///C:/Users/tharcio/.gemini/config/skills/ultimate-research/tests/integration-tests/integration.test.mjs#L187-L199) e a suíte completa passou com **23 testes aprovados e 0 falhas**.
+A alteração foi coberta por teste automatizado em `tests/integration-tests/integration.test.mjs#L187-L199` (ambiente de auditoria) e a suíte completa passou com **23 testes aprovados e 0 falhas**.
 
 ---
 

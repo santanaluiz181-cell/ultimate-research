@@ -1,7 +1,7 @@
 # SCORECARD DE AVALIAÇÃO CEGA DE DESEMPENHO (FASE 4 E 6)
-**Avaliação:** ULTIMATE RESEARCH 3.0 — Avaliação Cega de Desempenho Jornalístico  
+**Avaliação:** ULTIMATE RESEARCH 3.0 - Avaliação Cega de Desempenho Jornalístico  
 **Pauta:** A Crise da Concessão da Enel Distribuição São Paulo (Apagão de Outubro/2024)  
-**Objeto Avaliado:** [`BLIND_RESEARCH_REPORT.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/BLIND_RESEARCH_REPORT.md) frente ao [`REFERENCE_ANSWER_KEY.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/REFERENCE_ANSWER_KEY.md)  
+**Objeto Avaliado:** [`BLIND_RESEARCH_REPORT.md`](./BLIND_RESEARCH_REPORT.md) frente ao [`REFERENCE_ANSWER_KEY.md`](./REFERENCE_ANSWER_KEY.md)  
 **Data:** 2026-11-04  
 **Auditor Independente:** Gabinete de Avaliação Epistêmica
 
@@ -37,9 +37,9 @@
         Audit 1.0 (Stress Test)     Audit 2.0 (Adversarial)     Audit 3.0 (Blind Evaluation)
 ```
 
-- **Auditoria 1.0 (Stress Test Inicial):** 9.25/10 — Identificou boa arquitetura, mas revelou dependência excessiva de fontes secundárias e carência de verificação documental determinística.
-- **Auditoria 2.0 / 2.1 / 2.2 (Adversarial e Validação Temporal):** 8.70/10 — Submeteu a ferramenta a estresse, descobrindo 3 falhas sistêmicas críticas (LexML falso positivo de alucinação, cegueira da sucessão de leis temporais e confusão de métricas econômicas contrafactuais vs. faturamento).
-- **Auditoria 3.0 (Avaliação Cega com Gabarito Independente):** **9.88/10** — Demonstra que a resolução cirúrgica das falhas na build instalada (máquina de estados documentais, parser universal de precedentes e rigor metodológico) permitiu à skill operar em uma pauta inédita de alta complexidade sem cometer alucinações, sem perder o contraditório e sem extrapolar as evidências documentais.
+- **Auditoria 1.0 (Stress Test Inicial):** 9.25/10 - Identificou boa arquitetura, mas revelou dependência excessiva de fontes secundárias e carência de verificação documental determinística.
+- **Auditoria 2.0 / 2.1 / 2.2 (Adversarial e Validação Temporal):** 8.70/10 - Submeteu a ferramenta a estresse, descobrindo 3 falhas sistêmicas críticas (LexML falso positivo de alucinação, cegueira da sucessão de leis temporais e confusão de métricas econômicas contrafactuais vs. faturamento).
+- **Auditoria 3.0 (Avaliação Cega com Gabarito Independente):** **9.88/10** - Demonstra que a resolução cirúrgica das falhas na build instalada (máquina de estados documentais, parser universal de precedentes e rigor metodológico) permitiu à skill operar em uma pauta inédita de alta complexidade sem cometer alucinações, sem perder o contraditório e sem extrapolar as evidências documentais.
 
 ---
 *Scorecard homologado: a ferramenta atingiu 9.88/10.0 na avaliação cega independente.*

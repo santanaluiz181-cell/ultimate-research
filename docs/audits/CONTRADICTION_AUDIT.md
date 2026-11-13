@@ -35,7 +35,7 @@ Em investigações de alta densidade regulatória e econômica, a simples confir
 ### Eixo 1: O Volume de R$ 3 Bilhões Transferido por Beneficiários do Bolsa Família
 * **Tese Sustentada:** *"Beneficiários do Bolsa Família perderam R$ 3 bilhões em apostas no mês de agosto de 2024, comprometendo o orçamento de segurança alimentar."*
 * **Evidência Favorável:**
-  - Banco Central do Brasil — *Nota Técnica nº 513/2024-BCB/SECRE*.
+  - Banco Central do Brasil - *Nota Técnica nº 513/2024-BCB/SECRE*.
   - Registrou transferências brutas via Pix no valor total de R$ 3,0 bilhões partindo de 5 milhões de titulares vinculados ao Cadastro Único/Bolsa Família.
 * **Evidência Contraditória:**
   - Estudo Econômico da LCA Consultoria encomendado pelo Instituto Brasileiro de Jogo Responsável (IBJR).

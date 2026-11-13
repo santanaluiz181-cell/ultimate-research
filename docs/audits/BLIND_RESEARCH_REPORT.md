@@ -2,16 +2,16 @@
 **Tema:** A Crise da Concessão da Enel Distribuição São Paulo: O Apagão de Outubro de 2024, a Disputa Regulatória (MME vs. Aneel vs. TCU), o Decreto nº 12.068/2024 e o Rito de Caducidade  
 **Protocolo Editorial:** `UR-JOURNALISTIC-INVESTIGATION-2026-ENEL`  
 **Data de Fechamento da Edição:** 2026-11-04  
-**Redação / Motor de Apuração:** Ultimate Research Engine (v1.1.0) — Pipeline Adaptativo Modo 4 (Investigação Jornalística e Triangulação Documental)  
+**Redação / Motor de Apuração:** Ultimate Research Engine (v1.1.0) - Pipeline Adaptativo Modo 4 (Investigação Jornalística e Triangulação Documental)  
 **Status de Apuração:** Concluída com Fontes Primárias Oficiais e Verificação ARS
 
 ---
 
 ## SUMÁRIO EXECUTIVO
 
-Em 11 de outubro de 2024, a Região Metropolitana de São Paulo (RMSP) foi atingida por uma tempestade severa caracterizada meteorologicamente como linha de instabilidade pré-frontal com padrão de eco em arco (*bow echo*), cujas rajadas atingiram a marca recorde de 107,6 km/h na estação de Interlagos (Zona Sul da capital) e 77,2 km/h no Aeroporto de Congonhas. O evento climático provocou o desabastecimento elétrico de 3,1 milhões de unidades consumidoras no pico — representando 37,8% dos cerca de 8,2 milhões de clientes atendidos pela Enel Distribuição São Paulo em 24 municípios da RMSP. O restabelecimento integral levou seis dias, sendo formalizado em 17 de outubro de 2024.
+Em 11 de outubro de 2024, a Região Metropolitana de São Paulo (RMSP) foi atingida por uma tempestade severa caracterizada meteorologicamente como linha de instabilidade pré-frontal com padrão de eco em arco (*bow echo*), cujas rajadas atingiram a marca recorde de 107,6 km/h na estação de Interlagos (Zona Sul da capital) e 77,2 km/h no Aeroporto de Congonhas. O evento climático provocou o desabastecimento elétrico de 3,1 milhões de unidades consumidoras no pico - representando 37,8% dos cerca de 8,2 milhões de clientes atendidos pela Enel Distribuição São Paulo em 24 municípios da RMSP. O restabelecimento integral levou seis dias, sendo formalizado em 17 de outubro de 2024.
 
-O episódio, ocorrido menos de um ano após o vendaval de 03 de novembro de 2023 (que havia deixado 2,1 milhões de clientes sem energia), deflagrou uma crise institucional e regulatória tripartite entre a concessionária de capital italiano, o Governo Federal (via Ministério de Minas e Energia — MME) e a Agência Nacional de Energia Elétrica (Aneel). A apuração documental revela que a crise reúne contornos jurídicos complexos:
+O episódio, ocorrido menos de um ano após o vendaval de 03 de novembro de 2023 (que havia deixado 2,1 milhões de clientes sem energia), deflagrou uma crise institucional e regulatória tripartite entre a concessionária de capital italiano, o Governo Federal (via Ministério de Minas e Energia - MME) e a Agência Nacional de Energia Elétrica (Aneel). A apuração documental revela que a crise reúne contornos jurídicos complexos:
 1. Um Contrato de Concessão de Distribuição (nº 162/1998) vincendo em junho de 2028;
 2. As novas diretrizes federais de renovação antecipada estipuladas pelo Decreto nº 12.068/2024;
 3. Uma sanção histórica de R$ 165,8 milhões aplicada pela Aneel em fevereiro de 2024 que se encontra com exigibilidade suspensa por decisão liminar da 16ª Vara Federal Cível do Distrito Federal;
@@ -89,8 +89,8 @@ Em 12 e 14 de outubro de 2024, o Ministro de Minas e Energia, Alexandre Silveira
 
 ### 5.2. O Posicionamento da Diretoria Colegiada da Aneel
 A Diretoria Colegiada da Aneel, por meio de notas oficiais e manifestações do Diretor-Geral Sandoval Feitosa:
-- Repeliu as acusações de omissão e defendeu a autonomia regulatória da autarquia federal (disciplinada pela Lei Geral das Agências Reguladoras — Lei nº 13.848/2019).
-- Argumentou que qualquer punição sancionatória grave — sob pena de anulação sumária pelo Poder Judiciário — exige estrito cumprimento do devido processo legal administrativo, ampla defesa e contraditório.
+- Repeliu as acusações de omissão e defendeu a autonomia regulatória da autarquia federal (disciplinada pela Lei Geral das Agências Reguladoras - Lei nº 13.848/2019).
+- Argumentou que qualquer punição sancionatória grave - sob pena de anulação sumária pelo Poder Judiciário - exige estrito cumprimento do devido processo legal administrativo, ampla defesa e contraditório.
 - **Abertura do Processo de Caducidade:** Em 21 de outubro de 2024, a Aneel autuou o **Processo Administrativo nº 48500.003331/2024-72** e emitiu o **Termo de Intimação nº 49/2024-SFT**, formalizando a notificação da Enel SP para apresentar defesa prévia no prazo de 15 dias sobre o descumprimento reiterado de obrigações de qualidade do serviço e capacidade de recomposição da rede.
 
 ### 5.3. A Intervenção do Tribunal de Contas da União (TCU)
@@ -142,7 +142,7 @@ A paralisação de circuitos elétricos em áreas de alta densidade econômica g
 ## 8. ESTRUTURA OPERACIONAL E TRABALHISTA: CORTE DE PESSOAL E TERCEIRIZAÇÃO
 
 Um dos pontos centrais da controvérsia técnica diz respeito à capacidade de resposta humana em emergências:
-- **Redução Histórica do Quadro Global (2019 a 2023):** Dados extraídos das Informações Financeiras Trimestrais (ITRs) e Formulários de Referência da Enel SP protocolados na CVM revelam que o quadro total de trabalhadores da concessionária (somando próprios e terceirizados) caiu de **23.835 em dezembro de 2019 para 15.366 em setembro de 2023** — uma redução líquida de **35,5% (-8.469 postos de trabalho)**, enquanto a base de clientes cresceu aproximadamente 7% no mesmo intervalo.
+- **Redução Histórica do Quadro Global (2019 a 2023):** Dados extraídos das Informações Financeiras Trimestrais (ITRs) e Formulários de Referência da Enel SP protocolados na CVM revelam que o quadro total de trabalhadores da concessionária (somando próprios e terceirizados) caiu de **23.835 em dezembro de 2019 para 15.366 em setembro de 2023** - uma redução líquida de **35,5% (-8.469 postos de trabalho)**, enquanto a base de clientes cresceu aproximadamente 7% no mesmo intervalo.
 - **Encolhimento do Quadro de Empregados Diretos:** Em 2018, no momento da privatização da Eletropaulo, a companhia contava com cerca de 7.500 funcionários próprios. Em setembro de 2023, o número de empregados próprios havia caído para **3.863 trabalhadores** (redução de ~49%), com o contingente operacional de rua passando a ser majoritariamente composto por equipes terceirizadas (11.503 terceirizados).
 - **Crítica dos Sindicatos (Sinergia-SP / STIEESP):** As entidades de classe denunciaram formalmente a perda de engenheiros e eletricistas veteranos com amplo conhecimento da topologia complexa da malha da Grande SP, apontando alta rotatividade (*turnover*), treinamento superficial e menor qualificação das terceirizadas para execução de manobras de carga em alta tensão sob chuva intensa.
 - **Apontamentos Regulatórios:** O Relatório de Fiscalização da SFT/Aneel no Auto de Infração de fev/2024 destacou expressamente que o dimensionamento das equipes de campo mantidas em prontidão pela Enel SP em fins de semana e feriados era incompatível com a extensão da rede e com os alertas prévios de tempestade emitidos pela Defesa Civil.
@@ -183,7 +183,7 @@ Para os consumidores residenciais e comerciais que sofreram queima de equipament
 
 Em seus comunicados oficiais, defesas administrativas perante a Aneel e fatos relevantes protocolados na CVM:
 - **Tese de Força Maior e Clima Severo:** A Enel SP sustentou a excludente de nexo de causalidade por evento de força maior absoluta e caso fortuito climáticointenso (ventos de 107,6 km/h associados a chuvas torrenciais), argumentando que nenhuma rede aérea de distribuição urbana do mundo é projetada para resistir ao impacto de árvores centenárias de 20 a 30 metros de altura arremessadas sobre os postes.
-- **Plano de Investimentos de R$ 6,2 Bilhões (2024–2026):** A empresa reiterou o compromisso firmado em seu Plano de Negócios divulgado em abril de 2024, no montante de **R$ 6,2 bilhões** destinados à concessão de São Paulo no triênio 2024–2026, com foco em:
+- **Plano de Investimentos de R$ 6,2 Bilhões (2024-2026):** A empresa reiterou o compromisso firmado em seu Plano de Negócios divulgado em abril de 2024, no montante de **R$ 6,2 bilhões** destinados à concessão de São Paulo no triênio 2024-2026, com foco em:
   - Expansão de esquemas automáticos de self-healing (autocura da rede por telecontrole);
   - Triplicação do volume anual de podas em circuitos críticos;
   - Reforço do quadro operacional, com o compromisso público de contratar e incorporar cerca de 1.200 eletricistas próprios até o encerramento do biênio 2024/2025.

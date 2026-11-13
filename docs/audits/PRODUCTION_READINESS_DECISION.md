@@ -1,6 +1,6 @@
 # DECISÃO FORMAL DE PRONTIDÃO OPERACIONAL E HOMOLOGAÇÃO (FASE 7)
 **Motor Avaliado:** `ultimate-research` (v1.1.0)  
-**Protocolo:** ULTIMATE RESEARCH 3.0 — Avaliação Cega de Desempenho Jornalístico  
+**Protocolo:** ULTIMATE RESEARCH 3.0 - Avaliação Cega de Desempenho Jornalístico  
 **Auditor Responsável:** NEXUS OMEGA (Engenharia de Sistemas, Validação Epistêmica e Governança Técnica)  
 **Data da Decisão:** 2026-11-04  
 **Classificação Anterior:** `APROVADO PARA TESTES CONTROLADOS`  
@@ -46,4 +46,4 @@ $$\mathbf{Status: \text{APROVADO PARA PRODUÇÃO ASSISTIDA}}$$
 A ferramenta comprovou maturidade técnica, resiliência temporal, imunidade a alucinações e conformidade com os mais elevados padrões da investigação jornalística e documental contemporânea.
 
 ---
-*Assinado eletronicamente por NEXUS OMEGA — Engenheiro Principal de Sistemas, Validação Epistêmica e Guardião Técnico.*
+*Assinado eletronicamente por NEXUS OMEGA - Engenheiro Principal de Sistemas, Validação Epistêmica e Guardião Técnico.*

@@ -1,7 +1,7 @@
 # ANÁLISE DE OMISSÕES E LIMITAÇÕES INVESTIGATIVAS (FASE 5)
-**Avaliação:** ULTIMATE RESEARCH 3.0 — Avaliação Cega de Desempenho Jornalístico  
+**Avaliação:** ULTIMATE RESEARCH 3.0 - Avaliação Cega de Desempenho Jornalístico  
 **Pauta:** A Crise da Concessão da Enel Distribuição São Paulo (Apagão de Outubro/2024)  
-**Documento Auditado:** [`BLIND_RESEARCH_REPORT.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/BLIND_RESEARCH_REPORT.md)  
+**Documento Auditado:** [`BLIND_RESEARCH_REPORT.md`](./BLIND_RESEARCH_REPORT.md)  
 **Auditor Responsável:** Gabinete de Avaliação Epistêmica Independente  
 **Data:** 2026-11-04
 
@@ -43,7 +43,7 @@ Nesta fase, foram avaliados 7 vetores de omissão crítica:
   - Acórdão nº 2.191/2024-TCU-Plenário (medida cautelar de compartilhamento de dados telemétricos);
   - Lei Federal nº 8.987/1995 (art. 38) e Lei Federal nº 9.427/1996 (arts. 2º e 3º);
   - Lei Municipal de São Paulo nº 17.267/2020 e 17.794/2022 (manejo arbóreo);
-  - Resolução Normativa Aneel nº 1.000/2021 (arts. 602 a 625 — ressarcimento por dano elétrico).
+  - Resolução Normativa Aneel nº 1.000/2021 (arts. 602 a 625 - ressarcimento por dano elétrico).
 - **Documento Regulatório Omitido:**
   - **Convênio de Cooperação nº 001/2019-Aneel/Arsesp:** Instrumento que formaliza a delegação descentralizada da fiscalização da distribuição paulista da Aneel para a agência reguladora estadual (Arsesp), e a respectiva partilha da Taxa de Fiscalização de Serviços de Energia Elétrica (TFSEE). A ausência desse convênio oculta a disputa financeira de bastidor sobre quem retém as verbas fiscalizatórias. Severidade: **BAIXA**.
 
@@ -55,7 +55,7 @@ Nesta fase, foram avaliados 7 vetores de omissão crítica:
 A investigação da skill demonstrou equilíbrio e amplitude no contraditório:
 - **Lado Concessionária (Enel Brasil):**
   - Tese de força maior registrada e explicada tecnicamente (ventos de 107,6 km/h, árvores centenárias atingindo condutores aéreos);
-  - Plano de resiliência e investimentos de R$ 6,2 bilhões no triênio 2024–2026 detalhado com suas metas de automação (*self-healing*) e promessa de 1.200 contratações;
+  - Plano de resiliência e investimentos de R$ 6,2 bilhões no triênio 2024-2026 detalhado com suas metas de automação (*self-healing*) e promessa de 1.200 contratações;
   - Conflito da Lei Municipal nº 17.267/2020 que restringe a atuação preventiva da empresa fora da faixa de servidão.
 - **Lado Poder Concedente / Regulador / Consumidores:**
   - Confronto empírico dos dados da CVM apontando corte de 35,5% na força de trabalho global e queda de 49% no quadro de eletricistas próprios desde 2018;

@@ -67,7 +67,7 @@ A verificação documental exige o confronto direto com repositórios públicos 
 | **Decreto nº 11.907/2024** | 31/01/2024 | Seção 1, pág. 12 | Estrutura regimental do Ministério da Fazenda | Criação formal da Secretaria de Prêmios e Apostas (SPA/MF) | **VERIFICADA** |
 | **Portaria SPA/MF nº 615/2024** | 18/04/2024 | Seção 1, pág. 45 | Regras gerais de transações de pagamento | Proibição de cartões de crédito, dinheiro e criptoativos | **VERIFICADA** |
 | **Portaria SPA/MF nº 827/2024** | 22/05/2024 | Seção 1, pág. 52 | Procedimento de autorização e pagamento de outorga | Detalhamento do prazo de 5 anos e exploração de até 3 marcas | **VERIFICADA** |
-| **Portaria Fictícia SPA/MF nº 9.999/2024** | — | — | Suposta portaria permitindo apostas anônimas sem CPF | Não encontrada no DOU; busca retornou zero resultados | **ALUCINAÇÃO DETECTADA** |
+| **Portaria Fictícia SPA/MF nº 9.999/2024** | - | - | Suposta portaria permitindo apostas anônimas sem CPF | Não encontrada no DOU; busca retornou zero resultados | **ALUCINAÇÃO DETECTADA** |
 
 ---
 

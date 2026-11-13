@@ -1,7 +1,7 @@
 # AUDITORIA DE QUALIDADE EDITORIAL E REPRODUTIBILIDADE JORNALÍSTICA (FASE 6)
-**Avaliação:** ULTIMATE RESEARCH 3.0 — Avaliação Cega de Desempenho Jornalístico  
+**Avaliação:** ULTIMATE RESEARCH 3.0 - Avaliação Cega de Desempenho Jornalístico  
 **Pauta:** A Crise da Concessão da Enel Distribuição São Paulo (Apagão de Outubro/2024)  
-**Documento Auditado:** [`BLIND_RESEARCH_REPORT.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/BLIND_RESEARCH_REPORT.md)  
+**Documento Auditado:** [`BLIND_RESEARCH_REPORT.md`](./BLIND_RESEARCH_REPORT.md)  
 **Auditor Responsável:** Gabinete de Avaliação Epistêmica Independente  
 **Data:** 2026-11-04
 

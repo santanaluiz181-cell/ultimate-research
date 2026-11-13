@@ -1,7 +1,7 @@
 # LEGAL TEMPORAL VALIDATION: RECONSTRUÇÃO DA LINHA DO TEMPO NORMATIVA DAS APOSTAS NO BRASIL
 **Skill:** `ultimate-research` v1.1.0  
 **Data da Auditoria:** 04 de Novembro de 2026  
-**Auditor:** NEXUS OMEGA — Engenharia de Sistemas & Auditoria Epistêmica  
+**Auditor:** NEXUS OMEGA - Engenharia de Sistemas & Auditoria Epistêmica  
 
 ---
 
@@ -14,7 +14,7 @@ Na auditoria de campo preliminar, o sistema cometeu um erro de **cegueira tempor
 
 ---
 
-## 2. Linha do Tempo Reconstruída (2023 – 2026)
+## 2. Linha do Tempo Reconstruída (2023 - 2026)
 
 ```
 [30/12/2023] Sancionada a Lei nº 14.790/2023 (Marco Legal das Apostas de Quota Fixa e Jogos Online)

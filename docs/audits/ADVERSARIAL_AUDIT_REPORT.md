@@ -1,6 +1,6 @@
 # RELATÓRIO OFICIAL DE AUDITORIA ADVERSARIAL EPISTÊMICA
 **Mecanismo Auditado:** `ultimate-research` v1.1.0  
-**Autor da Auditoria:** NEXUS OMEGA — Engenheiro Principal de Sistemas, Arquitetura de Contexto & Auditoria de Evidências  
+**Autor da Auditoria:** NEXUS OMEGA - Engenheiro Principal de Sistemas, Arquitetura de Contexto & Auditoria de Evidências  
 **Data:** 04 de Novembro de 2026  
 **Status Final:** **APROVADO COM RESSALVAS**  
 **Scorecard Homologado:** **8,10 / 10** *(Hipótese anterior de 9,25/10 categoricamente rejeitada)*

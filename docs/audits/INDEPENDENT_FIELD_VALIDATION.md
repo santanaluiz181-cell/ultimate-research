@@ -1,8 +1,8 @@
 # RELATÓRIO DE VALIDAÇÃO DE CAMPO INDEPENDENTE (FIELD VALIDATION)
 **Skill Avaliada:** `ultimate-research` v1.1.0  
-**Tema Inédito:** A Regulação e Tributação de Apostas de Quota Fixa ("Bets") e Jogos Online no Brasil — Impactos Macroeconômicos no Consumo e Judicialização Constitucional (Lei 14.790/2023 e ADI 7721/STF)  
+**Tema Inédito:** A Regulação e Tributação de Apostas de Quota Fixa ("Bets") e Jogos Online no Brasil - Impactos Macroeconômicos no Consumo e Judicialização Constitucional (Lei 14.790/2023 e ADI 7721/STF)  
 **Data:** 04 de Novembro de 2026  
-**Auditor Principal:** NEXUS OMEGA — Engenheiro Principal de Sistemas & Auditoria Epistêmica  
+**Auditor Principal:** NEXUS OMEGA - Engenheiro Principal de Sistemas & Auditoria Epistêmica  
 **Ambiente:** Windows x64, Node.js v24.14.1, Playwright/CDP, LexML API, ComunicaAPI/DJEN, CrossRef API  
 
 ---
@@ -51,14 +51,14 @@ O presente teste de campo foi executado sem reutilizar nenhum caso de teste da a
 
 ### Afirmação 01: Transferências de Beneficiários do Bolsa Família
 * **Afirmação:** Em agosto de 2024, cerca de 5 milhões de beneficiários do Bolsa Família enviaram R$ 3 bilhões via Pix a empresas de apostas, com mediana de R$ 100 por pessoa.
-* **Fonte Primária:** Banco Central do Brasil — *Nota Técnica nº 513/2024-BCB/SECRE* (setembro de 2024).
+* **Fonte Primária:** Banco Central do Brasil - *Nota Técnica nº 513/2024-BCB/SECRE* (setembro de 2024).
 * **Trecho Literal:** *"Em agosto, 5 milhões de pessoas pertencentes a famílias beneficiárias do programa Bolsa Família (PBF) transferiram R$ 3 bilhões para as empresas de aposta por meio do Pix [...] a mediana do valor transferido foi de R$ 100."*
 * **Veredito:** **CONFIRMADA.**
 * **Ressalva Epistêmica:** O estudo mediu volume bruto de envio (*cash-in*), não perdas líquidas nem saldo remanescente, e não diferenciou o benefício assistencial de outras rendas familiares dos titulares.
 
 ### Afirmação 02: Estimativa de Perda de Faturamento do Varejo (CNC)
 * **Afirmação:** Estudo da Confederação Nacional do Comércio estimou prejuízo de R$ 100 bilhões ao varejo em virtude do redirecionamento de renda para apostas.
-* **Fonte:** CNC — Divisão Econômica (*Impacto das Apostas Online no Comércio Varejista*, 2024).
+* **Fonte:** CNC - Divisão Econômica (*Impacto das Apostas Online no Comércio Varejista*, 2024).
 * **Trecho Literal:** *"A perda potencial de faturamento do varejo decorrente do comprometimento de renda com apostas eletrônicas alcança R$ 103,9 bilhões ao ano."*
 * **Veredito:** **PARCIALMENTE CONFIRMADA.**
 * **Ressalva Epistêmica:** Trata-se de estimativa hipotética baseada em extrapolação de receita bruta. Estudos do Insper e Itaú Macro contestam a metodologia, provando que o GGR real do setor é inferior a um terço desse montante e que fatores macroeconômicos (taxa Selic e inflação) respondem pela desaceleração do comércio.
@@ -83,7 +83,7 @@ O presente teste de campo foi executado sem reutilizar nenhum caso de teste da a
 
 ### Afirmação 06: Secretaria de Prêmios e Apostas (SPA/MF)
 * **Afirmação:** A SPA/MF foi instituída pelo Decreto nº 11.907/2024 como autoridade regulatória nacional do setor.
-* **Fonte Primária:** Diário Oficial da União — Decreto nº 11.907, de 31 de janeiro de 2024 (Artigo 54-A).
+* **Fonte Primária:** Diário Oficial da União - Decreto nº 11.907, de 31 de janeiro de 2024 (Artigo 54-A).
 * **Trecho Literal:** *"Fica criada, na estrutura do Ministério da Fazenda, a Secretaria de Prêmios e Apostas, órgão competente para autorizar, normatizar e fiscalizar as apostas de quota fixa e jogos online."*
 * **Veredito:** **CONFIRMADA.**
 
@@ -101,31 +101,31 @@ O presente teste de campo foi executado sem reutilizar nenhum caso de teste da a
 
 ### Afirmação 09: Código de Autorregulamentação Publicitária (Conar)
 * **Afirmação:** O Conar aprovou o Anexo X com restrições de publicidade, vedando o direcionamento a menores de 18 anos e promessas de ganhos garantidos.
-* **Fonte:** Conar — Anexo X (*Publicidade de Apostas de Quota Fixa*).
+* **Fonte:** Conar - Anexo X (*Publicidade de Apostas de Quota Fixa*).
 * **Trecho Literal:** *"Princípio da Proteção a Crianças e Adolescentes: os anúncios devem conter a identificação etária '18+' [...] e Princípio do Jogo Responsável: é vedada a veiculação de mensagens que apresentem o jogo como solução para problemas financeiros ou investimento."*
 * **Veredito:** **CONFIRMADA.**
 
 ### Afirmação 10: Ajuizamento da ADI 7721 perante o STF
 * **Afirmação:** A CNC ajuizou a ADI 7721 perante o STF arguindo a inconstitucionalidade total da Lei 14.790/2023, sob relatoria do Min. Luiz Fux.
-* **Fonte Primária:** Supremo Tribunal Federal — Andamento Processual da ADI 7721 (Distribuída em setembro de 2024).
+* **Fonte Primária:** Supremo Tribunal Federal - Andamento Processual da ADI 7721 (Distribuída em setembro de 2024).
 * **Trecho Literal:** *"A Confederação Nacional do Comércio ajuíza ADI contra a integralidade da Lei nº 14.790/2023 alegando ofensa à dignidade da pessoa humana, proteção à família e à ordem econômica. Relatoria: Min. Luiz Fux."*
 * **Veredito:** **CONFIRMADA.**
 
 ### Afirmação 11: Medida Cautelar Monocrática do Min. Luiz Fux
 * **Afirmação:** Em novembro de 2024, Luiz Fux deferiu liminar na ADI 7721 proibindo o uso de verbas do Bolsa Família e BPC em apostas e determinando a aplicação imediata do banimento de publicidade infantil.
-* **Fonte Primária:** STF — Decisão Monocrática na ADI 7721 (13/11/2024).
+* **Fonte Primária:** STF - Decisão Monocrática na ADI 7721 (13/11/2024).
 * **Trecho Literal:** *"Defiro a medida cautelar para determinar: (i) ao Governo Federal a implementação imediata de medidas que impeçam a utilização de recursos de programas sociais e assistenciais (Bolsa Família e BPC) para apostas online; (ii) a aplicação imediata das restrições de publicidade de jogos de apostas voltadas a crianças e adolescentes."*
 * **Veredito:** **CONFIRMADA.**
 
 ### Afirmação 12: Referendo Unânime pelo Plenário do STF
 * **Afirmação:** O Plenário do STF confirmou por unanimidade a medida cautelar de Fux na ADI 7721 em sessão virtual extraordinária.
-* **Fonte Primária:** STF — Certidão de Julgamento / Ata da Sessão Virtual Extraordinária da ADI 7721 (14/11/2024).
+* **Fonte Primária:** STF - Certidão de Julgamento / Ata da Sessão Virtual Extraordinária da ADI 7721 (14/11/2024).
 * **Trecho Literal:** *"O Tribunal, por unanimidade, referendou a medida cautelar deferida pelo Ministro Relator, nos termos de seu voto."*
 * **Veredito:** **CONFIRMADA.**
 
 ### Afirmação 13: Modulação Operacional das Contas em Dezembro de 2025
 * **Afirmação:** Em dezembro de 2025, o Min. Luiz Fux suspendeu regras ministeriais que ordenavam o encerramento forçado e imediato de contas com saldo, mantendo o veto a novos cadastros de beneficiários.
-* **Fonte Primária:** STF — Despacho Interlocutório na ADI 7721 (dezembro de 2025).
+* **Fonte Primária:** STF - Despacho Interlocutório na ADI 7721 (dezembro de 2025).
 * **Trecho Literal:** *"Suspendo parcialmente os efeitos operacionais das portarias no ponto em que determinam o encerramento compulsório imediato das contas existentes de titulares de benefícios com saldo [...] mantida a proibição de novos cadastros de beneficiários de programas sociais."*
 * **Veredito:** **CONFIRMADA.**
 

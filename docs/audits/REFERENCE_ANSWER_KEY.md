@@ -1,5 +1,5 @@
 # MATRIZ DE REFERÊNCIA INDEPENDENTE (GABARITO CEGO)
-**Avaliação:** ULTIMATE RESEARCH 3.0 — Avaliação Cega de Desempenho Jornalístico  
+**Avaliação:** ULTIMATE RESEARCH 3.0 - Avaliação Cega de Desempenho Jornalístico  
 **Tema da Pauta:** A Crise da Concessão da Enel Distribuição São Paulo: O Apagão de Outubro de 2024, a Disputa Regulatória (MME vs. Aneel vs. TCU), o Decreto nº 12.068/2024 e o Processo de Caducidade  
 **Data de Fixação do Gabarito:** 2026-11-04  
 **Auditor Independente:** Gabinete de Avaliação Epistêmica (NEXUS OMEGA)  
@@ -24,7 +24,7 @@
 - **Fontes Primárias:** Centro de Gerenciamento de Emergências Climáticas (CGE) da Prefeitura de SP; Defesa Civil do Estado de SP; REDEMET (Rede de Meteorologia do Comando da Aeronáutica).
 - **Fonte Independente de Confirmação:** Instituto Nacional de Meteorologia (INMET).
 - **Data de Referência:** 11/10/2024.
-- **Critério de Aceitação:** Menção à velocidade máxima aproximada de 107–108 km/h e localização (Congonhas/Zona Sul).
+- **Critério de Aceitação:** Menção à velocidade máxima aproximada de 107-108 km/h e localização (Congonhas/Zona Sul).
 - **Possíveis Ambiguidades:** Outras estações mediram ventos menores (70 a 90 km/h); o pico metropolitano foi em Congonhas.
 
 ### 3. Escopo Operacional da Concessão da Enel Distribuição SP
@@ -84,7 +84,7 @@
 ### 9. Instalação de Processo Administrativo para Fins de Caducidade
 - **Enunciado:** Em outubro de 2024, após determinação formal do Ministério de Minas e Energia, a Diretoria Colegiada da Aneel instaurou processo administrativo sancionador específico (Termo de Notificação) para apurar os descumprimentos contratuais da Enel SP e avaliar a recomendação de caducidade da concessão.
 - **Resposta de Referência:** Confirmado. Termo de Notificação da SFE/Aneel instaurado em 21/10/2024 em cumprimento ao Ofício nº 356/2024/GM-MME.
-- **Fontes Primárias:** Ofício nº 356/2024/GM-MME; Resolução e Despacho da Diretoria da Aneel de 18–21 de outubro de 2024.
+- **Fontes Primárias:** Ofício nº 356/2024/GM-MME; Resolução e Despacho da Diretoria da Aneel de 18-21 de outubro de 2024.
 - **Fonte Independente de Confirmação:** Diário Oficial da União de 22/10/2024.
 - **Data de Referência:** Outubro de 2024.
 - **Critério de Aceitação:** Relatar a abertura formal de processo de avaliação de descumprimento contratual / rito prévio de caducidade.

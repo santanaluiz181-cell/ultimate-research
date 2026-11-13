@@ -30,7 +30,7 @@ A Auditoria 2.2 foi instaurada para investigar, isolar e sanar de forma determin
      * `FALSO DOCUMENTO`: Comprovação positiva de fraude, estrutura inexistente ou violação de regras cronológicas formais.
   2. **Tratamento de Exceções de Conectividade:** Falhas de rede no LexML agora atribuem `FONTE INDISPONÍVEL` (score 0.50), impedindo terminantemente a emissão de carimbo de alucinação.
   3. **Catálogo Canônico STF:** Ações de controle concentrado de constitucionalidade (`ADI`, `ADC`, `ADPF`, `ADO`) passam a ser resolvidas com precedência direta no repositório do Supremo Tribunal Federal / DJe, garantindo indexação instantânea de processos reais como ADI 7721 e ADI 8027.
-- **Documento de Evidência Técnica:** [`STF_VERIFICATION_FIX.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/STF_VERIFICATION_FIX.md).
+- **Documento de Evidência Técnica:** [`STF_VERIFICATION_FIX.md`](./STF_VERIFICATION_FIX.md).
 
 ### 2.2. Rigor Temporal e Sucessão de Leis no Tempo
 - **Causa Raiz:** O verificador de legislação realizava correspondência estática textual sem validação de vigência temporal, histórico de revogação ou medidas provisórias posteriores.
@@ -43,7 +43,7 @@ A Auditoria 2.2 foi instaurada para investigar, isolar e sanar de forma determin
      * *28/09/2026:* Publicação do **Decreto nº 13.128/2026**, criando comitê interinstitucional de liquidação e fiscalização.
      * *Outubro/2026:* Ajuizamento da **ADI 8027/STF** contra dispositivos da MP 1.394/2026.
   2. **Regras de Sanidade Cronológica e Formal:** Inclusão de checagens determinísticas que detectam leis fictícias (ex: leis federais com número superior a 30.000, MPs acima de 5.000 ou referências temporais no futuro), classificando-as como `FALSO DOCUMENTO`.
-- **Documento de Evidência Técnica:** [`LEGAL_TEMPORAL_VALIDATION.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/LEGAL_TEMPORAL_VALIDATION.md).
+- **Documento de Evidência Técnica:** [`LEGAL_TEMPORAL_VALIDATION.md`](./LEGAL_TEMPORAL_VALIDATION.md).
 
 ### 2.3. Segregação de Métricas Econômicas e Reauditoria da CNC
 - **Causa Raiz:** A auditoria anterior apontou que a projeção da Confederação Nacional do Comércio (CNC) de R$ 100 bilhões de desvio de consumo varejista estava "desmentida" pelo GGR dos operadores reportado em R$ 30 bilhões. Essa comparação continha um vício conceitual primário: confrontar a estimativa de impacto macroeconômico em consumo alternativo com a margem bruta de receita das plataformas de apostas.
@@ -59,7 +59,7 @@ A Auditoria 2.2 foi instaurada para investigar, isolar e sanar de forma determin
      * A afirmação da CNC NÃO foi contradita empiricamente por dados de GGR.
      * A afirmação foi reclassificada como: **`METODOLOGIA INSUFICIENTEMENTE DEMONSTRADA`** e `NÃO COMPROVADA`.
      * *Fundamento:* A CNC assumiu elasticidade de substituição de 100% (cada R$ 1 apostado seria integralmente direcionado ao comércio), ignorou a taxa básica de juros (Selic), inflação de alimentos e endividamento prévio das famílias, e não publicou microdados anonimizados nem código do modelo para replicação independente.
-- **Documento de Evidência Técnica:** [`CNC_METHODOLOGY_REAUDIT.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/CNC_METHODOLOGY_REAUDIT.md).
+- **Documento de Evidência Técnica:** [`CNC_METHODOLOGY_REAUDIT.md`](./CNC_METHODOLOGY_REAUDIT.md).
 
 ---
 
@@ -70,17 +70,17 @@ O regex de precedentes foi refatorado e submetido a 16 variações sintáticas r
 ```typescript
 /\b(?:(S[u\u00fa]mula\s+Vinculante|S[u\u00fa]mula)\s+(?:n[o\u00ba\u00b0.]?\s*)?(\d+)(?:\s+d[oe]\s+(STF|STJ|TST|TSE|STM|TJTO))?|(Tema)\s+(?:n[o\u00ba\u00b0.]?\s*)?(\d+)(?:\s+d[oe]\s+(STF|STJ))?|(Recurso\s+Extraordin[a\u00e1]rio|RE|Recurso\s+Especial|REsp|A[c\u00e7][a\u00e3]o\s+Direta\s+de\s+Inconstitucionalidade|ADI|Habeas\s+Corpus|HC)\s*(?:n[o\u00ba\u00b0.]?\s*|\s+)?([\d.]+)(?:\/([A-Z]{2}))?)\b/gi
 ```
-- **Resultado da Bateria de Testes:** [`tests/precedent-regex.test.mjs`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/tests/precedent-regex.test.mjs)
+- **Resultado da Bateria de Testes:** `tests/precedent-regex.test.mjs` (suíte histórica consolidada)
   - 16 de 16 testes executados com 100% de sucesso.
   - Reconhecimento garantido de: `ADI 7721`, `ADI nº 7721`, `ADI n. 7721`, `Ação Direta de Inconstitucionalidade 7721`, `ADI 7.721`, `ADI nº 7.721/DF`, `RE 635659`, `REsp n. 987.654/SP`, `Súmula Vinculante 10`, `Tema 1234 do STF`.
-- **Relatório Completo:** [`PRECEDENT_REGEX_TESTS.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/PRECEDENT_REGEX_TESTS.md).
+- **Relatório Completo:** [`PRECEDENT_REGEX_TESTS.md`](./PRECEDENT_REGEX_TESTS.md).
 
 ### 3.2. Bateria de 20 Casos de Regressão Temporal-Jurídica
 Foi implementada e executada uma suíte com 20 casos reais e sintéticos cobrindo todos os cenários de validade, vigência, revogação e falsidade:
-- **Resultado:** [`tests/temporal-legal.test.mjs`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/tests/temporal-legal.test.mjs)
+- **Resultado:** `tests/temporal-legal.test.mjs` (suíte histórica consolidada)
   - 20 de 20 testes aprovados.
   - Distinção perfeita entre normas vigentes, diplomas históricos válidos (Lei 10.406/2002, CPC/2015) e leis impossíveis/falsificadas (ex: Lei 99.999/2099 classificada com segurança como `FALSO DOCUMENTO`).
-- **Relatório Completo:** [`TEMPORAL_REGRESSION_TESTS.md`](file:///c:/Users/tharcio/Downloads/DESLOP%20SEARCH%20SKILL/TEMPORAL_REGRESSION_TESTS.md).
+- **Relatório Completo:** [`TEMPORAL_REGRESSION_TESTS.md`](./TEMPORAL_REGRESSION_TESTS.md).
 
 ### 3.3. Regressão Global da Suíte de Testes
 O projeto completo foi compilado e auditado através do executor de testes:
@@ -124,4 +124,4 @@ Em cumprimento estrito às regras de auditoria que proíbem o aumento artificial
 * **Integridade Epistêmica:** O sistema não assume mais ausência de dados como falsidade documental, não confunde métricas de naturezas contábeis opostas e possui blindagem temporal contra sucessão de leis.
 
 ---
-*Assinado eletronicamente por NEXUS OMEGA — Engenheiro Principal de Sistemas e Guardião Técnico.*
+*Assinado eletronicamente por NEXUS OMEGA - Engenheiro Principal de Sistemas e Guardião Técnico.*
