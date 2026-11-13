@@ -247,7 +247,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(live_report.to_dict(), indent=2, ensure_ascii=False))
         else:
             print(
-                f"Live Human-Archive Results (before:{args.before_year}) — Kept {live_report.stats['keptCount']}/{live_report.stats['total']}:"
+                f"Live Human-Archive Results (before:{args.before_year}) - Kept {live_report.stats['keptCount']}/{live_report.stats['total']}:"
             )
             for hit in live_report.kept:
                 print(

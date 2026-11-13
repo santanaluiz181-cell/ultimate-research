@@ -1,8 +1,10 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { pathToFileURL } from "node:url";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-const bridgePath = "C:/Users/tharcio/.gemini/config/skills/ultimate-research/scripts/deslop-bridge.mjs";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const bridgePath = resolve(__dirname, "../scripts/deslop-bridge.mjs");
 const {
   loadDeslopSdk,
   executeDeslopMcpTool,
@@ -22,7 +24,7 @@ function makeCnj(n, a, j, tr, o) {
   return `${nStr}-${dd}.${aStr}.${jStr}.${trStr}.${oStr}`;
 }
 
-describe("Auditoria 2.3 — Seção 4: Bateria de 10 Testes Negativos Adicionais", () => {
+describe("Auditoria 2.3 - Seção 4: Bateria de 10 Testes Negativos Adicionais", () => {
   // 1. Número CNJ válido matematicamente, mas sem registro
   it("Cenário 1: CNJ com Modulo 97 válido mas sem registro judicial não pode receber [VERIFICADA]", async () => {
     // 9999999-51.2024.8.27.9999 possui dígito verificador 51 matematicamente exato (Mod 97), mas é inexistente no DJEN
@@ -79,7 +81,7 @@ describe("Auditoria 2.3 — Seção 4: Bateria de 10 Testes Negativos Adicionais
       "Na ADI 7721, o STF acolheu integralmente a inicial e julgou procedente a inconstitucionalidade total da Lei das Bets.",
       {
         exists: true,
-        title: "Ação Direta de Inconstitucionalidade 7721 — STF",
+        title: "Ação Direta de Inconstitucionalidade 7721 - STF",
         summary: "O Supremo Tribunal Federal rejeitou os pedidos de nulidade total e julgou improcedente a declaração de inconstitucionalidade."
       },
       {

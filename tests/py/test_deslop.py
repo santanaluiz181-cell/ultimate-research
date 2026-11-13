@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import sys
+import threading
 import time
 import unittest
 from pathlib import Path
@@ -134,9 +135,11 @@ Check CVE-2021-4034 and RFC 9110 section 5.
 
     def test_split_horizon_parallel_execution_and_divergence(self) -> None:
         engine = DeslopSearch()
+        # Deterministic concurrency barrier: sequential execution deadlocks and raises BrokenBarrierError
+        barrier = threading.Barrier(2, timeout=1.5)
 
         def mock_lane_a(_q: str, _y: int) -> list[RawSearchResult]:
-            time.sleep(0.08)
+            barrier.wait()
             return [
                 RawSearchResult(
                     title="TLS configuration in Python 3.9 with ssl.wrap_socket",
@@ -147,7 +150,7 @@ Check CVE-2021-4034 and RFC 9110 section 5.
             ]
 
         def mock_lane_b(_q: str, _y: int) -> list[RawSearchResult]:
-            time.sleep(0.08)
+            barrier.wait()
             return [
                 RawSearchResult(
                     title="[Updated 2026] Ultimate Guide to Python SSL",
@@ -162,15 +165,11 @@ Check CVE-2021-4034 and RFC 9110 section 5.
                 ),
             ]
 
-        t0 = time.perf_counter()
         report = engine.live_split_horizon_search(
             "python ssl wrap_socket",
             lane_a_fetcher=mock_lane_a,
             lane_b_fetcher=mock_lane_b,
         )
-        elapsed_ms = (time.perf_counter() - t0) * 1000
-        # 2 x 80ms sequential = >= 160ms; ThreadPoolExecutor parallel finishes well under 145ms
-        self.assertLess(elapsed_ms, 145)
 
         self.assertEqual(report.canonical_pre_2023["results"]["stats"]["keptCount"], 1)
         self.assertEqual(report.contemporary_post_2023["results"]["stats"]["keptCount"], 1)

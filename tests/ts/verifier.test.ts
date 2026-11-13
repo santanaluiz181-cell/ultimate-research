@@ -7,8 +7,8 @@ import {
   SemanticEntailmentEngine,
   validateCnjNumber,
   validateIsbn
-} from "../src/verifier.js";
-import type { SourceCheckAdapter } from "../src/types.js";
+} from "../../src/verifier.js";
+import type { SourceCheckAdapter } from "../../src/types.js";
 
 describe("ARS Epistemic Citation Verifier", () => {
   describe("1. CNJ Checksum Validation (Resolução CNJ nº 65/2008 - Módulo 97)", () => {

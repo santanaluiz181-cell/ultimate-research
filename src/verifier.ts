@@ -1312,7 +1312,7 @@ export class CitationVerifier {
       out += `- **Diagnóstico:** ${audit.details}\n\n`;
     }
 
-    out += `---\n*Certidão gerada pelo Deslop Search Engine — Módulo de Auditoria Epistêmica ARS.*\n`;
+    out += `---\n*Certidão gerada pelo Deslop Search Engine - Módulo de Auditoria Epistêmica ARS.*\n`;
     return out;
   }
 }

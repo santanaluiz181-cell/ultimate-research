@@ -14,7 +14,7 @@ import type {
 } from "./types.js";
 
 const HELP_TEXT = `
-deslop — Clean Human-Era Search, Split-Horizon & Anti-Slop Utility
+deslop - Clean Human-Era Search, Split-Horizon & Anti-Slop Utility
 
 USAGE:
   deslop query "<search terms>" [--split | --split-horizon] [options]
@@ -299,7 +299,7 @@ async function runCli(argv: string[]): Promise<number> {
       process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
     } else {
       process.stdout.write(
-        `Live Human-Archive Results (before:${cutoffYear}) — Kept ${report.stats.keptCount}/${report.stats.total}:\n`
+        `Live Human-Archive Results (before:${cutoffYear}) - Kept ${report.stats.keptCount}/${report.stats.total}:\n`
       );
       for (const hit of report.kept) {
         process.stdout.write(
