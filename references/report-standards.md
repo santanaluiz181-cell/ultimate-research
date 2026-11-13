@@ -1,6 +1,6 @@
 # Padrões Epistêmicos de Síntese e Redação de Relatórios (`report-standards`)
 
-**Fase do Pipeline:** Fase 10 — Síntese e Redação Final de Relatórios (`UR-REPORT`)  
+**Fase do Pipeline:** Fase 10 - Síntese e Redação Final de Relatórios (`UR-REPORT`)  
 **Padrão Redacional:** Engenharia Pragmática, Rigor Judiciário e Densidade de Informação  
 **Diretiva Central:** Fidelidade Epistêmica, Rastreabilidade Total de Afirmações e Proibição de Prosa Genérica de IA  
 

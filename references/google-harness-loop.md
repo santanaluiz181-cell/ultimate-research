@@ -56,3 +56,7 @@ O **Google Harness²** atua como uma camada meta-cognitiva que avalia empiricame
 ### 2.3. ReasoningBank (Memória de Lições Cumulativas)
 - Todo erro empírico detectado na sessão é destilado em uma regra atômica invariável e persistido no `claude-mem` (`work_state_write` / `save_memory`).
 - Exemplo de lição: *"Em consultas processuais do TJTO/CNJ, o dígito verificador regular não prova existência documental; verificar sempre o DJEN/ComunicaAPI"*.
+
+### 2.4. Advisor-Planner vs Executor Tiering & Quality Gates (`DfraUxsjj1y` + `DfpaKb1k2Og`)
+- **Separacao de Inteligencia (`shadcn/improve`):** O modelo mais capaz audita a arquitetura e escreve planos/checklists autocontidos; modelos leves (`flash_lite`/`flash`) executam buscas paralelas e entregas delimitadas.
+- **Portoes Maquina-Verificaveis (Uncle Bob):** Toda validacao tecnica ou auditoria Goldfish converte heuristicas subjetivas em testes de mutacao de alegacoes, checagem de cobertura e limites objetivos descritos em [uncle-bob-verification-gates.md](./uncle-bob-verification-gates.md).

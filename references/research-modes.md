@@ -57,7 +57,7 @@
 - **Sub-Modo Competitive Intelligence (CI):** Foco em desmontagem da stack tecnológica de concorrentes via engenharia reversa de headers, bundles JS e contratos de API abertos.
 - **Regra de Ouro:** Proibido aceitar números de mercado divulgados pelo marketing da própria empresa avaliada sem confronto com relatórios fiscais auditados (CVM, SEC 10-K) ou métricas de tráfego de terceiros.
 
-### MODE 7: LEGAL (Direito Público e Poder Judiciário — TJTO / CNJ / STJ / STF)
+### MODE 7: LEGAL (Direito Público e Poder Judiciário - TJTO / CNJ / STJ / STF)
 - **Gatilho:** Elaboração de minutas de sentenças, pareceres de gabinetes judiciários, análise de recursos, conformidade com a Lei de Licitações e atos do eproc.
 - **Topologia:** Subagentes com restrição estrita a domínios governamentais e judiciários oficiais: `*.jus.br`, `*.gov.br`, `lexml.gov.br`.
 - **Validação Específica:**

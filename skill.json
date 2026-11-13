@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "ultimate-research",
-  "version": "2.0.0",
-  "displayName": "Ultimate Research — Unified Autonomous Research & ARS Verification Engine",
+  "version": "2.1.0",
+  "displayName": "Ultimate Research: Unified Autonomous Research, 5 MCP Connectors & Mutation Gates Engine",
   "description": "The Ultimate Research Engine: Intercepts search queries with temporal bounds and anti-slop filters, executes Split-Horizon comparisons, performs ARS citation verification, zero-context Elephant-Goldfish adversarial attacks, and Google Research Harness² recursive optimization.",
   "license": "MIT",
   "author": "Antigravity Engineering / Ultimate Research Contributors",

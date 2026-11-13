@@ -1,6 +1,6 @@
 # Arquitetura Elephant-Goldfish (`elephant-goldfish-architecture`)
 
-**Fase Operacional:** Fase 8 / Fase 9 — Auditoria Adversarial Cega de Entailment e Estresse de Premissas  
+**Fase Operacional:** Fase 8 / Fase 9 - Auditoria Adversarial Cega de Entailment e Estresse de Premissas  
 **Origem Metodológica:** Google Open Source (`google/elephant-goldfish-model`)  
 **Padrão de Integridade:** Expurgo Radical de Viés de Confirmação (Zero Context Handoff)
 

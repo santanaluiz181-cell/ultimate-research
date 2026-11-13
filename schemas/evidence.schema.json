@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://antigravity.local/schemas/ultimate-research/evidence.schema.json",
+  "title": "UltimateResearchEvidenceLedger",
+  "description": "Structured contract for Phase 7 (Evidence Triangulation) and Phase 8 (Epistemic Audit).",
+  "type": "object",
+  "required": ["ledger_id", "plan_id", "items", "triangulation_summary"],
+  "properties": {
+    "ledger_id": {
+      "type": "string",
+      "pattern": "^UR-EVD-LEDGER-[A-Z0-9-]+$"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "claim",
+          "claim_nature",
+          "source_title",
+          "url",
+          "author_or_institution",
+          "publication_date",
+          "source_tier",
+          "source_category",
+          "supporting_excerpt",
+          "origin_fingerprint",
+          "independent_from_peers",
+          "limitations",
+          "confidence",
+          "verification_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^EV-[0-9]{3}$"
+          },
+          "sub_question_id": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 10
+          },
+          "claim_nature": {
+            "type": "string",
+            "enum": ["observed_fact", "attributed_allegation", "expert_opinion", "hypothesis", "estimate_or_projection"]
+          },
+          "source_title": {
+            "type": "string",
+            "minLength": 2
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https?://.+"
+          },
+          "identifiers": {
+            "type": "object",
+            "properties": {
+              "doi": { "type": "string" },
+              "isbn": { "type": "string" },
+              "cnj": { "type": "string" },
+              "statute_or_precedent": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "author_or_institution": {
+            "type": "string",
+            "minLength": 2
+          },
+          "publication_date": {
+            "type": "string",
+            "description": "ISO date YYYY-MM-DD, YYYY-MM, YYYY, or UNDATED"
+          },
+          "event_date": {
+            "type": "string",
+            "description": "Date of underlying event when distinct from publication_date"
+          },
+          "source_tier": {
+            "type": "string",
+            "enum": ["TIER_1", "TIER_2", "TIER_3", "TIER_4"]
+          },
+          "source_category": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "institutional",
+              "academic",
+              "journalistic",
+              "technical",
+              "specialized_community",
+              "independent",
+              "critical_or_dissenting"
+            ]
+          },
+          "supporting_excerpt": {
+            "type": "string",
+            "minLength": 10
+          },
+          "origin_fingerprint": {
+            "type": "string",
+            "minLength": 3,
+            "description": "Canonical identifier of the underlying primary document/release/study so republications share the same origin_fingerprint and are NOT counted as independent confirmations."
+          },
+          "independent_from_peers": {
+            "type": "boolean"
+          },
+          "single_source_flag": {
+            "type": "boolean"
+          },
+          "deslop_triage": {
+            "type": "object",
+            "required": ["verdict", "score", "primary_source_preserved"],
+            "properties": {
+              "verdict": { "type": "string", "enum": ["AUTHENTIC", "SUSPICIOUS", "SLOP", "NOT_APPLICABLE"] },
+              "score": { "type": "number", "minimum": 0, "maximum": 1 },
+              "primary_source_preserved": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          },
+          "limitations": {
+            "type": "string",
+            "minLength": 3
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["HIGH", "MEDIUM", "LOW"]
+          },
+          "entailment_checked": {
+            "type": "boolean",
+            "description": "Must be true before emitting VERIFICADA."
+          },
+          "verification_status": {
+            "type": "string",
+            "enum": [
+              "VERIFICADA",
+              "DIVERGENCIA_DE_TESE",
+              "ALUCINACAO_DETECTADA",
+              "EXISTENCIA_CONFIRMADA_SEM_ENTAILMENT",
+              "NAO_COMPROVADA"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "triangulation_summary": {
+      "type": "object",
+      "required": [
+        "total_items",
+        "distinct_urls",
+        "distinct_independent_origins",
+        "single_source_claims_count",
+        "contradictions_count"
+      ],
+      "properties": {
+        "total_items": { "type": "integer", "minimum": 0 },
+        "distinct_urls": { "type": "integer", "minimum": 0 },
+        "distinct_independent_origins": { "type": "integer", "minimum": 0 },
+        "single_source_claims_count": { "type": "integer", "minimum": 0 },
+        "contradictions_count": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

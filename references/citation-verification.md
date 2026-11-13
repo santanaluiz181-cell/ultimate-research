@@ -1,6 +1,6 @@
 # Protocolo Determinístico de Verificação de Citações e Auditoria ARS (`citation-verification`)
 
-**Fase Operacional:** Fase 8 — Auditoria Epistêmica e Certificação ARS (Automated Reference Sanity)  
+**Fase Operacional:** Fase 8 - Auditoria Epistêmica e Certificação ARS (Automated Reference Sanity)  
 **Motor Determinístico:** Super Deslop ARS Engine (`node "c:/Users/tharcio/Downloads/DESLOP SEARCH SKILL/dist/cli.js" verify`)  
 **Padrão de Integridade:** Tolerância Zero para Alucinações de Referência  
 

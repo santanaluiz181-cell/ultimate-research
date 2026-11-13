@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://antigravity.local/schemas/ultimate-research/report.schema.json",
+  "title": "UltimateResearchReport",
+  "description": "Structured contract for Phase 9 (Convergence Evaluation) and Phase 10 (Final Synthesis).",
+  "type": "object",
+  "required": [
+    "report_id",
+    "plan_id",
+    "mode",
+    "generated_at",
+    "central_answer",
+    "key_findings",
+    "evidence_citations",
+    "contradictions_and_dissent",
+    "limitations_and_gaps",
+    "convergence_audit",
+    "conclusions",
+    "references"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "pattern": "^UR-REP-[A-Z0-9-]+$"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "QUICK_RESEARCH",
+        "DEEP_RESEARCH",
+        "ACADEMIC_RESEARCH",
+        "JOURNALISTIC_INVESTIGATION",
+        "TECHNICAL_RESEARCH",
+        "MARKET_RESEARCH",
+        "LEGAL_RESEARCH",
+        "FACT_CHECKING"
+      ]
+    },
+    "fact_check_verdict": {
+      "type": "string",
+      "enum": [
+        "CONFIRMADO",
+        "PARCIALMENTE_CONFIRMADO",
+        "ENGANOSO",
+        "FALSO",
+        "NAO_COMPROVADO",
+        "INCONCLUSIVO"
+      ],
+      "description": "Mandatory when mode == FACT_CHECKING."
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "central_answer": {
+      "type": "string",
+      "minLength": 20
+    },
+    "key_findings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["statement", "evidence_ids", "confidence"],
+        "properties": {
+          "statement": { "type": "string", "minLength": 10 },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^EV-[0-9]{3}$" }
+          },
+          "single_source": { "type": "boolean" },
+          "confidence": { "type": "string", "enum": ["HIGH", "MEDIUM", "LOW", "INSUFFICIENT_EVIDENCE"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_citations": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^EV-[0-9]{3}$" }
+    },
+    "contradictions_and_dissent": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic", "position_a", "position_b", "resolution_or_status"],
+        "properties": {
+          "topic": { "type": "string" },
+          "position_a": { "type": "string" },
+          "position_b": { "type": "string" },
+          "resolution_or_status": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations_and_gaps": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "convergence_audit": {
+      "type": "object",
+      "required": [
+        "waves_executed",
+        "verified_claims_count",
+        "distinct_independent_origins",
+        "unanswered_questions_count",
+        "novelty_rate_last_wave",
+        "converged",
+        "stop_reason"
+      ],
+      "properties": {
+        "waves_executed": { "type": "integer", "minimum": 1 },
+        "verified_claims_count": { "type": "integer", "minimum": 0 },
+        "distinct_independent_origins": { "type": "integer", "minimum": 0 },
+        "unanswered_questions_count": { "type": "integer", "minimum": 0 },
+        "novelty_rate_previous_wave": { "type": "number", "minimum": 0, "maximum": 1 },
+        "novelty_rate_last_wave": { "type": "number", "minimum": 0, "maximum": 1 },
+        "converged": { "type": "boolean" },
+        "insufficient_evidence_declared": { "type": "boolean" },
+        "stop_reason": { "type": "string", "minLength": 5 }
+      },
+      "additionalProperties": false
+    },
+    "conclusions": {
+      "type": "string",
+      "minLength": 15
+    },
+    "references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["ref_id", "title", "url", "tier", "verification_status"],
+        "properties": {
+          "ref_id": { "type": "string" },
+          "title": { "type": "string" },
+          "author_or_institution": { "type": "string" },
+          "publication_date": { "type": "string" },
+          "url": { "type": "string", "pattern": "^https?://.+" },
+          "tier": { "type": "string", "enum": ["TIER_1", "TIER_2", "TIER_3", "TIER_4"] },
+          "verification_status": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
