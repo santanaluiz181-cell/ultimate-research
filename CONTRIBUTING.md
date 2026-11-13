@@ -1,6 +1,6 @@
-# Contributing to deslop-search
+# Contributing to ultimate-research
 
-Thank you for helping rescue the human web from synthetic AI slop and content mills! We welcome contributions of all kinds: new blocklist domains, refined heuristic regexes, community channels, tests, documentation, and performance optimizations.
+Thank you for helping keep `ultimate-research` fast, epistemically rigorous, and resilient against synthetic AI slop! We welcome contributions of all kinds: new blocklist domains, refined heuristic regexes, community channels, verification gates, schemas, tests, and documentation.
 
 ---
 
@@ -18,13 +18,13 @@ This project is governed by the [Contributor Covenant Code of Conduct](./CODE_OF
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/santanaluiz181-cell/deslop-search.git
-cd deslop-search
+git clone https://github.com/santanaluiz181-cell/ultimate-research.git
+cd ultimate-research
 
 # Install Node dependencies
 npm install
 
-# Test TypeScript build & test suite
+# Run full TypeScript, Python, Schema & Negative verification gates
 npm run verify
 ```
 
@@ -46,7 +46,7 @@ npm run verify
 
 ## Pull Request Guidelines
 
-1. **Keep it Tested**: All PRs must pass `npm run verify` (`tsc`, `vitest`, and Python `unittest`).
+1. **Keep it Tested**: All PRs must pass `npm run verify` (`tsc`, `vitest`, Python `unittest`, `validate-schemas.mjs`, and `negative-scenarios.test.mjs`).
 2. **Deterministic & Fast**: The `SlopClassifier` must remain $O(N)$ with zero external API calls and zero ReDoS vulnerabilities.
 3. **Commit Messages**: Follow [Conventional Commits](https://www.conventionalcommits.org/):
    - `feat: add new community routing profile for kernel developers`

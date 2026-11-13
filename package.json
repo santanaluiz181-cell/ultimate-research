@@ -1,7 +1,7 @@
 {
   "name": "ultimate-research",
-  "version": "2.0.0",
-  "description": "The Ultimate Research Engine: Fusion of Perplexity Prompting, Deep Multi-Wave Research, Super Deslop Search (Anti-Slop & Split-Horizon), ARS Epistemic Citation Verification, Elephant-Goldfish Adversarial Auditing, and Google Research Harness² Recursive Optimization.",
+  "version": "2.1.0",
+  "description": "The Ultimate Research Engine: Unified Perplexity Prompting, Deep Multi-Wave Research, Super Deslop Search (Anti-Slop & Split-Horizon), ARS Epistemic Citation Verification, Elephant-Goldfish Claim Mutation Testing, 5 MCP Connectors, and Google Research Harness² Optimization.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -23,11 +23,16 @@
   "files": [
     "dist",
     "data",
+    "references",
+    "schemas",
+    "scripts",
+    "templates",
+    "workflows",
     "SKILL.md",
     "skill.json",
     "README.md",
-    "LICENSE",
-    "*.md"
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -35,7 +40,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:py": "python -m unittest discover -s tests/py -p \"test_*.py\" -v",
-    "verify": "npm run typecheck && npm run build && npm run test && npm run test:py",
+    "test:negative": "node --test tests/negative-scenarios.test.mjs",
+    "validate:schemas": "node scripts/validate-schemas.mjs",
+    "env:check": "node scripts/env-check.mjs",
+    "verify": "npm run typecheck && npm run build && npm run test && npm run test:py && node scripts/validate-schemas.mjs && node --test tests/negative-scenarios.test.mjs",
     "deslop": "node ./dist/cli.js",
     "research": "node ./dist/cli.js"
   },
@@ -45,6 +53,7 @@
     "perplexity-prompting",
     "elephant-goldfish",
     "google-harness",
+    "claim-mutation-testing",
     "anti-slop",
     "deslop-search",
     "ars-verification",
@@ -56,11 +65,11 @@
     "citation-verification",
     "cli"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "author": "Antigravity Engineering / Ultimate Research Contributors",
   "license": "MIT",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.1"
-  },
   "devDependencies": {
     "@types/node": "^22.13.10",
     "typescript": "^5.8.2",

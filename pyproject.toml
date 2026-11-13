@@ -3,16 +3,16 @@ requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "deslop-search"
-version = "1.1.0"
-description = "Clean web search utility, Split-Horizon comparative engine, CLI, and AI Agent Skill that filters synthetic SEO slop via temporal dorks (before:2023), community routing, and heuristic text classification."
+name = "ultimate-research"
+version = "2.1.0"
+description = "Clean web search utility, Split-Horizon comparative engine, CLI, and AI Agent Skill engine that filters synthetic SEO slop via temporal dorks (before:2023), community routing, and heuristic text classification."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
 authors = [
-  { name = "Deslop Search Contributors" }
+  { name = "Antigravity Engineering / Ultimate Research Contributors" }
 ]
-keywords = ["search", "dorks", "before-2023", "dead-internet", "anti-slop", "ai-skill", "cli"]
+keywords = ["ultimate-research", "search", "dorks", "before-2023", "dead-internet", "anti-slop", "ai-skill", "cli"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
@@ -27,6 +27,7 @@ classifiers = [
 dependencies = []
 
 [project.scripts]
+ultimate-research-py = "deslop_search.cli:main"
 deslop-py = "deslop_search.cli:main"
 
 [tool.setuptools]
