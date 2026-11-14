@@ -33,6 +33,9 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Local session checkpoint
+# Local session checkpoint & runtime scratch/vault
 organizer.md
-
+scratch/
+research/runs/
+research/notes/
+.hyperresearch/

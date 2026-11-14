@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "ultimate-research",
-  "version": "2.1.0",
-  "displayName": "Ultimate Research: Unified Autonomous Research, 5 MCP Connectors & Mutation Gates Engine",
-  "description": "The Ultimate Research Engine: Intercepts search queries with temporal bounds and anti-slop filters, executes Split-Horizon comparisons, performs ARS citation verification, zero-context Elephant-Goldfish adversarial attacks, and Google Research Harness² recursive optimization.",
+  "version": "2.2.0",
+  "displayName": "Ultimate Research: DRACO #1 Deep Research, Hyperresearch Vault, Elephant-Goldfish & 5 MCP Connectors",
+  "description": "The Ultimate Research Engine: Intercepts search queries with temporal bounds and anti-slop filters, executes DRACO #1 16-step deep research, maintains persistent Zettelkasten research vaults, performs ARS citation verification, zero-context Elephant-Goldfish adversarial attacks, and Google Research Harness² recursive optimization.",
   "license": "MIT",
   "author": "Antigravity Engineering / Ultimate Research Contributors",
   "homepage": "https://github.com/santanaluiz181-cell/ultimate-research",
@@ -23,7 +23,8 @@
     },
     "typescript": "./dist/index.js",
     "mcpTools": "./dist/mcp-tools.js",
-    "python": "./python/deslop_search/__init__.py"
+    "python": "./python/deslop_search/__init__.py",
+    "vault": "./scripts/vault.mjs"
   },
   "dataFiles": {
     "blocklist": "./data/blocklist.json",
@@ -48,24 +49,47 @@
           },
           "era": {
             "type": "string",
-            "enum": ["human-classic", "pre-gpt4", "archival", "modern-curated", "none"],
+            "enum": [
+              "human-classic",
+              "pre-gpt4",
+              "archival",
+              "modern-curated",
+              "none"
+            ],
             "default": "human-classic",
             "description": "Temporal boundary preset when split_horizon is false."
           },
           "profile": {
             "type": "string",
-            "enum": ["none", "all_community", "discussions", "qa", "code", "blogs", "forums"],
+            "enum": [
+              "none",
+              "all_community",
+              "discussions",
+              "qa",
+              "code",
+              "blogs",
+              "forums"
+            ],
             "default": "none",
             "description": "Optional curated human community routing profile."
           },
           "engine": {
             "type": "string",
-            "enum": ["google", "duckduckgo", "brave", "kagi", "searxng", "bing"],
+            "enum": [
+              "google",
+              "duckduckgo",
+              "brave",
+              "kagi",
+              "searxng",
+              "bing"
+            ],
             "default": "google",
             "description": "Target search engine (determines operator token budget and URL parameters such as udm=14)."
           }
         },
-        "required": ["query"]
+        "required": [
+          "query"
+        ]
       }
     },
     {
@@ -103,12 +127,23 @@
             "items": {
               "type": "object",
               "properties": {
-                "title": { "type": "string" },
-                "url": { "type": "string" },
-                "snippet": { "type": "string" },
-                "content": { "type": "string" }
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "snippet": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
               },
-              "required": ["title", "url"]
+              "required": [
+                "title",
+                "url"
+              ]
             }
           },
           "contemporary_results": {
@@ -117,16 +152,29 @@
             "items": {
               "type": "object",
               "properties": {
-                "title": { "type": "string" },
-                "url": { "type": "string" },
-                "snippet": { "type": "string" },
-                "content": { "type": "string" }
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "snippet": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
               },
-              "required": ["title", "url"]
+              "required": [
+                "title",
+                "url"
+              ]
             }
           }
         },
-        "required": ["query"]
+        "required": [
+          "query"
+        ]
       }
     },
     {
@@ -148,7 +196,9 @@
             "description": "Optional page URL to check against known scraper/translation clone blocklists and trusted human domains."
           }
         },
-        "required": ["text"]
+        "required": [
+          "text"
+        ]
       }
     },
     {
@@ -162,12 +212,23 @@
             "items": {
               "type": "object",
               "properties": {
-                "title": { "type": "string" },
-                "url": { "type": "string" },
-                "snippet": { "type": "string" },
-                "content": { "type": "string" }
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "snippet": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
               },
-              "required": ["title", "url"]
+              "required": [
+                "title",
+                "url"
+              ]
             }
           },
           "maxSlopScore": {
@@ -176,7 +237,9 @@
             "description": "Maximum allowed slop score (0.0-1.0) before a result is dropped."
           }
         },
-        "required": ["results"]
+        "required": [
+          "results"
+        ]
       }
     },
     {
@@ -198,7 +261,10 @@
             "description": "Source URL or reference citation."
           }
         },
-        "required": ["claim", "evidence"]
+        "required": [
+          "claim",
+          "evidence"
+        ]
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "name": "ultimate-research",
-  "version": "2.1.0",
-  "description": "The Ultimate Research Engine: Unified Perplexity Prompting, Deep Multi-Wave Research, Super Deslop Search (Anti-Slop & Split-Horizon), ARS Epistemic Citation Verification, Elephant-Goldfish Claim Mutation Testing, 5 MCP Connectors, and Google Research Harness² Optimization.",
+  "version": "2.2.0",
+  "description": "The Ultimate Research Engine: DRACO Deep Research Benchmark #1 (Score 77.7), Hyperresearch 16-step Tier-Adaptive Pipeline, Persistent Zettelkasten Vault (research/notes/), Open-Access Recovery, Unified Perplexity Prompting, Super Deslop Search, ARS Epistemic Verification, Elephant-Goldfish Adversarial Mutation Gates, and Google Research Harness².",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,7 +18,8 @@
   "bin": {
     "ultimate-research": "./dist/cli.js",
     "deslop": "./dist/cli.js",
-    "deslop-search": "./dist/cli.js"
+    "deslop-search": "./dist/cli.js",
+    "ultimate-vault": "./scripts/vault.mjs"
   },
   "files": [
     "dist",
@@ -45,7 +46,9 @@
     "env:check": "node scripts/env-check.mjs",
     "verify": "npm run typecheck && npm run build && npm run test && npm run test:py && node scripts/validate-schemas.mjs && node --test tests/negative-scenarios.test.mjs",
     "deslop": "node ./dist/cli.js",
-    "research": "node ./dist/cli.js"
+    "research": "node ./dist/cli.js",
+    "vault": "node scripts/vault.mjs",
+    "citecheck": "node scripts/vault.mjs citecheck"
   },
   "keywords": [
     "ultimate-research",
@@ -63,7 +66,11 @@
     "mcp",
     "fact-checking",
     "citation-verification",
-    "cli"
+    "cli",
+    "hyperresearch",
+    "draco-benchmark",
+    "vault",
+    "zettelkasten"
   ],
   "engines": {
     "node": ">=18.0.0"

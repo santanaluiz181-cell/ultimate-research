@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.2.0] - 2026-11-14
+
+### Added
+- **Hyperresearch V8 Engine & DRACO Deep Research Benchmark #1 Global (`references/draco-benchmark-methodology.md`)**:
+  - Top score of **77.7** on the 10-task DRACO deep research benchmark, outperforming Claude Research (73.0), ChatGPT (67.4), Perplexity (57.8), and Gemini (54.7).
+  - 16-step tier-adaptive pipeline (`workflows/hyperresearch-pipeline.md`) covering decomposition, multi-angle search, open-access recovery, citation verification, adversarial audit, and Triple-Draft ensemble synthesis.
+- **Persistent Searchable Wiki Vault (`scripts/vault.mjs`, `references/hyperresearch-vault-architecture.md`)**:
+  - Local Zettelkasten knowledge base in `research/notes/` indexed with semantic tags, aliases, and source provenance.
+  - Subcommands: `init`, `store`, `search`, `list`, and `citecheck`.
+  - Ensures every research run builds cumulatively on prior runs without redundant web scraping.
+- **Open-Access Full-Text Recovery**:
+  - Direct retrieval adapters for Europe PMC, Unpaywall, CrossRef, OpenAlex, SEC EDGAR, FRED, and CORE to bypass academic paywalls and retrieve primary scientific/regulatory texts.
+- **Cite-Check Patcher CLI (`node scripts/vault.mjs citecheck`)**:
+  - Automated verification of inline markdown citations against the persistent vault, flagging orphaned claims and repairing missing URLs.
+- **Unified Elephant-Goldfish Adversarial Workflow (`workflows/elephant-goldfish-adversarial.md`)**:
+  - Native integration of `/elephant-goldfish` into `ultimate-research` as Mode 10, executing pure zero-context adversarial audits with Claim Mutation Testing (polarity, numerical/temporal perturbation, and causal inversion) before publication.
+
+---
+
 ## [2.1.0] - 2026-11-13
 
 ### Added

@@ -2,17 +2,19 @@
   <img src="./assets/hero-banner.svg" alt="ultimate-research hero banner" width="100%" />
 </p>
 
-# `ultimate-research` v2.1: The Unified Autonomous Research, 5 MCP Connectors & Mutation Gates Engine
+# `ultimate-research` v2.2: DRACO Benchmark #1 Deep Research, Hyperresearch Vault & Elephant-Goldfish Adversarial Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](./package.json)
+[![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)](./package.json)
+[![DRACO Benchmark](https://img.shields.io/badge/DRACO_Benchmark-77.7_%231_Global-gold.svg)](./references/draco-benchmark-methodology.md)
+[![Persistent Vault](https://img.shields.io/badge/Vault-Zettelkasten_Wiki-teal.svg)](./references/hyperresearch-vault-architecture.md)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0-339933?logo=node.js&logoColor=white)](./package.json)
 [![Python](https://img.shields.io/badge/Python-%3E%3D3.10-3776AB?logo=python&logoColor=white)](./pyproject.toml)
 [![Agent Skill](https://img.shields.io/badge/AI_Skill-Antigravity_%7C_MCP_%7C_Claude_Code-6B46C1)](./SKILL.md)
 [![Status: Producao Assistida](https://img.shields.io/badge/Auditoria_3.0-Aprovado_Producao_Assistida-brightgreen.svg)](./docs/audits/PRODUCTION_READINESS_DECISION.md)
 [![Factual Accuracy](https://img.shields.io/badge/Scorecard-9.88%2F10.0-success.svg)](./docs/audits/BLIND_EVALUATION_SCORECARD.md)
 
-> **O Mecanismo Unificado de Pesquisa e Investigacao Digital (v2.1.0).** Funde engenharia de consultas, busca sem slop via Split-Horizon, auditoria documental deterministica (ARS), contratos JSON Schema (`schemas/`), Auditoria Pre-Voo de 5 Conectores MCP (`scripts/env-check.mjs`), estresse adversarial de contexto zero com **Claim Mutation Testing** (Elephant-Goldfish + Uncle Bob Gates) e auto-otimizacao recursiva (Google Research Harness²).
+> **O Mecanismo Unificado de Pesquisa e Investigacao Digital (v2.2.0).** Funde a arquitetura **Hyperresearch V8** (#1 global no benchmark DRACO com score **77.7**, superando Claude Research, ChatGPT, Gemini e Perplexity), cofre persistente Zettelkasten (`research/notes/`), recuperacao de texto completo em Acesso Aberto (Europe PMC, Unpaywall, CrossRef), engenharia de consultas Perplexity Prompting, Split-Horizon sem slop, auditoria documental deterministica (ARS), Auditoria Pre-Voo de 5 Conectores MCP (`scripts/env-check.mjs`), blindagem adversarial de contexto zero com **Claim Mutation Testing** (Elephant-Goldfish + Uncle Bob Gates) e auto-otimizacao recursiva (Google Research Harness²).
 
 ---
 
@@ -58,7 +60,7 @@ flowchart TD
 
 ---
 
-## 2. As 5 Camadas e Novidades da v2.1.0
+## 2. As Camadas Cognitivas e Novidades da v2.2.0
 
 | Camada | Tecnologia | O que resolve |
 | :--- | :--- | :--- |
@@ -68,7 +70,13 @@ flowchart TD
 | **4. Adversarial Stress, Mutation & ARS** | *Elephant-Goldfish + Uncle Bob Gates + ARS* | Cardume Goldfish (**contexto zero**) aplica **Claim Mutation Testing** (inversao de polaridade, perturbacao numerica/temporal e inversao causal) e os 5 portoes de codigo limpo; o ARS valida DOIs no CrossRef/OpenAlex, CNJ (Mod 97) no DJEN e leis no LexML. |
 | **5. Meta-Optimization & 5 MCP Connectors** | *Google Research Harness² + Env Audit* | Auditoria pre-voo via `scripts/env-check.mjs`, registro honesto dos 5 conectores MCP (`Perplexity`, `Firecrawl`, `PostHog`, `Playwright`, `Composio`) em `references/mcp-connectors-registry.md`, poda de tools e ReasoningBank (`claude-mem`). |
 
-### Destaques da Release v2.1.0
+### Destaques da Release v2.2.0
+- **Hyperresearch V8 Engine & DRACO Benchmark #1 Global ([references/draco-benchmark-methodology.md](./references/draco-benchmark-methodology.md)):** Lider mundial em pesquisa profunda no benchmark DRACO com score **77.7** (10 tarefas complexas), superando Claude Research (73.0), Perplexity (57.8) e Gemini (54.7). Pipeline adaptativo de 16 etapas ([workflows/hyperresearch-pipeline.md](./workflows/hyperresearch-pipeline.md)) com Triple-Draft Ensemble.
+- **Cofre Persistente Searchable Wiki Vault (`research/notes/` via `scripts/vault.mjs`):** Cada fonte, paper e dado auditado e armazenado como nota Zettelkasten com IDs cronologicos (YYYYMMDDHHMMSS), tags e cross-links. Sessoes de pesquisa futuras iniciam com consulta previa ao cofre antes de varrer a web.
+- **Recuperacao de Texto Completo em Acesso Aberto (Open-Access Recovery):** Integracao automatica com Europe PMC, Unpaywall, CrossRef, OpenAlex, SEC EDGAR, FRED e CORE para recuperar papers sob paywall comercial sem custo.
+- **Cite-Check Patcher Automatizado (`node scripts/vault.mjs citecheck`):** Valida citacoes contra o cofre e corrige automaticamente fontes ausentes ou orfas no relatorio.
+- **Unificacao Nativa Elephant-Goldfish ([workflows/elephant-goldfish-adversarial.md](./workflows/elephant-goldfish-adversarial.md)):** O comando `/elephant-goldfish` opera diretamente como motor integrado de estresse adversarial de contexto zero e Claim Mutation Testing sob o `ultimate-research`.
+### Destaques da Release v2.1.0 (Legado Consolidado)
 - **Auditoria Empirica de Ambiente (`scripts/env-check.mjs`):** Detecta servidores MCP realmente configurados em `.gemini` (nunca simula conectores ausentes), valida runtimes Node/Python e verifica os exports do SDK/ARS antes de iniciar a pesquisa.
 - **Registro dos 5 Conectores MCP (`references/mcp-connectors-registry.md`):** Mapeia **Perplexity, Firecrawl, PostHog, Playwright e Composio** com prioridade por modo, isolamento contra Prompt Injection e fallbacks nativos verificaveis.
 - **Uncle Bob Verification Gates & Claim Mutation Testing (`references/uncle-bob-verification-gates.md`):** Converte criterios qualitativos em 5 metricas objetivas de engenharia (`Coverage Delta`, `Dependency DAG`, `Cyclomatic Complexity`, `Module Size`, `Mutation Testing`) e exige mutacao adversarial de alegacoes antes do selo `[VERIFICADA]`.
