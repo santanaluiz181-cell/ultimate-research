@@ -1,204 +1,337 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="100%" height="100%" role="img" aria-label="ultimate-research v2.2 hero banner with Phanty the Elephant Detective">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" role="img" aria-label="ultimate-research v2.2 Official Hero Banner with Phanty the Detective Elephant">
   <defs>
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070A10"/>
-      <stop offset="45%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#05070B"/>
+    <clipPath id="hero-banner-clip"><rect width="960" height="280" rx="18"/></clipPath>
+    <clipPath id="b-eye-l"><circle cx="732" cy="136" r="8.2"/></clipPath>
+    <clipPath id="b-eye-r"><circle cx="774" cy="136" r="8.2"/></clipPath>
+
+    <!-- Deep Ambient Glows -->
+    <radialGradient id="terminal-glow" cx="72%" cy="56%" r="48%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.32"/>
+      <stop offset="50%" stop-color="#10B981" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#090B0F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amber-glow" cx="24%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#090B0F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold Monocle Gradient -->
+    <linearGradient id="gold-monocle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="35%" stop-color="#FACC15"/>
+      <stop offset="70%" stop-color="#CA8A04"/>
+      <stop offset="100%" stop-color="#854D0E"/>
     </linearGradient>
-    <linearGradient id="brand-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="40%" stop-color="#818CF8"/>
-      <stop offset="80%" stop-color="#C084FC"/>
-      <stop offset="100%" stop-color="#F43F5E"/>
+
+    <!-- Dark Titanium Background -->
+    <linearGradient id="hero-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0C12"/>
+      <stop offset="55%" stop-color="#111520"/>
+      <stop offset="100%" stop-color="#07080D"/>
     </linearGradient>
-    <linearGradient id="canon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.08"/>
-    </linearGradient>
-    <linearGradient id="contemp-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#6D28D9" stop-opacity="0.08"/>
-    </linearGradient>
-    <linearGradient id="diff-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0284C7"/>
-      <stop offset="35%" stop-color="#F59E0B"/>
-      <stop offset="70%" stop-color="#EC4899"/>
-      <stop offset="100%" stop-color="#8B5CF6"/>
-    </linearGradient>
-    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FDE047"/>
-      <stop offset="50%" stop-color="#EAB308"/>
-      <stop offset="100%" stop-color="#B45309"/>
-    </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
+
+    <style>
+      .b-ele-breathe { animation: bEleBreathe 4.4s ease-in-out infinite; transform-origin: 754px 165px; }
+      .b-ele-head { animation: bEleHeadNod 4.4s ease-in-out infinite; transform-origin: 754px 136px; }
+      .b-ear-twitch-l { animation: bEarTwitchL 3.8s ease-in-out infinite; transform-origin: 702px 116px; }
+      .b-ear-twitch-r { animation: bEarTwitchR 3.8s ease-in-out infinite; transform-origin: 806px 116px; }
+      .b-trunk-alive { animation: bTrunkSniff 3.2s ease-in-out infinite; transform-origin: 747px 152px; }
+      .b-paw-type-l { animation: bPawTypeL 0.38s ease-in-out infinite alternate; transform-origin: 718px 206px; }
+      .b-paw-type-r { animation: bPawTypeR 0.42s ease-in-out infinite alternate 0.12s; transform-origin: 766px 206px; }
+      .b-eye-blink { animation: bEyeBlink 4.2s ease-in-out infinite; transform-origin: 754px 136px; }
+      .b-eye-look { animation: bEyeLook 5.2s ease-in-out infinite; }
+      .b-screen-flicker { animation: bScreenFlicker 2.8s ease-in-out infinite; }
+      .b-cursor-blink { animation: bCursorBlink 0.85s steps(2, start) infinite; }
+      .b-bubble-bob { animation: bBubbleBob 3.4s ease-in-out infinite; }
+      .b-badge-pulse { animation: bBadgePulse 2.8s ease-in-out infinite; }
+
+      @keyframes bEleBreathe {
+        0%, 100% { transform: translateY(0px) scale(1, 1); }
+        50% { transform: translateY(-2.5px) scale(1.015, 1.02); }
+      }
+      @keyframes bEleHeadNod {
+        0%, 100% { transform: rotate(0deg) translateY(0px); }
+        35% { transform: rotate(-1.2deg) translateY(-1px); }
+        70% { transform: rotate(1deg) translateY(-0.5px); }
+      }
+      @keyframes bEarTwitchL {
+        0%, 82%, 100% { transform: rotate(0deg); }
+        86% { transform: rotate(-7deg); }
+        92% { transform: rotate(3deg); }
+      }
+      @keyframes bEarTwitchR {
+        0%, 80%, 100% { transform: rotate(0deg); }
+        84% { transform: rotate(7deg); }
+        90% { transform: rotate(-3deg); }
+      }
+      @keyframes bTrunkSniff {
+        0%, 100% { transform: rotate(0deg) scale(1); }
+        30% { transform: rotate(-4deg) scale(1.02); }
+        60% { transform: rotate(2deg) scale(0.98); }
+      }
+      @keyframes bPawTypeL {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-3.5px); }
+      }
+      @keyframes bPawTypeR {
+        0% { transform: translateY(-3.5px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes bEyeBlink {
+        0%, 92%, 96%, 100% { transform: scaleY(1); }
+        94% { transform: scaleY(0.08); }
+      }
+      @keyframes bEyeLook {
+        0%, 20% { transform: translate(-1.2px, 0.4px); }
+        40%, 65% { transform: translate(-2.4px, 0.8px); }
+        75%, 90% { transform: translate(0px, 0px); }
+        100% { transform: translate(-1.2px, 0.4px); }
+      }
+      @keyframes bScreenFlicker {
+        0%, 100% { opacity: 0.95; }
+        50% { opacity: 1; }
+        72% { opacity: 0.92; }
+      }
+      @keyframes bCursorBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      @keyframes bBubbleBob {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3.2px); }
+      }
+      @keyframes bBadgePulse {
+        0%, 100% { border-color: #F59E0B; }
+        50% { border-color: #FBBF24; }
+      }
+    </style>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="440" rx="16" fill="url(#bg-grad)"/>
-  <rect width="1200" height="440" rx="16" fill="none" stroke="#1E293B" stroke-width="2"/>
+  <g clip-path="url(#hero-banner-clip)">
+    <!-- Canvas Base -->
+    <rect width="960" height="280" fill="url(#hero-bg)"/>
+    <rect width="960" height="280" fill="url(#terminal-glow)"/>
+    <rect width="960" height="280" fill="url(#amber-glow)"/>
 
-  <!-- Subtle grid pattern -->
-  <g stroke="#334155" stroke-opacity="0.16" stroke-width="1">
-    <line x1="80" y1="0" x2="80" y2="440"/>
-    <line x1="240" y1="0" x2="240" y2="440"/>
-    <line x1="400" y1="0" x2="400" y2="440"/>
-    <line x1="560" y1="0" x2="560" y2="440"/>
-    <line x1="720" y1="0" x2="720" y2="440"/>
-    <line x1="880" y1="0" x2="880" y2="440"/>
-    <line x1="1040" y1="0" x2="1040" y2="440"/>
-    <line x1="0" y1="80" x2="1200" y2="80"/>
-    <line x1="0" y1="180" x2="1200" y2="180"/>
-    <line x1="0" y1="280" x2="1200" y2="280"/>
-    <line x1="0" y1="380" x2="1200" y2="380"/>
-  </g>
-
-  <!-- Top Badges Row -->
-  <g transform="translate(60, 42)">
-    <!-- Pill 1: Version & Benchmark -->
-    <rect width="250" height="28" rx="14" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
-    <circle cx="16" cy="14" r="5" fill="#F59E0B" filter="url(#glow)"/>
-    <text x="30" y="18" fill="#FDE047" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1">DRACO #1 BENCHMARK • 77.7</text>
-
-    <!-- Pill 2: Hyperresearch Vault -->
-    <g transform="translate(262, 0)">
-      <rect width="230" height="28" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
-      <circle cx="16" cy="14" r="5" fill="#38BDF8"/>
-      <text x="30" y="18" fill="#BAE6FD" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1">HYPERRESEARCH V8 ENGINE</text>
+    <!-- Subtle Technical Grid -->
+    <g stroke="#334155" stroke-opacity="0.14" stroke-width="1">
+      <line x1="0" y1="56" x2="960" y2="56"/><line x1="0" y1="112" x2="960" y2="112"/>
+      <line x1="0" y1="168" x2="960" y2="168"/><line x1="0" y1="224" x2="960" y2="224"/>
+      <line x1="120" y1="0" x2="120" y2="280"/><line x1="240" y1="0" x2="240" y2="280"/>
+      <line x1="360" y1="0" x2="360" y2="280"/><line x1="480" y1="0" x2="480" y2="280"/>
+      <line x1="600" y1="0" x2="600" y2="280"/>
     </g>
 
-    <!-- Pill 3: Elephant-Goldfish -->
-    <g transform="translate(504, 0)">
-      <rect width="220" height="28" rx="14" fill="#0F172A" stroke="#C084FC" stroke-width="1"/>
-      <circle cx="16" cy="14" r="5" fill="#C084FC"/>
-      <text x="30" y="18" fill="#E9D5FF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1">ELEPHANT-GOLDFISH DUAL</text>
-    </g>
-  </g>
+    <!-- Outer Border with Neon Accent -->
+    <rect x="1.5" y="1.5" width="957" height="277" rx="17" fill="none" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="2.5"/>
 
-  <!-- Title & Tagline -->
-  <text x="60" y="124" fill="url(#brand-grad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="900" letter-spacing="-1.8">
-    ultimate-research
-  </text>
-  <text x="60" y="162" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18.5" font-weight="500">
-    The Unstoppable Deep Research Engine • DRACO #1 • Wiki Vault • Anti-Slop Split-Horizon • Claim Mutation
-  </text>
+    <!-- ======================================================== -->
+    <!-- LEFT TYPOGRAPHY & VALUE PROPOSITION                      -->
+    <!-- ======================================================== -->
+    <g transform="translate(48, 38)">
+      <!-- Top DRACO #1 Badge Pill -->
+      <g>
+        <rect x="0" y="0" width="288" height="26" rx="13" fill="#1C1814" stroke="#F59E0B" stroke-width="1.3"/>
+        <circle cx="14" cy="13" r="4.5" fill="#F59E0B"/>
+        <text x="28" y="17.2" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="900" fill="#FDE047" letter-spacing="0.6">DRACO BENCHMARK #1 · 77.7 PTS</text>
+      </g>
 
-  <!-- Split-Horizon Graphic Display (Two Cards) -->
-  <g transform="translate(60, 198)">
-    <!-- Lane A Card: Canonical Pre-2023 -->
-    <rect x="0" y="0" width="410" height="155" rx="12" fill="url(#canon-grad)" stroke="#0284C7" stroke-width="1.5" stroke-opacity="0.7"/>
-    <g transform="translate(22, 24)">
-      <circle cx="8" cy="8" r="6" fill="#38BDF8" filter="url(#glow)"/>
-      <text x="24" y="12" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="0.8">LANE A • [HORIZONTE CANÔNICO: PRÉ-2023]</text>
-      <text x="24" y="38" fill="#E2E8F0" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="600">after:2010 before:2023</text>
-      <text x="24" y="60" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">
-        Reddit • Stack Overflow • Archived GitHub • Indie Blogs
+      <!-- Main Project Title -->
+      <text x="0" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="900" fill="#FFFFFF" letter-spacing="-1.2">
+        ULTIMATE RESEARCH
       </text>
-      <text x="24" y="84" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">
-        ✓ 100% Acervo Humano Autêntico • Zero IA Slop
+
+      <!-- Subtitle -->
+      <text x="2" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#E2E8F0">
+        The Unstoppable Deep Research Engine · 16-Step Hyperresearch
       </text>
-      <text x="24" y="104" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
-        Cofre Persistente: research/notes/ (Zettelkasten)
+      
+      <!-- Split-Horizon & Vault Details -->
+      <text x="2" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="500" fill="#94A3B8">
+        Split-Horizon (<tspan fill="#38BDF8" font-weight="700">BF:2023</tspan>) · Zero-Context <tspan fill="#C084FC" font-weight="700">Elephant-Goldfish</tspan> · <tspan fill="#34D399" font-weight="700">Wiki Vault</tspan>
       </text>
-    </g>
 
-    <!-- Center Lightning / Split Bar -->
-    <g transform="translate(422, 48)">
-      <rect x="0" y="0" width="28" height="58" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1.2"/>
-      <text x="14" y="36" fill="#F43F5E" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="900" text-anchor="middle">⇄</text>
-    </g>
-
-    <!-- Lane B Card: Contemporary Post-2023 -->
-    <rect x="462" y="0" width="410" height="155" rx="12" fill="url(#contemp-grad)" stroke="#8B5CF6" stroke-width="1.5" stroke-opacity="0.7"/>
-    <g transform="translate(484, 24)">
-      <circle cx="8" cy="8" r="6" fill="#C084FC" filter="url(#glow)"/>
-      <text x="24" y="12" fill="#C084FC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="0.8">LANE B • [PÓS-2023 &amp; DRACO 16-STEPS]</text>
-      <text x="24" y="38" fill="#E2E8F0" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="600">after:2023 + blocklist.json + ARS</text>
-      <text x="24" y="60" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">
-        Europe PMC • Unpaywall • CrossRef • LexML • DJEN
-      </text>
-      <text x="24" y="84" fill="#C084FC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">
-        ✓ 16 Etapas Adaptativas • Claim Mutation Testing
-      </text>
-      <text x="24" y="104" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
-        Uncle Bob Gates • Entailment Estrito
-      </text>
-    </g>
-  </g>
-
-  <!-- Right: Phanty the Dapper Elephant Detective Mascot Card -->
-  <g transform="translate(952, 120)">
-    <!-- Mascot Container Frame -->
-    <rect x="0" y="0" width="188" height="234" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.8"/>
-    <!-- Screen Header -->
-    <rect x="0" y="0" width="188" height="26" rx="14" fill="#1E293B"/>
-    <rect x="0" y="14" width="188" height="12" fill="#1E293B"/>
-    <circle cx="14" cy="13" r="3" fill="#EF4444"/>
-    <circle cx="24" cy="13" r="3" fill="#F59E0B"/>
-    <circle cx="34" cy="13" r="3" fill="#10B981"/>
-    <text x="50" y="17" fill="#38BDF8" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="700">phanty-detective</text>
-
-    <!-- Elephant Drawing -->
-    <g transform="translate(18, 38)">
-      <!-- Ground Shadow -->
-      <ellipse cx="76" cy="134" rx="56" ry="7" fill="#000000" opacity="0.45"/>
-
-      <!-- Large Left Ear -->
-      <path d="M42 46 C16 40 10 70 28 88 C40 100 48 94 50 82 Z" fill="#64748B" stroke="#0F172A" stroke-width="2"/>
-      <path d="M38 52 C22 50 18 70 32 82 C38 88 44 84 46 76 Z" fill="#F472B6" opacity="0.4"/>
-
-      <!-- Large Right Ear -->
-      <path d="M108 46 C134 40 140 70 122 88 C110 100 102 94 100 82 Z" fill="#64748B" stroke="#0F172A" stroke-width="2"/>
-      <path d="M112 52 C128 50 132 70 118 82 C112 88 106 84 104 76 Z" fill="#F472B6" opacity="0.4"/>
-
-      <!-- Elephant Body & Vest -->
-      <ellipse cx="76" cy="106" rx="30" ry="24" fill="#475569" stroke="#0F172A" stroke-width="2"/>
-      <path d="M62 106 L76 120 L90 106 L76 102 Z" fill="#090D16"/>
-      <circle cx="76" cy="110" r="3" fill="#F59E0B"/>
-
-      <!-- Elephant Head -->
-      <ellipse cx="76" cy="64" rx="28" ry="26" fill="#64748B" stroke="#0F172A" stroke-width="2"/>
-
-      <!-- Eyes -->
-      <circle cx="66" cy="62" r="5.2" fill="#0F172A"/>
-      <circle cx="64.5" cy="60.5" r="1.8" fill="#FFFFFF"/>
-      <circle cx="67.5" cy="63.5" r="0.8" fill="#FFFFFF"/>
-
-      <circle cx="88" cy="62" r="5.2" fill="#0F172A"/>
-      <circle cx="86.5" cy="60.5" r="1.8" fill="#FFFFFF"/>
-      <circle cx="89.5" cy="63.5" r="0.8" fill="#FFFFFF"/>
-
-      <!-- Golden Monocle with Chain -->
-      <circle cx="88" cy="62" r="9.5" fill="none" stroke="url(#gold-grad)" stroke-width="2.4"/>
-      <circle cx="88" cy="62" r="8.5" fill="#38BDF8" opacity="0.2"/>
-      <path d="M97 64 C104 72 100 92 92 104" fill="none" stroke="url(#gold-grad)" stroke-width="1.3" stroke-dasharray="2,1.5"/>
-
-      <!-- Trunk with curled tip -->
-      <path d="M72 74 C72 88 68 98 70 106 C72 112 78 114 82 110 C85 106 82 100 78 98 C76 94 78 86 80 74 Z" fill="#64748B" stroke="#0F172A" stroke-width="2"/>
-
-      <!-- Detective Hat -->
-      <path d="M58 42 C58 32 94 32 94 42 Z" fill="#0F172A" stroke="#1E293B" stroke-width="1.8"/>
-      <rect x="52" y="40" width="48" height="4" rx="2" fill="#1E293B"/>
-      <rect x="60" y="37" width="32" height="3" fill="#F59E0B"/>
-
-      <!-- Clipboard: BF: 2023 -->
-      <g transform="translate(10, 80) rotate(-10)">
-        <rect x="0" y="0" width="44" height="46" rx="4" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
-        <rect x="14" y="-3" width="16" height="5" rx="2" fill="#CBD5E1"/>
-        <rect x="3" y="4" width="38" height="38" rx="2" fill="#FEF3C7"/>
-        <rect x="5" y="7" width="34" height="15" rx="3" fill="#DC2626"/>
-        <text x="22" y="18" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="8.8" font-weight="900" fill="#FFFFFF">BF: 2023</text>
-        <path d="M7 27 H37 M7 32 H31 M7 37 H25" stroke="#92400E" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Interactive Feature Pills -->
+      <g transform="translate(0, 162)">
+        <g>
+          <rect x="0" y="0" width="138" height="28" rx="6" fill="#0F172A" stroke="#38BDF8" stroke-width="1.3"/>
+          <text x="69" y="18" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="800" fill="#BAE6FD">PERSISTENT VAULT</text>
+        </g>
+        <g transform="translate(148, 0)">
+          <rect x="0" y="0" width="144" height="28" rx="6" fill="#0F172A" stroke="#34D399" stroke-width="1.3"/>
+          <text x="72" y="18" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="800" fill="#A7F3D0">OPEN-ACCESS OA</text>
+        </g>
+        <g transform="translate(302, 0)">
+          <rect x="0" y="0" width="154" height="28" rx="6" fill="#0F172A" stroke="#F43F5E" stroke-width="1.3"/>
+          <text x="77" y="18" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="800" fill="#FECDD3">CLAIM MUTATION</text>
+        </g>
       </g>
     </g>
 
-    <!-- Bottom Mascot Tag -->
-    <rect x="12" y="196" width="164" height="26" rx="6" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
-    <text x="94" y="213" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="800" fill="#38BDF8">PHANTY • BF: 2023</text>
-  </g>
+    <!-- ======================================================== -->
+    <!-- SPEECH BUBBLE ABOVE PHANTY                               -->
+    <!-- ======================================================== -->
+    <g transform="translate(680, 24)" class="b-bubble-bob">
+      <rect x="0" y="0" width="220" height="32" rx="9" fill="#1C1814" stroke="#F59E0B" stroke-width="1.6"/>
+      <path d="M78 32 L86 42 L94 32 Z" fill="#1C1814" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="110" y="20.5" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="900" fill="#FDE047">BF: 2023 · Memória Infinita!</text>
+    </g>
 
-  <!-- Bottom Accent Stripe -->
-  <rect x="0" y="435" width="1200" height="5" fill="url(#diff-grad)"/>
+    <!-- Desk Surface & Floor -->
+    <g>
+      <path d="M520 220 L660 176 L960 176 L960 280 L520 280 Z" fill="#080A0E"/>
+      <path d="M520 220 L660 176 L960 176 L960 206 L520 250 Z" fill="#151922" stroke="#252C3B" stroke-width="1.8"/>
+    </g>
+
+    <!-- ======================================================== -->
+    <!-- RIGHT: PHANTY TYPING AT RETRO TERMINAL (Matches Image 1)  -->
+    <!-- ======================================================== -->
+    <g class="b-ele-breathe">
+      <!-- Ground Shadow -->
+      <ellipse cx="760" cy="204" rx="66" ry="12" fill="#000000" opacity="0.6"/>
+
+      <!-- OUTER STICKER CONTOUR: Left Ear -->
+      <g class="b-ear-twitch-l">
+        <path d="M714 94 C668 82 652 130 680 162 C698 180 716 170 720 152 Z" fill="none" stroke="#454A54" stroke-width="5.4" stroke-linejoin="round"/>
+        <path d="M714 94 C668 82 652 130 680 162 C698 180 716 170 720 152 Z" fill="#848B98" stroke="#181A20" stroke-width="2.6" stroke-linejoin="round"/>
+        <path d="M708 104 C676 96 666 132 686 154 C698 164 710 158 714 146 Z" fill="#FFB6C6" opacity="0.65"/>
+      </g>
+
+      <!-- OUTER STICKER CONTOUR: Right Ear -->
+      <g class="b-ear-twitch-r">
+        <path d="M794 94 C840 82 856 130 828 162 C810 180 792 170 788 152 Z" fill="none" stroke="#454A54" stroke-width="5.4" stroke-linejoin="round"/>
+        <path d="M794 94 C840 82 856 130 828 162 C810 180 792 170 788 152 Z" fill="#848B98" stroke="#181A20" stroke-width="2.6" stroke-linejoin="round"/>
+        <path d="M800 104 C832 96 842 132 822 154 C810 164 798 158 794 146 Z" fill="#FFB6C6" opacity="0.65"/>
+      </g>
+
+      <!-- Chubby Body & Vest -->
+      <g>
+        <path d="M708 156 C698 175 704 204 720 210 C734 215 774 215 788 210 C804 204 810 175 800 156 Z" fill="none" stroke="#454A54" stroke-width="5.4" stroke-linejoin="round"/>
+        <path d="M708 156 C698 175 704 204 720 210 C734 215 774 215 788 210 C804 204 810 175 800 156 Z" fill="#848B98" stroke="#181A20" stroke-width="2.6" stroke-linejoin="round"/>
+        
+        <!-- Dark Navy Blue Vest -->
+        <path d="M709 164 C703 182 708 204 724 209 C738 213 770 213 784 209 C800 204 805 182 799 164 L776 162 L754 182 L732 162 Z" fill="#1C2333" stroke="#181A20" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M754 182 L754 211" stroke="#181A20" stroke-width="2.2"/>
+      </g>
+
+      <!-- Elephant Head -->
+      <g class="b-ele-head">
+        <ellipse cx="754" cy="136" rx="44" ry="40" fill="none" stroke="#454A54" stroke-width="5.4"/>
+        <ellipse cx="754" cy="136" rx="44" ry="40" fill="#848B98" stroke="#181A20" stroke-width="2.6"/>
+
+        <!-- Kawaii Pink Cheeks -->
+        <ellipse cx="720" cy="148" rx="8.5" ry="4.5" fill="#FF8CA3" opacity="0.85"/>
+        <ellipse cx="788" cy="148" rx="8.5" ry="4.5" fill="#FF8CA3" opacity="0.85"/>
+
+        <!-- Left Kawaii Eye -->
+        <g class="b-eye-blink">
+          <ellipse cx="732" cy="136" rx="8.2" ry="8.6" fill="#121418"/>
+          <g class="b-eye-look">
+            <circle cx="729.5" cy="133.2" r="3.2" fill="#FFFFFF"/>
+            <circle cx="734.8" cy="138.5" r="1.6" fill="#FFFFFF"/>
+          </g>
+        </g>
+
+        <!-- Right Kawaii Eye -->
+        <g class="b-eye-blink">
+          <ellipse cx="774" cy="136" rx="8.2" ry="8.6" fill="#121418"/>
+          <g class="b-eye-look">
+            <circle cx="771.5" cy="133.2" r="3.2" fill="#FFFFFF"/>
+            <circle cx="776.8" cy="138.5" r="1.6" fill="#FFFFFF"/>
+          </g>
+        </g>
+
+        <!-- Golden Monocle (Right Eye) -->
+        <g>
+          <circle cx="774" cy="136" r="14.5" fill="none" stroke="url(#gold-monocle)" stroke-width="3.4" stroke-linecap="round"/>
+          <circle cx="774" cy="136" r="13.2" fill="#38BDF8" opacity="0.14"/>
+          <path d="M766 128 A 12 12 0 0 1 782 128" fill="none" stroke="#FFFFFF" stroke-width="1.6" opacity="0.65" stroke-linecap="round"/>
+          
+          <!-- Golden Chain -->
+          <path d="M788 140 C796 152 795 174 786 188 C783 192 778 194 774 192" fill="none" stroke="url(#gold-monocle)" stroke-width="1.8" stroke-dasharray="1.5, 2.5" stroke-linecap="round"/>
+          <circle cx="774" cy="192" r="2.2" fill="#FACC15"/>
+        </g>
+
+        <!-- Trunk Alive -->
+        <g class="b-trunk-alive">
+          <path d="M748 144 C748 156 742 168 744 176 C746 182 754 183 758 178 C761 174 758 167 753 165 C751 161 753 153 756 144 Z" fill="none" stroke="#454A54" stroke-width="4.8" stroke-linejoin="round"/>
+          <path d="M748 144 C748 156 742 168 744 176 C746 182 754 183 758 178 C761 174 758 167 753 165 C751 161 753 153 756 144 Z" fill="#848B98" stroke="#181A20" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M749 153 Q753 151 756 153" stroke="#181A20" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M748 159 Q752 157 755 159" stroke="#181A20" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Keyboard & Typing Paws -->
+    <g transform="translate(670, 188) rotate(-4)">
+      <path d="M0 12 L18 0 L108 0 L90 12 Z" fill="#E2E8F0" stroke="#181A20" stroke-width="2"/>
+      <path d="M0 12 L90 12 L90 18 L0 18 Z" fill="#94A3B8" stroke="#181A20" stroke-width="2"/>
+      <g stroke="#181A20" stroke-width="1.2" fill="#CBD5E1">
+        <rect x="6" y="2" width="7" height="4" rx="1"/>
+        <rect x="15" y="2" width="7" height="4" rx="1"/>
+        <rect x="24" y="2" width="7" height="4" rx="1"/>
+        <rect x="33" y="2" width="7" height="4" rx="1"/>
+        <rect x="42" y="2" width="7" height="4" rx="1"/>
+        <rect x="51" y="2" width="7" height="4" rx="1"/>
+        <rect x="60" y="2" width="7" height="4" rx="1"/>
+        <rect x="69" y="2" width="7" height="4" rx="1"/>
+        <rect x="78" y="2" width="7" height="4" rx="1"/>
+        <rect x="87" y="2" width="7" height="4" rx="1"/>
+      </g>
+      <path d="M12 2 C-10 -4 -30 4 -48 -8" fill="none" stroke="#181A20" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+
+    <g class="b-paw-type-l">
+      <ellipse cx="706" cy="198" rx="13" ry="10" fill="#848B98" stroke="#181A20" stroke-width="2.4"/>
+      <circle cx="699" cy="203" r="2.2" fill="#E2E8F0" stroke="#181A20" stroke-width="1.2"/>
+      <circle cx="705" cy="204" r="2.2" fill="#E2E8F0" stroke="#181A20" stroke-width="1.2"/>
+      <circle cx="711" cy="203" r="2.2" fill="#E2E8F0" stroke="#181A20" stroke-width="1.2"/>
+    </g>
+
+    <g class="b-paw-type-r">
+      <ellipse cx="766" cy="198" rx="13" ry="10" fill="#848B98" stroke="#181A20" stroke-width="2.4"/>
+      <circle cx="759" cy="203" r="2.2" fill="#E2E8F0" stroke="#181A20" stroke-width="1.2"/>
+      <circle cx="765" cy="204" r="2.2" fill="#E2E8F0" stroke="#181A20" stroke-width="1.2"/>
+      <circle cx="771" cy="203" r="2.2" fill="#E2E8F0" stroke="#181A20" stroke-width="1.2"/>
+    </g>
+
+    <!-- Retro CRT Terminal Computer (Matches Image 1) -->
+    <g transform="translate(542, 105)">
+      <!-- Desktop PC Case -->
+      <g transform="translate(0, 92)">
+        <path d="M0 24 L24 0 L126 0 L102 24 Z" fill="#CBD5E1" stroke="#181A20" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M0 24 L102 24 L102 46 L0 46 Z" fill="#94A3B8" stroke="#181A20" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M102 24 L126 0 L126 22 L102 46 Z" fill="#64748B" stroke="#181A20" stroke-width="2.4" stroke-linejoin="round"/>
+        <rect x="58" y="29" width="34" height="4" rx="1" fill="#181A20"/>
+        <rect x="86" y="36" width="6" height="3" fill="#10B981"/>
+        <line x1="12" y1="28" x2="12" y2="40" stroke="#181A20" stroke-width="1.8"/>
+        <line x1="18" y1="28" x2="18" y2="40" stroke="#181A20" stroke-width="1.8"/>
+        <line x1="24" y1="28" x2="24" y2="40" stroke="#181A20" stroke-width="1.8"/>
+      </g>
+
+      <!-- Monitor -->
+      <g>
+        <path d="M28 12 L72 -8 L114 8 L70 28 Z" fill="#94A3B8" stroke="#181A20" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M72 -8 L114 8 L114 74 L72 58 Z" fill="#64748B" stroke="#181A20" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M8 24 L86 2 L86 92 L8 114 Z" fill="#CBD5E1" stroke="#181A20" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M18 32 L76 14 L76 82 L18 100 Z" fill="#042F2E" stroke="#181A20" stroke-width="2" stroke-linejoin="round"/>
+        
+        <!-- Glowing Green Phosphor Screen -->
+        <g class="b-screen-flicker">
+          <path d="M19 34 L75 16 L75 80 L19 98 Z" fill="#064E3B"/>
+          <g stroke="#34D399" stroke-width="1.8" stroke-linecap="round">
+            <line x1="24" y1="42" x2="54" y2="33"/>
+            <line x1="24" y1="50" x2="68" y2="37"/>
+            <line x1="24" y1="58" x2="48" y2="51"/>
+            <line x1="24" y1="66" x2="62" y2="55"/>
+            <line x1="24" y1="74" x2="70" y2="60"/>
+            <line x1="24" y1="82" x2="56" y2="73"/>
+            <line x1="24" y1="90" x2="42" y2="85"/>
+          </g>
+          <rect x="44" y="81" width="4.5" height="7" fill="#34D399" class="b-cursor-blink"/>
+        </g>
+        <path d="M18 108 C12 114 10 120 16 124 L24 124" fill="none" stroke="#181A20" stroke-width="2.2" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
 </svg>
