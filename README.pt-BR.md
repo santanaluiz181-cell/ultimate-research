@@ -37,7 +37,7 @@ Com o **`ultimate-research`**, o agente não viaja. Ele decompõe a investigaç�
 
 </td>
 <td width="38%" align="center" valign="middle">
-  <img src="./assets/elephant-curious-peek.svg" alt="Phanty o Elefante Detetive com Monóculo e Prancheta BF:2023" width="280" />
+  <img src="./assets/phanty-clipboard.jpg" alt="Phanty o Elefante Detetive com Monóculo e Prancheta BF:2023" width="280" />
 </td>
 </tr>
 </table>

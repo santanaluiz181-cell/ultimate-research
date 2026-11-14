@@ -37,7 +37,7 @@
 
 </td>
 <td width="38%" align="center" valign="middle">
-  <img src="./assets/elephant-curious-peek.svg" alt="佩戴单片眼镜与 BF:2023 调查板的大象侦探 Phanty" width="280" />
+  <img src="./assets/phanty-clipboard.jpg" alt="佩戴单片眼镜与 BF:2023 调查板的大象侦探 Phanty" width="280" />
 </td>
 </tr>
 </table>

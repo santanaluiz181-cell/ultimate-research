@@ -37,7 +37,7 @@ With **`ultimate-research`**, your agent does not guess. It decomposes complex q
 
 </td>
 <td width="38%" align="center" valign="middle">
-  <img src="./assets/elephant-curious-peek.svg" alt="Phanty the Dapper Elephant Detective with Monocle and BF:2023 Clipboard" width="280" />
+  <img src="./assets/phanty-clipboard.jpg" alt="Phanty the Dapper Elephant Detective with Monocle and BF:2023 Clipboard" width="280" />
 </td>
 </tr>
 </table>
