@@ -2,191 +2,199 @@
   <img src="./assets/hero-banner.svg" alt="ultimate-research hero banner" width="100%" />
 </p>
 
-# `ultimate-research` v2.2: DRACO Benchmark #1 Deep Research, Hyperresearch Vault & Elephant-Goldfish Adversarial Engine
+# `ultimate-research` v2.2
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)](./package.json)
-[![DRACO Benchmark](https://img.shields.io/badge/DRACO_Benchmark-77.7_%231_Global-gold.svg)](./references/draco-benchmark-methodology.md)
-[![Persistent Vault](https://img.shields.io/badge/Vault-Zettelkasten_Wiki-teal.svg)](./references/hyperresearch-vault-architecture.md)
-[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0-339933?logo=node.js&logoColor=white)](./package.json)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.10-3776AB?logo=python&logoColor=white)](./pyproject.toml)
-[![Agent Skill](https://img.shields.io/badge/AI_Skill-Antigravity_%7C_MCP_%7C_Claude_Code-6B46C1)](./SKILL.md)
-[![Status: Producao Assistida](https://img.shields.io/badge/Auditoria_3.0-Aprovado_Producao_Assistida-brightgreen.svg)](./docs/audits/PRODUCTION_READINESS_DECISION.md)
-[![Factual Accuracy](https://img.shields.io/badge/Scorecard-9.88%2F10.0-success.svg)](./docs/audits/BLIND_EVALUATION_SCORECARD.md)
+<p align="center">
+  <strong>English (US)</strong> · <a href="./README.pt-BR.md">Português (Brasil)</a> · <a href="./README.zh-CN.md">简体中文</a>
+</p>
 
-> **O Mecanismo Unificado de Pesquisa e Investigacao Digital (v2.2.0).** Funde a arquitetura **Hyperresearch V8** (#1 global no benchmark DRACO com score **77.7**, superando Claude Research, ChatGPT, Gemini e Perplexity), cofre persistente Zettelkasten (`research/notes/`), recuperacao de texto completo em Acesso Aberto (Europe PMC, Unpaywall, CrossRef), engenharia de consultas Perplexity Prompting, Split-Horizon sem slop, auditoria documental deterministica (ARS), Auditoria Pre-Voo de 5 Conectores MCP (`scripts/env-check.mjs`), blindagem adversarial de contexto zero com **Claim Mutation Testing** (Elephant-Goldfish + Uncle Bob Gates) e auto-otimizacao recursiva (Google Research Harness²).
+<p align="center">
+  <strong>The unstoppable deep research engine for AI agents. #1 on the DRACO Deep Research Benchmark (77.7 pts). Persistent Zettelkasten Vault. Split-Horizon Anti-Slop Firewall. Zero-Context Adversarial Stress.</strong>
+</p>
+
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-181615?style=for-the-badge&logoColor=white" alt="License: MIT" /></a>
+  <a href="./package.json"><img src="https://img.shields.io/badge/Version-2.2.0-38BDF8?style=for-the-badge&labelColor=181615" alt="Version 2.2.0" /></a>
+  <a href="./references/draco-benchmark-methodology.md"><img src="https://img.shields.io/badge/DRACO%20Benchmark-77.7%20%231%20Global-F59E0B?style=for-the-badge&labelColor=181615" alt="DRACO Benchmark #1" /></a>
+  <a href="./references/hyperresearch-vault-architecture.md"><img src="https://img.shields.io/badge/Vault-Persistent%20Wiki-10B981?style=for-the-badge&labelColor=181615" alt="Persistent Wiki Vault" /></a>
+  <a href="./SKILL.md"><img src="https://img.shields.io/badge/Antigravity-AI%20Skill%20Ready-6B46C1?style=for-the-badge&labelColor=181615" alt="AI Agent Skill" /></a>
+  <a href="./docs/audits/BLIND_EVALUATION_SCORECARD.md"><img src="https://img.shields.io/badge/Factual%20Score-9.88%2F10.0-10B981?style=for-the-badge&labelColor=181615" alt="Factual Score" /></a>
+</p>
 
 ---
 
-## 1. Arquitetura das 5 Camadas Unificadas
+<table>
+<tr>
+<td width="62%" valign="top">
+
+### Meet Phanty: The Dapper Detective Elephant (BF: 2023)
+
+Ever tried researching on the web recently? It is exhausting. You search for a critical technical question or legal regulation and get buried under synthetic SEO content farms, sponsored affiliate junk, circular citations, and AI models hallucinating answers while nodding politely.
+
+**Elephants never forget.** That is why **Phanty** wears a golden monocle to inspect raw primary documents, holds a clipboard stamped **`BF: 2023`** to cut straight into the pre-slop authentic human web, and operates a retro workstation connected to our **Zettelkasten Wiki Vault** (`research/notes/`).
+
+With **`ultimate-research`**, your agent does not guess. It decomposes complex questions into 16 adaptive stages, recovers open-access papers behind paywalls, saves durable notes to a local vault, and unleashes a zero-context school of **Goldfish** to tear down weak claims before anything gets published.
+
+</td>
+<td width="38%" align="center" valign="middle">
+  <img src="./assets/elephant-curious-peek.svg" alt="Phanty the Dapper Elephant Detective with Monocle and BF:2023 Clipboard" width="280" />
+</td>
+</tr>
+</table>
+
+---
+
+## 1. Why Ultimate Research Crushes Existing Research Tools
+
+Most AI research tools (Perplexity, ChatGPT Deep Research, Claude Research) share three fatal flaws:
+1. **Self-Approval Bias:** The same agent that gathered the data audits its own conclusions. It never challenges its own assumptions.
+2. **Amnesia:** Once the session ends, all findings evaporate. The next run starts from scratch, wasting tokens and scraping the same sources repeatedly.
+3. **Post-2023 Slop Blindness:** Standard search engines ingest AI-generated summary sites, mistaking synthetic spam for primary sources.
+
+`ultimate-research` solves this fundamentally through empirical engineering:
+
+| Feature / Metric | **ultimate-research v2.2** | Claude Research | ChatGPT Deep Research | Perplexity Pro |
+| :--- | :--- | :--- | :--- | :--- |
+| **DRACO Benchmark Score** | **77.7 (#1 Global)** | 73.0 | 67.4 | 57.8 |
+| **Pipeline Architecture** | **16-Step Tier-Adaptive** | Fixed Iterative | Monolithic Run | Single-Pass Multi-Search |
+| **Persistent Knowledge Vault** | **Zettelkasten (`research/notes/`)** | None (Ephemeral) | None (Session Only) | None |
+| **Temporal Anti-Slop Firewall** | **Split-Horizon (`before:2023`)** | None | None | Basic Operator |
+| **Adversarial Stress Engine** | **Elephant-Goldfish (Zero-Context)** | Self-Review | Self-Review | None |
+| **Open-Access Paywall Recovery** | **Native (7 APIs: Europe PMC, Unpaywall, etc.)** | Manual | None | None |
+| **Deterministic Epistemic Gates** | **Uncle Bob Gates + CNJ Mod97 + DOI ARS** | Qualitative | Qualitative | None |
+
+---
+
+## 2. The 7 Cognitive Layers
 
 ```mermaid
 flowchart TD
-    User["Operador: /ultimate-research [Demanda / Pauta]"] --> EnvCheck["Pre-Voo: scripts/env-check.mjs (MCP & Runtime Audit)"]
-    EnvCheck --> Dispatcher["Orquestrador Central Ultimate Research 2.1"]
-
-    subgraph CAMADA_1["1. GOOGLE RESEARCH HARNESS² & 5 CONECTORES MCP"]
-        Dispatcher --> Pruning["Dynamic Tool Pruner + Connector Registry"]
-        Pruning --> ActiveTools["Perplexity | Firecrawl | PostHog | Playwright | Composio (ou Fallbacks Reais)"]
+    User["User: /ultimate-research 'Investigate Subject'"] --> Env["1. Pre-Flight: scripts/env-check.mjs (5 MCP Connectors)"]
+    Env --> VaultSearch["2. Vault Search: scripts/vault.mjs (Query Prior Notes)"]
+    
+    subgraph ENGINE["16-STEP HYPERRESEARCH & SPLIT-HORIZON PIPELINE"]
+        VaultSearch --> Dorking["3. Query Engineering (Perplexity Prompting, 2-3 tokens)"]
+        Dorking --> Split["4. Split-Horizon: Lane A (BF:2023) vs Lane B (Post-2023)"]
+        Split --> OARecovery["5. Open-Access Recovery (Europe PMC, Unpaywall, CrossRef)"]
+        OARecovery --> Subagents["6. Isolated Scout Waves (Flash / Flash-Lite)"]
+        Subagents --> VaultStore["7. Ingest into Zettelkasten Vault (research/notes/)"]
     end
 
-    subgraph CAMADA_2["2. PERPLEXITY PROMPTING & SUPER DESLOP (Busca Limpa)"]
-        ActiveTools --> Dorking["Query Engineering (Sem few-shot, ancoras temporais)"]
-        Dorking --> Split["Split-Horizon 3-Lanes (Canonico pre-2023 vs Contemporaneo pos-2023)"]
-        Split --> SlopFilter["SlopClassifier O(N) (Exclui SEO farms e preserva fontes primarias)"]
+    subgraph ADVERSARIAL["ADVERSARIAL STRESS & VERIFICATION GATES"]
+        VaultStore --> ARS["8. ARS Epistemic Verifier (DOI, ISBN, CNJ Modulo 97, LexML)"]
+        ARS --> Purge["9. Context Purge (Zero-Context Hand-off)"]
+        Purge --> Goldfish["10. Goldfish Swarm: Claim Mutation Testing (Polarity, Values, Causes)"]
+        Goldfish --> UncleBob["11. Uncle Bob Verification Gates (5 Negative Asserters)"]
     end
 
-    subgraph CAMADA_3["3. DEEP RESEARCH (Onda Construtiva do Elefante)"]
-        SlopFilter --> Subagents["Enxame de Subagentes em Ondas Isoladas (Advisor -> Executor)"]
-        Subagents --> Triangulation["Triangulacao Anti-Eco (origin_fingerprint)"]
-        Triangulation --> ElephantDraft["Gera Plano/Minuta com Schemas (schemas/*.schema.json)"]
-    end
-
-    subgraph CAMADA_4["4. ARS EPISTEMICO, MUTATION GATES & GOLDFISH"]
-        ElephantDraft --> ARS["Modulo ARS + scripts/validate-schemas.mjs (DOI, ISBN, CNJ Mod97, Leis)"]
-        ARS --> PurgeContext["Corte Sanitario de Contexto (Zero Context)"]
-        PurgeContext --> Goldfish["Cardume Goldfish: Claim Mutation Testing + 5 Portoes Uncle Bob"]
-    end
-
-    subgraph CAMADA_5["5. FECHAMENTO & REASONINGBANK"]
-        Goldfish --> Convergence{"Aprovado nos Portoes & Goldfish?"}
-        Convergence -- "Com Furos" --> ReOptimize["Harness² ajusta regras + Salva no claude-mem + Corrige Minuta"]
-        ReOptimize --> ElephantDraft
-        Convergence -- "100% Aprovado" --> FinalReport["Relatorio com Certidao ARS de Conformidade de Fontes"]
-    end
-
-    FinalReport --> Done["Entrega Pronta para Publicacao"]
+    UncleBob --> Synthesis["12. Triple-Draft Ensemble & Final Certified Report"]
 ```
 
 ---
 
-## 2. As Camadas Cognitivas e Novidades da v2.2.0
+## 3. Quickstart (30 Seconds)
 
-| Camada | Tecnologia | O que resolve |
-| :--- | :--- | :--- |
-| **1. Search Intelligence** | *Perplexity Prompting* | Consultas cirurgicas de 2-3 termos, ancoras temporais numericas, busca multi-perspectiva e roteamento sem ruido de SEO. |
-| **2. Clean Search & Split-Horizon** | *Super Deslop Search* | Restaura a web humana pre-2023 sem cegueira temporal, comparando o horizonte canonico com a realidade auditada contemporanea. |
-| **3. Investigation Intelligence** | *Deep Research + Schemas* | Decomposicao em subproblemas, extracao *span-level* em ondas paralelas, contratos JSON (`schemas/`) e convergencia matematica. |
-| **4. Adversarial Stress, Mutation & ARS** | *Elephant-Goldfish + Uncle Bob Gates + ARS* | Cardume Goldfish (**contexto zero**) aplica **Claim Mutation Testing** (inversao de polaridade, perturbacao numerica/temporal e inversao causal) e os 5 portoes de codigo limpo; o ARS valida DOIs no CrossRef/OpenAlex, CNJ (Mod 97) no DJEN e leis no LexML. |
-| **5. Meta-Optimization & 5 MCP Connectors** | *Google Research Harness² + Env Audit* | Auditoria pre-voo via `scripts/env-check.mjs`, registro honesto dos 5 conectores MCP (`Perplexity`, `Firecrawl`, `PostHog`, `Playwright`, `Composio`) em `references/mcp-connectors-registry.md`, poda de tools e ReasoningBank (`claude-mem`). |
-
-### Destaques da Release v2.2.0
-- **Hyperresearch V8 Engine & DRACO Benchmark #1 Global ([references/draco-benchmark-methodology.md](./references/draco-benchmark-methodology.md)):** Lider mundial em pesquisa profunda no benchmark DRACO com score **77.7** (10 tarefas complexas), superando Claude Research (73.0), Perplexity (57.8) e Gemini (54.7). Pipeline adaptativo de 16 etapas ([workflows/hyperresearch-pipeline.md](./workflows/hyperresearch-pipeline.md)) com Triple-Draft Ensemble.
-- **Cofre Persistente Searchable Wiki Vault (`research/notes/` via `scripts/vault.mjs`):** Cada fonte, paper e dado auditado e armazenado como nota Zettelkasten com IDs cronologicos (YYYYMMDDHHMMSS), tags e cross-links. Sessoes de pesquisa futuras iniciam com consulta previa ao cofre antes de varrer a web.
-- **Recuperacao de Texto Completo em Acesso Aberto (Open-Access Recovery):** Integracao automatica com Europe PMC, Unpaywall, CrossRef, OpenAlex, SEC EDGAR, FRED e CORE para recuperar papers sob paywall comercial sem custo.
-- **Cite-Check Patcher Automatizado (`node scripts/vault.mjs citecheck`):** Valida citacoes contra o cofre e corrige automaticamente fontes ausentes ou orfas no relatorio.
-- **Unificacao Nativa Elephant-Goldfish ([workflows/elephant-goldfish-adversarial.md](./workflows/elephant-goldfish-adversarial.md)):** O comando `/elephant-goldfish` opera diretamente como motor integrado de estresse adversarial de contexto zero e Claim Mutation Testing sob o `ultimate-research`.
-### Destaques da Release v2.1.0 (Legado Consolidado)
-- **Auditoria Empirica de Ambiente (`scripts/env-check.mjs`):** Detecta servidores MCP realmente configurados em `.gemini` (nunca simula conectores ausentes), valida runtimes Node/Python e verifica os exports do SDK/ARS antes de iniciar a pesquisa.
-- **Registro dos 5 Conectores MCP (`references/mcp-connectors-registry.md`):** Mapeia **Perplexity, Firecrawl, PostHog, Playwright e Composio** com prioridade por modo, isolamento contra Prompt Injection e fallbacks nativos verificaveis.
-- **Uncle Bob Verification Gates & Claim Mutation Testing (`references/uncle-bob-verification-gates.md`):** Converte criterios qualitativos em 5 metricas objetivas de engenharia (`Coverage Delta`, `Dependency DAG`, `Cyclomatic Complexity`, `Module Size`, `Mutation Testing`) e exige mutacao adversarial de alegacoes antes do selo `[VERIFICADA]`.
-- **Contratos JSON Schema & Auditor Epistemico (`schemas/` + `scripts/validate-schemas.mjs`):** Valida `research-plan.schema.json`, `evidence.schema.json` e `report.schema.json`, bloqueia `VERIFICADA` sem `entailment_checked === true`, deduplica re-publicacoes por `origin_fingerprint` e audita links internos e frontmatter de `SKILL.md`.
-
----
-
-## 3. Instalacao e Uso
-
-### Como AI Agent Skill (Google Antigravity / Claude Code / Cursor)
-Dispare diretamente no chat com um unico comando:
+### As an Antigravity / Claude Code Skill
+Trigger the engine directly from the chat:
 ```markdown
-/ultimate-research "Investigar a crise da concessao da Enel SP e o rito de caducidade"
+# 1. Standard Deep Research (16-Step Hyperresearch Pipeline)
+/ultimate-research "Competitor analysis of restaurant POS systems: Toast, Square and Clover"
+
+# 2. Pure Adversarial Stress (Mode 10: Elephant-Goldfish)
+/ultimate-research --mode 10 "Stress-test the antitrust defense for cloud platform exclusivity"
+
+# 3. Direct Elephant-Goldfish Command (Unified Native Alias)
+/elephant-goldfish "Audit regulatory risk and compliance claims in project PRD"
 ```
 
-### Scripts de Orquestracao e Validacao v2.1.0
+### Persistent Knowledge Vault CLI
+Every research run records structured Zettelkasten notes with timestamps, tags, and source provenance:
 ```bash
-# 1. Auditoria empirica pre-voo (MCPs instalados, runtimes e SDK Super Deslop)
-node scripts/env-check.mjs
+# Initialize local vault
+node scripts/vault.mjs init
 
-# 2. Analise de intencao, modo (MODE 1..8) e compilacao do plano de pesquisa
-node scripts/orchestrate.mjs "Sua demanda de pesquisa"
+# Search accumulated vault notes before running a web query
+node scripts/vault.mjs search "antitrust cloud platform"
 
-# 3. Validacao estrutural da skill, links internos e contratos JSON
-node scripts/validate-schemas.mjs skill .
-
-# 4. Execucao direta via Bridge Unificada
-node scripts/deslop-bridge.mjs status
+# Audit and automatically repair missing citations in a draft report
+node scripts/vault.mjs citecheck "report.md" --fix
 ```
 
-### Via Linha de Comando (CLI)
+### Command Line Interface (CLI)
 ```bash
-# Execucao da pesquisa
-npx ultimate-research query "Reforma tributaria impactos no setor de servicos"
+# Direct clean query with operator budget
+npx ultimate-research query "PostgreSQL connection pooling production latency"
 
-# Split-Horizon comparativo
-npx ultimate-research split "React Server Components architecture"
+# Split-Horizon comparative search
+npx ultimate-research split "React Server Components mental model"
 
-# Auditoria epistemica deterministica de citacoes (ARS)
-npx ultimate-research verify --file "relatorio.md" --strict
+# Deterministic citation & statute verification (ARS Engine)
+npx ultimate-research verify --file "research_report.md" --strict
 ```
-*(Nota: O comando legado `npx deslop` permanece disponivel como alias de compatibilidade).*
 
 ---
 
-## 4. Auditorias, Testes e Benchmarks Oficiais
+## 4. Verification Suite & Quality Gates
 
-- **Auditoria 1.0 (Stress Test):** Nota 9.25/10 - Validacao da fusao de ferramentas ([Relatorio](./docs/audits/STRESS_TEST_REPORT.md)).
-- **Auditoria 2.2 / 2.3 (Auditoria Adversarial e Integridade de Build):** Validacao da maquina de 6 estados documentais (`CONFIRMADO`, `NAO LOCALIZADO`, `FONTE INDISPONIVEL`, `ACESSO RESTRITO`, `DIVERGENCIA DOCUMENTAL`, `FALSO DOCUMENTO`), regex universal de precedentes judiciais e testes negativos ([Relatorio](./docs/audits/INSTALLED_BUILD_INTEGRITY_REPORT.md)).
-- **Auditoria 3.0 (Avaliacao Cega com Gabarito Independente):**
-  - **Pauta:** Concessao da Enel SP, Apagao de Outubro/2024, Decreto nº 12.068/2024 e Acoes Civis Publicas.
-  - **Precisao Factual:** **100% de acerto (20 de 20 afirmacoes do gabarito cego confirmadas)**.
-  - **Scorecard Global:** **9.88 / 10.0** ([Scorecard Detalhado](./docs/audits/BLIND_EVALUATION_SCORECARD.md)).
-  - **Homologacao:** **Aprovado para Producao Assistida** ([Termo de Decisao](./docs/audits/PRODUCTION_READINESS_DECISION.md)).
-
-### Validacao Automatizada (CI & Local)
+Run the entire verification pipeline with zero mock assumptions:
 ```bash
 npm run verify
 ```
-Executa sequencialmente: `tsc --noEmit`, `tsc -p tsconfig.json`, Vitest (`tests/ts/*.test.ts`), Python `unittest` (`tests/py/test_*.py`), `node scripts/validate-schemas.mjs` e `node --test tests/negative-scenarios.test.mjs`.
+Executes in sequence:
+- TypeScript strict typecheck (`tsc --noEmit`)
+- TypeScript production build (`tsc -p tsconfig.json`)
+- Vitest suite (30 specs across `tests/ts/`)
+- Python parity test suite (11 unit tests across `tests/py/`)
+- Epistemic schema and `SKILL.md` link validator (`scripts/validate-schemas.mjs`)
+- Adversarial negative scenario runner (10 tests in `tests/negative-scenarios.test.mjs`)
+
+**Result:** 51/51 automated tests passing cleanly.
 
 ---
 
-## 5. Estrutura de Diretorios
+## 5. Directory Structure
 
 ```text
 ultimate-research/
-├── .github/workflows/ci.yml        # Pipeline CI completa (Node 22 + Python 3.12)
-├── data/                           # Blocklist, sources e slop lexicon sincronizados
-├── docs/audits/                    # 26 relatorios e matrizes historicas de auditoria
-├── python/deslop_search/           # Biblioteca e CLI Python (paridade estrita)
+├── assets/
+│   ├── elephant-curious-peek.svg        # Phanty Mascot Card
+│   └── hero-banner.svg                  # High-DPI Hero Banner
+├── docs/audits/                         # 26 historical peer-audit reports
+├── python/deslop_search/                # Python 3.10+ SDK & CLI parity engine
 ├── references/
-│   ├── citation-verification.md
-│   ├── deep-research-methodology.md
-│   ├── deslop-methodology.md
+│   ├── draco-benchmark-methodology.md   # DRACO #1 (Score 77.7) benchmark data
 │   ├── elephant-goldfish-architecture.md
-│   ├── google-harness-loop.md
-│   ├── mcp-connectors-registry.md         # Matriz dos 5 conectores MCP + fallbacks
+│   ├── hyperresearch-vault-architecture.md
+│   ├── mcp-connectors-registry.md       # 5 MCP Connectors matrix
 │   ├── perplexity-prompting.md
-│   ├── report-standards.md
-│   ├── research-modes.md
 │   ├── source-credibility.md
-│   ├── temporal-research.md
-│   └── uncle-bob-verification-gates.md    # Portoes objetivos e Claim Mutation Testing
-├── schemas/
-│   ├── evidence.schema.json
-│   ├── report.schema.json
-│   └── research-plan.schema.json
+│   └── uncle-bob-verification-gates.md  # 5 deterministic code & evidence gates
+├── schemas/                             # JSON Schemas (plan, evidence, report)
 ├── scripts/
 │   ├── deslop-bridge.mjs
-│   ├── env-check.mjs
+│   ├── env-check.mjs                    # Empirical runtime & MCP check
 │   ├── orchestrate.mjs
-│   └── validate-schemas.mjs
-├── src/                            # Motor TypeScript ESM e verificador ARS
-├── templates/                      # Templates Markdown para planos, matrizes e relatorios
+│   ├── validate-schemas.mjs             # Deterministic schema auditor
+│   └── vault.mjs                        # Zettelkasten Wiki Vault CLI
+├── src/                                 # TypeScript ESM Engine & ARS Verifier
+├── templates/                           # Markdown research templates
 ├── tests/
-│   ├── negative-scenarios.test.mjs # 10 cenarios adversariais (node:test)
-│   ├── py/test_deslop.py           # Suite de paridade Python
-│   └── ts/                         # Suites Vitest consolidadas (deslop + verifier)
-├── workflows/                      # 9 workflows especializados sob demanda
+│   ├── negative-scenarios.test.mjs      # 10 adversarial negative tests
+│   ├── py/test_deslop.py                # Python parity test suite
+│   └── ts/                              # Vitest TypeScript test suite
+├── workflows/                           # 10 specialized operational workflows
 ├── CHANGELOG.md
 ├── package.json
 ├── pyproject.toml
 ├── README.md
+├── README.pt-BR.md
+├── README.zh-CN.md
 ├── skill.json
 └── SKILL.md
 ```
 
 ---
 
-## 6. Licenca
+## 6. License
 
-Distribuido sob licenca MIT. Incorpora metodologias abertas de Perplexity Prompting (Joel Helbling & Nate B. Jones), Deep Research (Ramit Mitra), Elephant-Goldfish Model (Google Open Source) e Google Research Harness² (Apache 2.0).
+Distributed under the [MIT License](./LICENSE). Incorporates open methodologies from Hyperresearch V8 (Jordan Gibbs, DRACO #1), Perplexity Prompting (Joel Helbling & Nate B. Jones), Elephant-Goldfish Dual Model (Google Research), and Google Research Harness² (Apache 2.0).

@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 165" role="img" aria-label="Dapper Elephant Detective with Monocle, BF:2023 Clipboard and Retro Terminal">
+  <defs>
+    <clipPath id="card-clip"><rect x="6" y="8" width="268" height="148" rx="14"/></clipPath>
+    <clipPath id="eye-clip-l"><circle cx="196" cy="74" r="5.2"/></clipPath>
+    <clipPath id="eye-clip-r"><circle cx="218" cy="74" r="5.2"/></clipPath>
+    <linearGradient id="ele-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="50%" stop-color="#64748B"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+    <linearGradient id="screen-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <style>
+      .ele-bob { animation: eleBob 4.8s ease-in-out infinite; transform-origin: 200px 90px; }
+      .ear-wiggle-l { animation: earWiggleL 3.6s ease-in-out infinite; transform-origin: 172px 64px; }
+      .ear-wiggle-r { animation: earWiggleR 3.6s ease-in-out infinite; transform-origin: 238px 64px; }
+      .trunk-sway { animation: trunkSway 2.8s ease-in-out infinite; transform-origin: 206px 88px; }
+      .eye-blink { animation: eyeBlink 4.2s ease-in-out infinite; transform-origin: 200px 74px; }
+      .screen-glow { animation: screenPulse 3s ease-in-out infinite; }
+      .badge-glow { animation: badgeGlow 2.5s ease-in-out infinite; }
+      @keyframes eleBob {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-3px) rotate(1deg); }
+      }
+      @keyframes earWiggleL {
+        0%, 100% { transform: rotate(0deg); }
+        40% { transform: rotate(-5deg); }
+        80% { transform: rotate(3deg); }
+      }
+      @keyframes earWiggleR {
+        0%, 100% { transform: rotate(0deg); }
+        40% { transform: rotate(5deg); }
+        80% { transform: rotate(-3deg); }
+      }
+      @keyframes trunkSway {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-4deg); }
+      }
+      @keyframes eyeBlink {
+        0%, 90%, 96%, 100% { transform: scaleY(1); }
+        93% { transform: scaleY(0.1); }
+      }
+      @keyframes screenPulse {
+        0%, 100% { stroke-opacity: 0.6; }
+        50% { stroke-opacity: 1; }
+      }
+      @keyframes badgeGlow {
+        0%, 100% { filter: drop-shadow(0 0 2px rgba(234, 179, 8, 0.4)); }
+        50% { filter: drop-shadow(0 0 6px rgba(234, 179, 8, 0.8)); }
+      }
+    </style>
+  </defs>
+
+  <!-- Outer Card Frame -->
+  <rect x="6" y="8" width="268" height="148" rx="14" fill="#0B0F17" stroke="#38BDF8" stroke-width="2" class="screen-glow"/>
+
+  <g clip-path="url(#card-clip)">
+    <!-- Background Grid Lines -->
+    <path d="M6 45 H274 M6 85 H274 M6 125 H274 M60 8 V156 M140 8 V156 M210 8 V156" stroke="#1E293B" stroke-width="0.8" opacity="0.4"/>
+
+    <!-- Left: Retro Terminal Workstation -->
+    <g transform="translate(14, 16)">
+      <!-- CRT Monitor Bezel -->
+      <rect x="0" y="0" width="124" height="128" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.8"/>
+      <!-- Monitor Stand -->
+      <path d="M42 128 L38 134 H86 L82 128 Z" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <rect x="30" y="134" width="64" height="4" rx="2" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <!-- Screen Inner -->
+      <rect x="8" y="10" width="108" height="108" rx="6" fill="url(#screen-grad)" stroke="#10B981" stroke-width="1" class="screen-glow"/>
+      <!-- Scanlines overlay -->
+      <path d="M8 22 H116 M8 34 H116 M8 46 H116 M8 58 H116 M8 70 H116 M8 82 H116 M8 94 H116 M8 106 H116" stroke="#047857" stroke-width="0.5" opacity="0.3"/>
+      
+      <!-- Terminal Texts -->
+      <circle cx="16" cy="18" r="2.5" fill="#EF4444"/>
+      <circle cx="23" cy="18" r="2.5" fill="#F59E0B"/>
+      <circle cx="30" cy="18" r="2.5" fill="#10B981"/>
+      <text x="14" y="34" font-family="'JetBrains Mono', Consolas, monospace" font-size="8.5" font-weight="800" fill="#34D399">$ /ultimate-research</text>
+      <text x="14" y="48" font-family="'JetBrains Mono', Consolas, monospace" font-size="7.5" fill="#A7F3D0">&gt; DRACO #1: 77.7 pts</text>
+      <text x="14" y="60" font-family="'JetBrains Mono', Consolas, monospace" font-size="7.5" fill="#6EE7B7">&gt; Vault: research/notes</text>
+      <text x="14" y="72" font-family="'JetBrains Mono', Consolas, monospace" font-size="7.5" fill="#38BDF8">&gt; Filter: BF:2023 Dork</text>
+      <text x="14" y="84" font-family="'JetBrains Mono', Consolas, monospace" font-size="7.5" fill="#FCD34D">&gt; Slop Farm: 0% Purged</text>
+      <text x="14" y="98" font-family="'JetBrains Mono', Consolas, monospace" font-size="8" font-weight="700" fill="#6EE7B7">● 100% EVIDÊNCIA OK</text>
+      <!-- Blinking Cursor -->
+      <rect x="94" y="90" width="5" height="9" fill="#34D399" opacity="0.85"/>
+    </g>
+
+    <!-- Top Speech Tag -->
+    <g transform="translate(144, 14)">
+      <rect x="0" y="0" width="122" height="22" rx="6" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2"/>
+      <text x="61" y="14.5" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="8.5" font-weight="800" fill="#38BDF8">🐘 Memória Infinita!</text>
+    </g>
+
+    <!-- Right: Phanty the Dapper Elephant Detective -->
+    <g class="ele-bob">
+      <!-- Shadow Under Elephant -->
+      <ellipse cx="206" cy="144" rx="42" ry="6" fill="#000000" opacity="0.55"/>
+
+      <!-- Large Left Ear -->
+      <g class="ear-wiggle-l">
+        <path d="M176 56 C150 50 142 82 160 102 C172 114 182 108 184 96 Z" fill="#64748B" stroke="#1E293B" stroke-width="2.2"/>
+        <path d="M172 62 C156 60 152 82 164 94 C170 100 176 96 178 88 Z" fill="#F472B6" opacity="0.45"/>
+      </g>
+
+      <!-- Large Right Ear -->
+      <g class="ear-wiggle-r">
+        <path d="M236 56 C262 50 270 82 252 102 C240 114 230 108 228 96 Z" fill="#64748B" stroke="#1E293B" stroke-width="2.2"/>
+        <path d="M240 62 C256 60 260 82 248 94 C242 100 236 96 234 88 Z" fill="#F472B6" opacity="0.45"/>
+      </g>
+
+      <!-- Elephant Head & Body -->
+      <ellipse cx="206" cy="116" rx="28" ry="24" fill="url(#ele-grad)" stroke="#1E293B" stroke-width="2.2"/>
+      <!-- Detective Vest / Bow Tie -->
+      <path d="M192 116 L206 130 L220 116 L206 112 Z" fill="#0F172A"/>
+      <circle cx="206" cy="120" r="2.8" fill="#F59E0B"/>
+      <!-- Head Circle -->
+      <ellipse cx="206" cy="74" rx="27" ry="25" fill="url(#ele-grad)" stroke="#1E293B" stroke-width="2.2"/>
+
+      <!-- Elephant Eyes with Catchlights -->
+      <g class="eye-blink">
+        <!-- Left Eye -->
+        <circle cx="196" cy="74" r="5" fill="#0F172A"/>
+        <circle cx="194.5" cy="72.5" r="1.8" fill="#FFFFFF"/>
+        <circle cx="197.5" cy="75.5" r="0.8" fill="#FFFFFF"/>
+
+        <!-- Right Eye (Behind Monocle) -->
+        <circle cx="218" cy="74" r="5" fill="#0F172A"/>
+        <circle cx="216.5" cy="72.5" r="1.8" fill="#FFFFFF"/>
+        <circle cx="219.5" cy="75.5" r="0.8" fill="#FFFFFF"/>
+      </g>
+
+      <!-- The Dapper Golden Monocle on Right Eye -->
+      <g class="badge-glow">
+        <circle cx="218" cy="74" r="9" fill="none" stroke="url(#gold-grad)" stroke-width="2.2"/>
+        <circle cx="218" cy="74" r="8" fill="#38BDF8" opacity="0.18"/>
+        <!-- Monocle chain dropping down -->
+        <path d="M227 75 C232 82 228 102 220 114" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" stroke-dasharray="2,1.5"/>
+      </g>
+
+      <!-- Cute Trunk with Sway Animation -->
+      <g class="trunk-sway">
+        <path d="M202 84 C202 96 198 106 200 114 C202 120 208 122 212 118 C215 114 212 108 208 106 C206 102 208 94 210 84 Z" fill="url(#ele-grad)" stroke="#1E293B" stroke-width="2"/>
+        <!-- Trunk Wrinkles -->
+        <path d="M203 91 Q206 90 209 91" stroke="#334155" stroke-width="1.2" fill="none"/>
+        <path d="M202 98 Q205 97 208 98" stroke="#334155" stroke-width="1.2" fill="none"/>
+      </g>
+
+      <!-- Little Cheek Blushes -->
+      <ellipse cx="186" cy="84" rx="4.5" ry="2.5" fill="#FB7185" opacity="0.45"/>
+      <ellipse cx="226" cy="84" rx="4.5" ry="2.5" fill="#FB7185" opacity="0.45"/>
+
+      <!-- Detective Hat / Cap -->
+      <path d="M190 52 C190 42 222 42 222 52 Z" fill="#0F172A" stroke="#1E293B" stroke-width="1.8"/>
+      <rect x="184" y="50" width="44" height="4" rx="2" fill="#1E293B"/>
+      <rect x="192" y="47" width="28" height="3" fill="#F59E0B"/>
+
+      <!-- Holding the "BF: 2023" Tablet / Clipboard -->
+      <g transform="translate(142, 86) rotate(-8)">
+        <!-- Clipboard Backing -->
+        <rect x="0" y="0" width="46" height="48" rx="4" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+        <rect x="15" y="-3" width="16" height="6" rx="2" fill="#CBD5E1" stroke="#475569" stroke-width="1"/>
+        <!-- Paper -->
+        <rect x="3" y="5" width="40" height="39" rx="2" fill="#FEF3C7" stroke="#D97706" stroke-width="0.8"/>
+        <!-- Etched Stamp: BF: 2023 -->
+        <rect x="6" y="8" width="34" height="15" rx="3" fill="#DC2626"/>
+        <text x="23" y="19" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="8.8" font-weight="900" fill="#FFFFFF" letter-spacing="0.4">BF: 2023</text>
+        <path d="M7 28 H39 M7 33 H33 M7 38 H27" stroke="#92400E" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+
+      <!-- Little Hand / Foot holding clipboard -->
+      <ellipse cx="176" cy="118" rx="6" ry="5" fill="#64748B" stroke="#1E293B" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
