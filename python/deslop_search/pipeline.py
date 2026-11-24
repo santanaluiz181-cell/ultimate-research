@@ -16,12 +16,15 @@ from .models import (
     DorkOptions,
     FilterBatchReport,
     FilteredSearchResult,
+    MultipolarExcavationOptions,
+    MultipolarExcavationPlan,
     RawSearchResult,
     SlopClassification,
     SplitHorizonQueryPlan,
     SplitHorizonSearchReport,
     VerticalRoute,
 )
+from .multipolar import build_multipolar_excavation_plan
 from .router import CommunityRouter
 from .split_horizon import (
     CANONICAL_HEADING,
@@ -67,6 +70,13 @@ class DeslopSearch:
         return build_split_horizon_query_plan(
             query, self.dorks, self.router, options, cutoff_year
         )
+
+    def excavate_multipolar(
+        self,
+        query: str,
+        options: MultipolarExcavationOptions | None = None,
+    ) -> MultipolarExcavationPlan:
+        return build_multipolar_excavation_plan(query, options, self.dorks)
 
     def build_routes(
         self, query: str, options: DorkOptions | None = None
@@ -461,6 +471,12 @@ def deslop_split_horizon(
     query: str, options: DorkOptions | None = None, cutoff_year: int = 2023
 ) -> SplitHorizonQueryPlan:
     return _DEFAULT_ENGINE.compile_split_horizon(query, options, cutoff_year)
+
+
+def deslop_excavate(
+    query: str, options: MultipolarExcavationOptions | None = None
+) -> MultipolarExcavationPlan:
+    return _DEFAULT_ENGINE.excavate_multipolar(query, options)
 
 
 def classify_slop(text: str, title: str = "", url: str = "") -> SlopClassification:

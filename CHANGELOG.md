@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.3.0] - 2026-11-23 (SUPERUPGRADE)
+
+### Added
+- **Layer 8 & Mode 11: Multipolar Polyglot, Small-Web Archaeology & Clean-Room Excavation (`references/multipolar-polyglot-excavation.md`, `workflows/multipolar-excavation.md`)**:
+  - **Clean-Room Isolation (`--clean-room`)**: Vault lookup (`scripts/vault.mjs search --clean-room`) and orchestrator (`scripts/orchestrate.mjs --clean-room`) explicitly bypass prior session memory and user profile bias during evidence gathering.
+  - **6-Stratum Excavation Engine (`src/multipolar.ts`, `python/deslop_search/multipolar.py`)**: Compiles deterministic dork plans across (1) Surface Dominant + *Cui Bono*, (2) Forensic Science + Retractions/Funding (`Retraction Watch`, `PubPeer`, `CrossRef`, `Europe PMC`), (3) Independent Communities, (4) Small-Web Archaeology (`tumblr.com`, `blogspot.com`, `web.archive.org`, `neocities.org`, `bearblog.dev`), (5) 15+ native-language non-US, Global South & Arabic jurisdictions (`DE, IT, FR, CN, JP, KR, SG, IN, MX, BR, TR, NO, DK, ARAB, GLOBAL_SOUTH` in `data/multipolar-jurisdictions.json`), and (6) Cross-Stratum Synthesis.
+  - **Tripartite Ontology & Deterministic Evidence Grading (`gradeEvidenceClaim` / `grade_evidence_claim`)**: Enforces `FATO | INTERPRETACAO | RELATO` separation and Grades `A` through `D` (retracted or marketing/rumor -> `D`; raw `RELATO` capped at `C`; `INTERPRETACAO` capped at `B`; unmitigated conflict of interest without replication caps `FATO` at `C`).
+  - **Anti-US-Bias Delta, Hypothesis Matrix & Minority Steelman**: Requires 1 Dominant + 2 Rival hypotheses, mandatory `[Original Quote + Translation]` for foreign sources, explicit *"What Changes Outside the US"* delta, and strongest-form Minority Steelman validation in `scripts/validate-schemas.mjs report-multipolar` and `auditMultipolarCoverage`.
+  - **CLI & MCP Parity**: Added `deslop excavate` / `python -m deslop_search excavate`, `small_web` profile/channel in `data/sources.json`, and `deslop_multipolar_excavate` MCP tool definition.
+
+---
+
 ## [2.2.0] - 2026-11-14
 
 ### Added

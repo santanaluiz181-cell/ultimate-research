@@ -2,19 +2,19 @@
   <img src="./assets/hero-banner.svg" alt="ultimate-research hero banner" width="100%" />
 </p>
 
-# `ultimate-research` v2.2
+# `ultimate-research` v2.3 (SUPERUPGRADE)
 
 <p align="center">
   <strong>English (US)</strong> · <a href="./README.pt-BR.md">Português (Brasil)</a> · <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
 <p align="center">
-  <strong>The unstoppable deep research engine for AI agents. #1 on the DRACO Deep Research Benchmark (77.7 pts). Persistent Zettelkasten Vault. Split-Horizon Anti-Slop Firewall. Zero-Context Adversarial Stress.</strong>
+  <strong>The unstoppable deep research engine for AI agents. #1 on the DRACO Deep Research Benchmark (77.7 pts). Layer 8 Multipolar Polyglot & Small-Web Deep Excavation (Clean-Room, 15+ Jurisdictions, Arabic & Global South). Persistent Zettelkasten Vault. Split-Horizon Anti-Slop Firewall. Zero-Context Adversarial Stress.</strong>
 </p>
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-181615?style=for-the-badge&logoColor=white" alt="License: MIT" /></a>
-  <a href="./package.json"><img src="https://img.shields.io/badge/Version-2.2.0-38BDF8?style=for-the-badge&labelColor=181615" alt="Version 2.2.0" /></a>
+  <a href="./package.json"><img src="https://img.shields.io/badge/Version-2.3.0%20SUPERUPGRADE-38BDF8?style=for-the-badge&labelColor=181615" alt="Version 2.3.0" /></a>
   <a href="./references/draco-benchmark-methodology.md"><img src="https://img.shields.io/badge/DRACO%20Benchmark-77.7%20%231%20Global-F59E0B?style=for-the-badge&labelColor=181615" alt="DRACO Benchmark #1" /></a>
   <a href="./references/hyperresearch-vault-architecture.md"><img src="https://img.shields.io/badge/Vault-Persistent%20Wiki-10B981?style=for-the-badge&labelColor=181615" alt="Persistent Wiki Vault" /></a>
   <a href="./SKILL.md"><img src="https://img.shields.io/badge/Antigravity-AI%20Skill%20Ready-6B46C1?style=for-the-badge&labelColor=181615" alt="AI Agent Skill" /></a>
@@ -53,41 +53,43 @@ Most AI research tools (Perplexity, ChatGPT Deep Research, Claude Research) shar
 
 `ultimate-research` solves this fundamentally through empirical engineering:
 
-| Feature / Metric | **ultimate-research v2.2** | Claude Research | ChatGPT Deep Research | Perplexity Pro |
+| Feature / Metric | **ultimate-research v2.3** | Claude Research | ChatGPT Deep Research | Perplexity Pro |
 | :--- | :--- | :--- | :--- | :--- |
 | **DRACO Benchmark Score** | **77.7 (#1 Global)** | 73.0 | 67.4 | 57.8 |
-| **Pipeline Architecture** | **16-Step Tier-Adaptive** | Fixed Iterative | Monolithic Run | Single-Pass Multi-Search |
-| **Persistent Knowledge Vault** | **Zettelkasten (`research/notes/`)** | None (Ephemeral) | None (Session Only) | None |
-| **Temporal Anti-Slop Firewall** | **Split-Horizon (`before:2023`)** | None | None | Basic Operator |
-| **Adversarial Stress Engine** | **Elephant-Goldfish (Zero-Context)** | Self-Review | Self-Review | None |
+| **Pipeline Architecture** | **16-Step Tier-Adaptive + Mode 11 Multipolar** | Fixed Iterative | Monolithic Run | Single-Pass Multi-Search |
+| **Persistent Knowledge Vault** | **Zettelkasten (`research/notes/`) + `--clean-room`** | None (Ephemeral) | None (Session Only) | None |
+| **Temporal Anti-Slop Firewall** | **Split-Horizon (`before:2023`) + Small-Web Archaeology** | None | None | Basic Operator |
+| **Non-US & Global South Coverage** | **15+ Native Jurisdictions + Arabic + `[Original + Translation]`** | US-Centric EN | US-Centric EN | US-Centric EN |
+| **Adversarial Stress Engine** | **Elephant-Goldfish (Zero-Context) + Minority Steelman** | Self-Review | Self-Review | None |
 | **Open-Access Paywall Recovery** | **Native (7 APIs: Europe PMC, Unpaywall, etc.)** | Manual | None | None |
-| **Deterministic Epistemic Gates** | **Uncle Bob Gates + CNJ Mod97 + DOI ARS** | Qualitative | Qualitative | None |
+| **Deterministic Epistemic Gates** | **FATO/INTERP/RELATO Grades A-D + Cui Bono + CNJ/DOI ARS** | Qualitative | Qualitative | None |
 
 ---
 
-## 2. The 7 Cognitive Layers
+## 2. The 8 Cognitive Layers
 
 ```mermaid
 flowchart TD
     User["User: /ultimate-research 'Investigate Subject'"] --> Env["1. Pre-Flight: scripts/env-check.mjs (5 MCP Connectors)"]
-    Env --> VaultSearch["2. Vault Search: scripts/vault.mjs (Query Prior Notes)"]
+    Env --> VaultSearch["2. Vault Search: scripts/vault.mjs (--clean-room bypass when Mode 11)"]
     
-    subgraph ENGINE["16-STEP HYPERRESEARCH & SPLIT-HORIZON PIPELINE"]
-        VaultSearch --> Dorking["3. Query Engineering (Perplexity Prompting, 2-3 tokens)"]
-        Dorking --> Split["4. Split-Horizon: Lane A (BF:2023) vs Lane B (Post-2023)"]
-        Split --> OARecovery["5. Open-Access Recovery (Europe PMC, Unpaywall, CrossRef)"]
-        OARecovery --> Subagents["6. Isolated Scout Waves (Flash / Flash-Lite)"]
-        Subagents --> VaultStore["7. Ingest into Zettelkasten Vault (research/notes/)"]
+    subgraph ENGINE["16-STEP HYPERRESEARCH, SPLIT-HORIZON & MULTIPOLAR EXCAVATION"]
+        VaultSearch --> Dorking["3. Query Engineering & Step 0 (1 Dominant + 2 Rivals + Native Lexicon)"]
+        Dorking --> Split["4. Split-Horizon + Small Web (Tumblr, Blogger, Wayback)"]
+        Split --> Multipolar["5. Multipolar Polyglot (15+ Countries, Arabic & Global South) + Cui Bono"]
+        Multipolar --> OARecovery["6. Forensic Science (Retractions/Funding) & Open-Access Recovery"]
+        OARecovery --> Subagents["7. Isolated Scout Waves (Flash / Flash-Lite)"]
+        Subagents --> VaultStore["8. Ingest into Zettelkasten Vault (research/notes/)"]
     end
 
     subgraph ADVERSARIAL["ADVERSARIAL STRESS & VERIFICATION GATES"]
-        VaultStore --> ARS["8. ARS Epistemic Verifier (DOI, ISBN, CNJ Modulo 97, LexML)"]
-        ARS --> Purge["9. Context Purge (Zero-Context Hand-off)"]
-        Purge --> Goldfish["10. Goldfish Swarm: Claim Mutation Testing (Polarity, Values, Causes)"]
-        Goldfish --> UncleBob["11. Uncle Bob Verification Gates (5 Negative Asserters)"]
+        VaultStore --> ARS["9. ARS Verifier + Tripartite Grades A-D (FATO | INTERPRETACAO | RELATO)"]
+        ARS --> Purge["10. Context Purge (Zero-Context Hand-off)"]
+        Purge --> Goldfish["11. Goldfish Swarm + Minority Steelman + Anti-US-Bias Delta"]
+        Goldfish --> UncleBob["12. Uncle Bob Verification Gates (Negative/Mutation Asserters)"]
     end
 
-    UncleBob --> Synthesis["12. Triple-Draft Ensemble & Final Certified Report"]
+    UncleBob --> Synthesis["13. Triple-Draft Ensemble & Final Certified Report"]
 ```
 
 ---
@@ -103,7 +105,10 @@ Trigger the engine directly from the chat:
 # 2. Pure Adversarial Stress (Mode 10: Elephant-Goldfish)
 /ultimate-research --mode 10 "Stress-test the antitrust defense for cloud platform exclusivity"
 
-# 3. Direct Elephant-Goldfish Command (Unified Native Alias)
+# 3. Multipolar Polyglot & Small-Web Clean-Room Excavation (Mode 11 SUPERUPGRADE)
+/ultimate-research --mode 11 "Investigate ultra-processed foods regulation across 15+ native jurisdictions, Global South and Small Web"
+
+# 4. Direct Elephant-Goldfish Command (Unified Native Alias)
 /elephant-goldfish "Audit regulatory risk and compliance claims in project PRD"
 ```
 
@@ -128,6 +133,9 @@ npx ultimate-research query "PostgreSQL connection pooling production latency"
 # Split-Horizon comparative search
 npx ultimate-research split "React Server Components mental model"
 
+# Multipolar Polyglot & Small-Web Clean-Room Excavation Plan (15+ jurisdictions)
+npx ultimate-research excavate "ultra processed foods regulation" --clean-room --json
+
 # Deterministic citation & statute verification (ARS Engine)
 npx ultimate-research verify --file "research_report.md" --strict
 ```
@@ -143,12 +151,12 @@ npm run verify
 Executes in sequence:
 - TypeScript strict typecheck (`tsc --noEmit`)
 - TypeScript production build (`tsc -p tsconfig.json`)
-- Vitest suite (30 specs across `tests/ts/`)
-- Python parity test suite (11 unit tests across `tests/py/`)
+- Vitest suite (35 specs across `tests/ts/`)
+- Python parity test suite (12 unit tests across `tests/py/`)
 - Epistemic schema and `SKILL.md` link validator (`scripts/validate-schemas.mjs`)
-- Adversarial negative scenario runner (10 tests in `tests/negative-scenarios.test.mjs`)
+- Adversarial negative scenario runner (15 tests in `tests/negative-scenarios.test.mjs`)
 
-**Result:** 51/51 automated tests passing cleanly.
+**Result:** 62/62 automated tests passing cleanly.
 
 ---
 
@@ -166,6 +174,7 @@ ultimate-research/
 │   ├── elephant-goldfish-architecture.md
 │   ├── hyperresearch-vault-architecture.md
 │   ├── mcp-connectors-registry.md       # 5 MCP Connectors matrix
+│   ├── multipolar-polyglot-excavation.md # Layer 8 Clean-Room & 15+ Jurisdictions
 │   ├── perplexity-prompting.md
 │   ├── source-credibility.md
 │   └── uncle-bob-verification-gates.md  # 5 deterministic code & evidence gates
@@ -179,10 +188,10 @@ ultimate-research/
 ├── src/                                 # TypeScript ESM Engine & ARS Verifier
 ├── templates/                           # Markdown research templates
 ├── tests/
-│   ├── negative-scenarios.test.mjs      # 10 adversarial negative tests
+│   ├── negative-scenarios.test.mjs      # 15 adversarial negative tests
 │   ├── py/test_deslop.py                # Python parity test suite
 │   └── ts/                              # Vitest TypeScript test suite
-├── workflows/                           # 10 specialized operational workflows
+├── workflows/                           # 12 specialized operational workflows
 ├── CHANGELOG.md
 ├── package.json
 ├── pyproject.toml

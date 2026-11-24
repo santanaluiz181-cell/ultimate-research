@@ -1,7 +1,7 @@
 {
   "name": "ultimate-research",
-  "version": "2.2.0",
-  "description": "The Ultimate Research Engine: DRACO Deep Research Benchmark #1 (Score 77.7), Hyperresearch 16-step Tier-Adaptive Pipeline, Persistent Zettelkasten Vault (research/notes/), Open-Access Recovery, Unified Perplexity Prompting, Super Deslop Search, ARS Epistemic Verification, Elephant-Goldfish Adversarial Mutation Gates, and Google Research Harness².",
+  "version": "2.3.0",
+  "description": "The Ultimate Research Engine (SUPERUPGRADE v2.3): DRACO Deep Research Benchmark #1 (Score 77.7), Hyperresearch 16-step Tier-Adaptive Pipeline, Multipolar Polyglot & Small-Web Deep Excavation (Clean-Room, 15+ Jurisdictions, Global South, Arabic, Cui Bono, FATO/INTERPRETACAO/RELATO A-D, Minority Steelman), Persistent Zettelkasten Vault, Open-Access Recovery, Super Deslop Search, ARS Epistemic Verification, Elephant-Goldfish Adversarial Mutation Gates, and Google Research Harness².",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

@@ -16,11 +16,18 @@ from deslop_search import (  # noqa: E402
     DIFFERENTIAL_HEADING,
     DeslopSearch,
     DorkOptions,
+    EvidenceGradeInput,
+    MultipolarAuditSourceItem,
+    MultipolarCoverageAuditInput,
+    MultipolarExcavationOptions,
     RawSearchResult,
+    audit_multipolar_coverage,
     classify_slop,
+    deslop_excavate,
     deslop_query,
     deslop_split_horizon,
     filter_search_results,
+    grade_evidence_claim,
 )
 from deslop_search.cli import build_parser  # noqa: E402
 
@@ -201,11 +208,141 @@ Check CVE-2021-4034 and RFC 9110 section 5.
 
         bundled_dir = ROOT_DIR / "python" / "deslop_search" / "data"
         root_data_dir = ROOT_DIR / "data"
-        for filename in ("blocklist.json", "sources.json", "slop-lexicon.json"):
+        for filename in (
+            "blocklist.json",
+            "sources.json",
+            "slop-lexicon.json",
+            "multipolar-jurisdictions.json",
+        ):
             self.assertEqual(
                 json.loads((root_data_dir / filename).read_text(encoding="utf-8")),
                 json.loads((bundled_dir / filename).read_text(encoding="utf-8")),
             )
+
+    def test_multipolar_excavation_small_web_and_grading_parity(self) -> None:
+        plan = deslop_excavate(
+            "ultra processed foods regulation",
+            MultipolarExcavationOptions(
+                use_case="Policy audit",
+                period_years=6,
+                native_terms_by_lang={"de": "hochverarbeitete Lebensmittel"},
+            ),
+        )
+        self.assertEqual(plan.protocol_version, "2.3.0")
+        self.assertTrue(plan.clean_room_isolation)
+        self.assertEqual(len(plan.strata), 6)
+        self.assertEqual(len(plan.multipolar_queries), 15)
+        self.assertTrue(any(mq.code == "ARAB" and mq.language == "ar" for mq in plan.multipolar_queries))
+        self.assertTrue(any(mq.is_global_south for mq in plan.multipolar_queries))
+
+        small_web_stratum = next(s for s in plan.strata if s.stratum == "small_web_archaeology")
+        combined_sw = " ".join(q.compiled_query for q in small_web_stratum.queries)
+        self.assertIn("tumblr.com", combined_sw)
+        self.assertIn("blogspot.com", combined_sw)
+        self.assertIn("web.archive.org", combined_sw)
+
+        for stratum in plan.strata:
+            for q in stratum.queries:
+                self.assertLessEqual(q.operator_count, q.operator_budget)
+
+        with self.assertRaises(ValueError):
+            deslop_excavate("   \u200b  ")
+
+        # Grading negative/mutation parity
+        self.assertEqual(
+            grade_evidence_claim(
+                EvidenceGradeInput(
+                    ontological_type="FATO",
+                    independent_origins=5,
+                    entailment_checked=True,
+                    replicated=True,
+                    retracted=True,
+                )
+            ).grade,
+            "D",
+        )
+        self.assertEqual(
+            grade_evidence_claim(
+                EvidenceGradeInput(
+                    ontological_type="RELATO",
+                    independent_origins=4,
+                    entailment_checked=True,
+                    replicated=True,
+                )
+            ).grade,
+            "C",
+        )
+        self.assertEqual(
+            grade_evidence_claim(
+                EvidenceGradeInput(
+                    ontological_type="FATO",
+                    independent_origins=2,
+                    entailment_checked=True,
+                    has_unmitigated_conflict_of_interest=True,
+                    replicated=False,
+                )
+            ).grade,
+            "C",
+        )
+        self.assertEqual(
+            grade_evidence_claim(
+                EvidenceGradeInput(
+                    ontological_type="FATO",
+                    independent_origins=2,
+                    entailment_checked=True,
+                    replicated=True,
+                )
+            ).grade,
+            "A",
+        )
+
+        bad_audit = audit_multipolar_coverage(
+            MultipolarCoverageAuditInput(
+                clean_room_isolation=False,
+                sources=[MultipolarAuditSourceItem(jurisdiction="DE", language="de")],
+                what_changes_outside_us="",
+                minority_steelman="",
+                cui_bono_audited=False,
+                rival_hypotheses_tested=0,
+            )
+        )
+        self.assertFalse(bad_audit.valid)
+
+        good_audit = audit_multipolar_coverage(
+            MultipolarCoverageAuditInput(
+                clean_room_isolation=True,
+                sources=[
+                    MultipolarAuditSourceItem(
+                        jurisdiction="DE",
+                        language="de",
+                        original_excerpt="Bundesamt Bericht",
+                        translated_excerpt="Federal agency report",
+                    ),
+                    MultipolarAuditSourceItem(jurisdiction="BR", language="pt-BR"),
+                    MultipolarAuditSourceItem(
+                        jurisdiction="ARAB",
+                        language="ar",
+                        original_excerpt="تقرير رسمي",
+                        translated_excerpt="Official report",
+                    ),
+                ],
+                what_changes_outside_us="European and Global South rules diverge sharply from US defaults.",
+                minority_steelman="Minority researchers present strong longitudinal confounding objections.",
+                cui_bono_audited=True,
+                rival_hypotheses_tested=2,
+            )
+        )
+        self.assertTrue(good_audit.valid)
+        self.assertTrue(good_audit.global_south_included)
+        self.assertTrue(good_audit.arabic_included)
+
+        parser = build_parser()
+        parsed_exc = parser.parse_args(
+            ["excavate", "grid", "storage", "--jurisdictions", "DE,BR", "--no-clean-room", "--json"]
+        )
+        self.assertEqual(parsed_exc.subcommand, "excavate")
+        self.assertFalse(parsed_exc.clean_room)
+        self.assertEqual(parsed_exc.jurisdictions, "DE,BR")
 
 
 if __name__ == "__main__":

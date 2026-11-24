@@ -22,6 +22,8 @@ function buildNativeChannelUrl(channel: CommunityChannelName, cleanQuery: string
     case "indie_forums":
     case "engineering_blogs":
       return undefined;
+    case "small_web":
+      return `https://web.archive.org/web/*/${encoded}`;
   }
 }
 

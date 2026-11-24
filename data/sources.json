@@ -94,6 +94,21 @@
         "research.swtch.com",
         "simonwillison.net"
       ]
+    },
+    "small_web": {
+      "label": "Small Web, Forgotten Blogs & Web Archive Archaeology",
+      "sites": [
+        "tumblr.com",
+        "blogspot.com",
+        "web.archive.org",
+        "neocities.org",
+        "bearblog.dev"
+      ],
+      "dorkHints": [
+        "site:tumblr.com",
+        "site:blogspot.com",
+        "site:web.archive.org"
+      ]
     }
   },
   "profiles": {
@@ -139,6 +154,13 @@
       "users.rust-lang.org",
       "discuss.python.org",
       "elixirforum.com"
+    ],
+    "small_web": [
+      "tumblr.com",
+      "blogspot.com",
+      "web.archive.org",
+      "neocities.org",
+      "bearblog.dev"
     ]
   }
 }

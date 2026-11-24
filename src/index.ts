@@ -4,6 +4,7 @@ export * from "./dorks.js";
 export * from "./router.js";
 export * from "./classifier.js";
 export * from "./split-horizon.js";
+export * from "./multipolar.js";
 export * from "./pipeline.js";
 export * from "./mcp-tools.js";
 export * from "./verifier.js";

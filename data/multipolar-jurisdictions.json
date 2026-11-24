@@ -1,0 +1,135 @@
+{
+  "version": "2.3.0",
+  "description": "Multipolar polyglot hubs, Global South & Arabic coverage, and Small-Web archaeology targets for Layer 8 / Mode 11 Deep Excavation.",
+  "smallWebSites": [
+    "tumblr.com",
+    "blogspot.com",
+    "web.archive.org",
+    "neocities.org",
+    "bearblog.dev",
+    "substack.com",
+    "marginalia-search.com"
+  ],
+  "jurisdictions": [
+    {
+      "code": "DE",
+      "countryOrRegion": "Germany",
+      "language": "de",
+      "isGlobalSouth": false,
+      "siteHints": [".de"],
+      "cuiBonoKeywords": ["finanzierung", "interessenkonflikt", "kritik"]
+    },
+    {
+      "code": "IT",
+      "countryOrRegion": "Italy",
+      "language": "it",
+      "isGlobalSouth": false,
+      "siteHints": [".it"],
+      "cuiBonoKeywords": ["finanziamento", "conflitto di interessi", "critica"]
+    },
+    {
+      "code": "FR",
+      "countryOrRegion": "France",
+      "language": "fr",
+      "isGlobalSouth": false,
+      "siteHints": [".fr"],
+      "cuiBonoKeywords": ["financement", "conflit d'interets", "critique"]
+    },
+    {
+      "code": "CN",
+      "countryOrRegion": "China",
+      "language": "zh",
+      "isGlobalSouth": true,
+      "siteHints": [".cn", "zhihu.com"],
+      "cuiBonoKeywords": ["研究", "争议", "利益冲突"]
+    },
+    {
+      "code": "JP",
+      "countryOrRegion": "Japan",
+      "language": "ja",
+      "isGlobalSouth": false,
+      "siteHints": [".jp", "note.com", "qiita.com"],
+      "cuiBonoKeywords": ["研究", "批判", "利益相反"]
+    },
+    {
+      "code": "KR",
+      "countryOrRegion": "South Korea",
+      "language": "ko",
+      "isGlobalSouth": false,
+      "siteHints": [".kr", "tistory.com", "velog.io"],
+      "cuiBonoKeywords": ["연구", "비판", "이해충돌"]
+    },
+    {
+      "code": "SG",
+      "countryOrRegion": "Singapore",
+      "language": "en/zh/ms",
+      "isGlobalSouth": false,
+      "siteHints": [".sg", ".gov.sg"],
+      "cuiBonoKeywords": ["regulation", "audit", "policy"]
+    },
+    {
+      "code": "IN",
+      "countryOrRegion": "India",
+      "language": "hi/en",
+      "isGlobalSouth": true,
+      "siteHints": [".in", ".gov.in", ".nic.in"],
+      "cuiBonoKeywords": ["policy", "critique", "audit"]
+    },
+    {
+      "code": "MX",
+      "countryOrRegion": "Mexico",
+      "language": "es-MX",
+      "isGlobalSouth": true,
+      "siteHints": [".mx", ".gob.mx"],
+      "cuiBonoKeywords": ["financiamiento", "conflicto de interes", "critica"]
+    },
+    {
+      "code": "BR",
+      "countryOrRegion": "Brazil",
+      "language": "pt-BR",
+      "isGlobalSouth": true,
+      "siteHints": [".br", ".gov.br", ".jus.br"],
+      "cuiBonoKeywords": ["financiamento", "conflito de interesses", "critica"]
+    },
+    {
+      "code": "TR",
+      "countryOrRegion": "Turkey",
+      "language": "tr",
+      "isGlobalSouth": true,
+      "siteHints": [".tr", ".gov.tr"],
+      "cuiBonoKeywords": ["arastirma", "elestiri", "finansman"]
+    },
+    {
+      "code": "NO",
+      "countryOrRegion": "Norway",
+      "language": "no",
+      "isGlobalSouth": false,
+      "siteHints": [".no", "regjeringen.no"],
+      "cuiBonoKeywords": ["forskning", "kritikk", "interessekonflikt"]
+    },
+    {
+      "code": "DK",
+      "countryOrRegion": "Denmark",
+      "language": "da",
+      "isGlobalSouth": false,
+      "siteHints": [".dk", "retsinformation.dk"],
+      "cuiBonoKeywords": ["forskning", "kritik", "interessekonflikt"]
+    },
+    {
+      "code": "ARAB",
+      "countryOrRegion": "Arabic World",
+      "language": "ar",
+      "isGlobalSouth": true,
+      "siteHints": [".ae", ".sa", ".eg", ".qa", "aljazeera.net"],
+      "cuiBonoKeywords": ["دراسة", "تحقيق", "نقد"]
+    },
+    {
+      "code": "GLOBAL_SOUTH",
+      "countryOrRegion": "Global South Cross-Regional",
+      "language": "multi",
+      "isGlobalSouth": true,
+      "siteHints": [".za", ".ng", ".ke", ".co", ".ar", ".cl", ".id", ".vn"],
+      "cuiBonoKeywords": ["independent", "local impact", "policy"]
+    }
+  ]
+}

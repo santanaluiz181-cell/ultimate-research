@@ -18,6 +18,9 @@
 | **MODE 6: MARKET / CI** | 2 a 3 (`flash_lite`, 2 ondas) | Lane B contemporânea | Demonstrações contábeis (CVM/SEC), relatórios setoriais, dados de tráfego | Verificação de Dados | Separar projeções de consultoria de faturamento real auditado; evitar hype de vendas. |
 | **MODE 7: LEGAL** | 2 a 4 (`flash_lite`, 2 ondas) | Lanes B, C e A | Diários Oficiais, eproc, LexML, acórdãos dos tribunais (STF/STJ/TJTO) | Rigorosa (CNJ Mod 97) | Restrição estrita a domínios `*.jus.br`, `*.gov.br` e `lexml.gov.br`; banir artigos de blog. |
 | **MODE 8: FACT-CHECKING** | 2 a 3 (`flash_lite`, 2 ondas) | Lane C e B | Registros civis, bases estatísticas oficiais, vídeos brutos, declarações | Exaustiva (Entailment) | Emitir estritamente um dos 6 vereditos canônicos; nunca confundir ausência de prova com mentira. |
+| **MODE 9: HYPERRESEARCH DRACO** | 3 a 8 (`flash_lite`/`flash`, 3+ ondas) | Cofre + OA + Ensemble | Bases Open-Access (Europe PMC, Unpaywall, CrossRef, OpenAlex, CORE) | Completa (`citecheck`) | Reaproveitar cofre persistente (`vault.mjs`); sintetizar com Triple-Draft Ensemble. |
+| **MODE 10: ELEPHANT-GOLDFISH** | 3 Goldfish (`flash_lite`, contexto zero) | Auditoria Cega | Evidencias brutas submetidas a mutacao de polaridade, numeros e causa | Adversarial Puro | Proibido passar justificativas da Queen ao cardume Goldfish; falhar se mutacao nao for detectada. |
+| **MODE 11: MULTIPOLAR EXCAVATION** | 3 a 5 (`flash_lite`, 2-3 ondas) | Lanes A, B, C + D (Small Web) + E (Poliglota) | Surface + Cui Bono, ciencia forense, comunidades, Tumblr/Blogger/Wayback e 15+ paises + Sul Global + Arabe | Tripartido `A-D` + Delta EUA | Clean-Room obrigatorio (`--clean-room`), citacao original+traducao e Steelman minoritario. |
 
 ---
 
@@ -77,3 +80,16 @@
   5. **NÃO COMPROVADO:** Não há base documental nem registros públicos que atestem ou infirmem a alegação.
   6. **INCONCLUSIVO:** As fontes de Tier 1 e Tier 2 apresentam dados metodologicamente contraditórios e inconciliáveis.
 - **Regra Epistêmica Suprema:** Ausência de prova de uma afirmação jamais pode ser classificada como "FALSO". Se não há registros, o veredito obrigatório é "NÃO COMPROVADO".
+
+### MODE 9: HYPERRESEARCH DRACO (Pipeline Profundo em 16 Etapas + Cofre Persistente)
+- **Gatilho:** Investigacoes de folego maximo que exigem recuperacao Open-Access de artigos bloqueados, cofre Zettelkasten cumulativo (`research/notes/`) e sintese Triple-Draft.
+- **Referencia:** `workflows/hyperresearch-pipeline.md` e `references/draco-benchmark-methodology.md`.
+
+### MODE 10: ELEPHANT-GOLDFISH (Auditoria Adversarial com Contexto Zero)
+- **Gatilho:** Auditoria de estresse sobre minutas, pareceres ou relatorios antes da publicacao usando 3 Goldfish cegos (`flash_lite`) e Claim Mutation Testing.
+- **Referencia:** `workflows/elephant-goldfish-adversarial.md` e `references/elephant-goldfish-architecture.md`.
+
+### MODE 11: MULTIPOLAR EXCAVATION (Escavacao Poliglota, Small Web & Clean-Room)
+- **Gatilho:** Temas sujeitos a bolha de SEO anglofona, conflito de interesses, vies norte-americano ou ausencia de dados em portugues/ingles.
+- **Topologia:** Clean-Room Isolation (`--clean-room`), Etapa 0 (`1 Dominante + 2 Rivais + Lexico Nativo`), Estratos 1..5 (`Surface + Cui Bono`, `Ciencia + Retratacoes`, `Comunidades`, `Small Web Tumblr/Blogger/Wayback`, `15+ Jurisdicoes + Sul Global + Arabe`) e Estrato 6 (`FATO | INTERPRETACAO | RELATO`, Graus `A-D`, `O Que Muda Fora dos EUA`, `Steelman Minoritario`).
+- **Referencia:** `workflows/multipolar-excavation.md` e `references/multipolar-polyglot-excavation.md`.

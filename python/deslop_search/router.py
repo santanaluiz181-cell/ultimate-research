@@ -20,6 +20,8 @@ def _build_native_channel_url(channel: CommunityChannelName, clean_query: str) -
     if channel == "github":
         gh_q = quote(f"{clean_query} created:<2023-01-01", safe="")
         return f"https://github.com/search?q={gh_q}&type=issues"
+    if channel == "small_web":
+        return f"https://web.archive.org/web/*/{encoded}"
     return None
 
 

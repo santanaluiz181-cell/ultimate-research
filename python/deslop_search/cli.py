@@ -6,7 +6,8 @@ import sys
 from pathlib import Path
 from typing import Sequence
 
-from .models import DorkOptions, RawSearchResult
+from .models import DorkOptions, MultipolarExcavationOptions, RawSearchResult
+from .multipolar import format_multipolar_plan_terminal
 from .pipeline import DeslopSearch
 
 
@@ -47,6 +48,7 @@ def build_parser() -> argparse.ArgumentParser:
                 "code",
                 "blogs",
                 "forums",
+                "small_web",
             ],
         )
         p.add_argument("--channel", default=None, help="Comma-separated community channels")
@@ -104,6 +106,23 @@ def build_parser() -> argparse.ArgumentParser:
     l_parser.add_argument("--limit", type=int, default=5)
     l_parser.add_argument("--max-slop", type=float, default=0.59)
     l_parser.add_argument("--json", action="store_true")
+
+    e_parser = sub.add_parser(
+        "excavate",
+        help="Build a Clean-Room 6-stratum Multipolar Polyglot & Small-Web Excavation Plan",
+    )
+    e_parser.add_argument("terms", nargs="+", help="Search query terms")
+    e_parser.add_argument("--jurisdictions", default=None, help="Comma-separated jurisdiction codes")
+    e_parser.add_argument("--clean-room", dest="clean_room", action="store_true", default=True)
+    e_parser.add_argument("--no-clean-room", dest="clean_room", action="store_false")
+    e_parser.add_argument("--period-years", type=int, default=5)
+    e_parser.add_argument("--use-case", default=None)
+    e_parser.add_argument(
+        "--engine",
+        default="google",
+        choices=["google", "duckduckgo", "brave", "kagi", "searxng", "bing"],
+    )
+    e_parser.add_argument("--json", action="store_true")
 
     return parser
 
@@ -253,6 +272,23 @@ def main(argv: Sequence[str] | None = None) -> int:
                 print(
                     f"\n- [{hit.source or 'web'}] {hit.title}\n  URL  : {hit.url}\n  Score: rank={hit.rank_score}, slop={hit.classification.score} ({hit.classification.verdict})"
                 )
+        return 0
+
+    if args.subcommand == "excavate":
+        raw_query = " ".join(args.terms).strip()
+        jur_tuple = tuple(j.upper() for j in _split_csv(args.jurisdictions))
+        opts_exc = MultipolarExcavationOptions(
+            use_case=args.use_case,
+            period_years=args.period_years,
+            clean_room=bool(args.clean_room),
+            jurisdictions=jur_tuple,  # type: ignore[arg-type]
+            engine=args.engine,
+        )
+        plan_exc = deslop.excavate_multipolar(raw_query, opts_exc)
+        if args.json:
+            print(json.dumps(plan_exc.to_dict(), indent=2, ensure_ascii=False))
+        else:
+            print(format_multipolar_plan_terminal(plan_exc))
         return 0
 
     return 1

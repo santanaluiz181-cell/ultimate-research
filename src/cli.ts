@@ -2,22 +2,26 @@
 import { readFileSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { DeslopSearch } from "./pipeline.js";
+import { formatMultipolarPlanTerminal } from "./multipolar.js";
 import { formatCertificateTerminal } from "./verifier.js";
 import type {
 
   CommunityChannelName,
   CommunityProfile,
   DorkOptions,
+  MultipolarExcavationOptions,
+  MultipolarJurisdictionCode,
   RawSearchResult,
   SearchEngine,
   TemporalEra
 } from "./types.js";
 
 const HELP_TEXT = `
-deslop - Clean Human-Era Search, Split-Horizon & Anti-Slop Utility
+deslop - Clean Human-Era Search, Split-Horizon, Multipolar Excavation & Anti-Slop Utility
 
 USAGE:
   deslop query "<search terms>" [--split | --split-horizon] [options]
+  deslop excavate "<search terms>" [--jurisdictions DE,BR,CN,...] [--clean-room] [--no-clean-room] [--period-years <N>] [--use-case "<goal>"] [--engine <name>] [--json]
   deslop live "<search terms>" [--split | --split-horizon] [--before-year <YYYY>] [--limit <N>] [--json]
   deslop split "<search terms>" [--plan] [--before-year <YYYY>] [--limit <N>] [--json]
   deslop routes "<search terms>" [options]
@@ -29,8 +33,8 @@ OPTIONS:
   --strict                  Fail verification (exit code 1) on hallucinated or divergent sources
   --split, --split-horizon  Enable Dual Temporal Horizon (Lane A: Pre-2023 Canonical vs Lane B: Post-2023 Audited)
   --era <preset>            human-classic (default: after:2010 before:2023) | pre-gpt4 | archival | modern-curated | none
-  --profile <name>          none (default) | all_community | discussions | qa | code | blogs | forums
-  --channel <list>          Comma-separated channels: reddit,stackoverflow,github,hackernews,indie_forums,engineering_blogs
+  --profile <name>          none (default) | all_community | discussions | qa | code | blogs | forums | small_web
+  --channel <list>          Comma-separated channels: reddit,stackoverflow,github,hackernews,indie_forums,engineering_blogs,small_web
   --engine <name>           google (default, udm=14) | duckduckgo | brave | kagi | searxng | bing
   --before <date>           Custom before:YYYY or YYYY-MM-DD override
   --after <date>            Custom after:YYYY or YYYY-MM-DD override
@@ -39,6 +43,11 @@ OPTIONS:
   --no-blocklist            Disable default inline spam domain exclusions
   --smart                   Auto-shift to modern-curated if post-2022 versions/years are detected
   --plan                    With 'deslop split', emit dual dork query plan without live HTTP calls
+  --jurisdictions <list>    Comma-separated jurisdiction codes for 'deslop excavate' (DE,IT,FR,CN,JP,KR,SG,IN,MX,BR,TR,NO,DK,ARAB,GLOBAL_SOUTH)
+  --clean-room              Enable Clean-Room Isolation (default for 'deslop excavate')
+  --no-clean-room           Disable Clean-Room Isolation on 'deslop excavate'
+  --period-years <N>        Lookback window in years for 'deslop excavate' (default: 5)
+  --use-case "<goal>"       Operational use case for 'deslop excavate'
   --json                    Emit structured JSON output
   -h, --help                Show this help message
 `.trim();
@@ -78,6 +87,11 @@ async function runCli(argv: string[]): Promise<number> {
       "max-slop": { type: "string" },
       "before-year": { type: "string" },
       limit: { type: "string" },
+      jurisdictions: { type: "string" },
+      "clean-room": { type: "boolean", default: false },
+      "no-clean-room": { type: "boolean", default: false },
+      "period-years": { type: "string" },
+      "use-case": { type: "string" },
       strict: { type: "boolean", default: false },
       json: { type: "boolean", default: false },
       help: { type: "boolean", short: "h", default: false }
@@ -136,6 +150,41 @@ async function runCli(argv: string[]): Promise<number> {
     values.limit !== undefined ? Number(values.limit) : 4;
   const maxSlopScore =
     values["max-slop"] !== undefined ? Number(values["max-slop"]) : 0.59;
+
+  if (subcommand === "excavate") {
+    if (restQuery.length === 0) {
+      throw new Error("Missing search query. Usage: deslop excavate \"<terms>\"");
+    }
+    const opts: MultipolarExcavationOptions = {};
+    if (values["use-case"] !== undefined) {
+      opts.useCase = values["use-case"];
+    }
+    if (values["period-years"] !== undefined) {
+      const parsedPeriod = Number(values["period-years"]);
+      if (Number.isFinite(parsedPeriod) && parsedPeriod > 0) {
+        opts.periodYears = parsedPeriod;
+      }
+    }
+    if (values["no-clean-room"] === true) {
+      opts.cleanRoom = false;
+    } else if (values["clean-room"] === true) {
+      opts.cleanRoom = true;
+    }
+    const jurList = splitCsv(values.jurisdictions);
+    if (jurList !== undefined) {
+      opts.jurisdictions = jurList.map((j) => j.toUpperCase()) as MultipolarJurisdictionCode[];
+    }
+    if (values.engine !== undefined) {
+      opts.engine = values.engine as SearchEngine;
+    }
+    const plan = deslop.excavateMultipolar(restQuery, opts);
+    if (values.json) {
+      process.stdout.write(`${JSON.stringify(plan, null, 2)}\n`);
+    } else {
+      process.stdout.write(`${formatMultipolarPlanTerminal(plan)}\n`);
+    }
+    return 0;
+  }
 
   if (subcommand === "query") {
     if (restQuery.length === 0) {

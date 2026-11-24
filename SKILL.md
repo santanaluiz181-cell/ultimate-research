@@ -3,13 +3,15 @@ name: ultimate-research
 description: >-
   Motor unificado de pesquisa profunda, investigacao iterativa, auditoria epistemica ARS,
   cofre persistente Hyperresearch (DRACO Benchmark #1, score 77.7), blindagem adversarial
-  Elephant-Goldfish (contexto zero e mutacao de alegacoes) e auto-otimizacao recursiva Google
-  Harness² v2.2 para o Google Antigravity. Unifica /ultimate-research, /elephant-goldfish e /hyperresearch.
+  Elephant-Goldfish (contexto zero e mutacao de alegacoes), Escavacao Multipolar Poliglota
+  15+ jurisdicoes + Small Web + Clean-Room Isolation (Mode 11) e auto-otimizacao recursiva
+  Google Harness² v2.3 SUPERUPGRADE para o Google Antigravity. Unifica /ultimate-research,
+  /elephant-goldfish e /hyperresearch.
 ---
 
-# Ultimate Research Engine 2.2 (`ultimate-research`)
+# Ultimate Research Engine 2.3 SUPERUPGRADE (`ultimate-research`)
 
-Motor adaptativo supremo de investigacao e auditoria epistemica para o Google Antigravity. Unifica sete camadas cognitivas sob um unico orquestrador de comando:
+Motor adaptativo supremo de investigacao e auditoria epistemica para o Google Antigravity. Unifica oito camadas cognitivas sob um unico orquestrador de comando:
 
 1. **Search Intelligence** (*Perplexity Prompting*): engenharia de consultas cirurgicas (2-3 termos), ancoras temporais numericas e roteamento multi-perspectiva ([references/perplexity-prompting.md](./references/perplexity-prompting.md)).
 2. **Clean Search & Split-Horizon** (*Super Deslop Search*): dorking temporal anti-slop com orcamento de operadores, roteamento comunitario e Split-Horizon 3-Lanes ([references/deslop-methodology.md](./references/deslop-methodology.md) e [references/temporal-research.md](./references/temporal-research.md)).
@@ -18,6 +20,7 @@ Motor adaptativo supremo de investigacao e auditoria epistemica para o Google An
 5. **Information Quality, ARS & Open-Access Recovery** (*Europe PMC, Unpaywall, CrossRef, OpenAlex, SEC EDGAR, FRED, LexML, DJEN*): recuperacao automatica de papers em acesso aberto quando ha paywall comercial, aliada a verificacao deterministica de CNJ Modulo 97, ISBN e leis vigentes ([references/citation-verification.md](./references/citation-verification.md) e [references/source-credibility.md](./references/source-credibility.md)).
 6. **Adversarial Stress & Claim Mutation Testing** (*Elephant-Goldfish Dual Model + Uncle Bob Gates*): a Queen (Elefante) sintetiza com memoria integral; em seguida, purga o contexto e aciona 3 Goldfish (`flash_lite`, contexto zero) aplicando mutacao de alegacoes (polaridade, valores e causa) e os 5 portoes objetivos ([references/elephant-goldfish-architecture.md](./references/elephant-goldfish-architecture.md), [references/uncle-bob-verification-gates.md](./references/uncle-bob-verification-gates.md) e [workflows/elephant-goldfish-adversarial.md](./workflows/elephant-goldfish-adversarial.md)).
 7. **Adaptive Meta-Optimization & 5 MCP Connectors** (*Google Harness² + Connector Registry*): auditoria pre-voo com [`scripts/env-check.mjs`](./scripts/env-check.mjs), poda dinamica de tools ociosas, roteamento honesto dos 5 conectores MCP ([references/mcp-connectors-registry.md](./references/mcp-connectors-registry.md)) e consolidacao no ReasoningBank ([references/google-harness-loop.md](./references/google-harness-loop.md)).
+8. **Multipolar Polyglot, Small-Web Archaeology & Clean-Room Excavation** (*Mode 11 Superupgrade*): isolamento Clean-Room (`--clean-room`), Etapa 0 (`1 Dominante + 2 Rivais + Lexico Nativo`), escavacao em 6 estratos (`Surface + Cui Bono`, ciencia/retratacoes, comunidades, garimpo Tumblr/Blogger/Wayback, 15+ jurisdicoes + mundo arabe + Sul Global em idioma original com `[Original + Traducao]`), triparticao `FATO | INTERPRETACAO | RELATO`, graus `A-D` e *Steelman* minoritario ([references/multipolar-polyglot-excavation.md](./references/multipolar-polyglot-excavation.md) e [workflows/multipolar-excavation.md](./workflows/multipolar-excavation.md)).
 
 > **Regra de Divulgacao Progressiva:** Carregue **apenas** o workflow e as referencias exigidos pelo modo ativo. Nunca despeje todos os arquivos no contexto de uma so vez.
 
@@ -55,21 +58,22 @@ Classifique a solicitacao e carregue **somente** o workflow correspondente ([ref
 | **MODE 8: FACT-CHECKING** | Verificacao de afirmacao especifica com veredito proporcional | **0 a 3** | Origem (A) + Atual (B/C) | [`workflows/fact-checking.md`](./workflows/fact-checking.md) |
 | **MODE 9: HYPERRESEARCH DRACO** | Investigacao exaustiva em 16 etapas com cofre persistente | **3 a 8 / onda** | Cofre + OA + Ensemble | [`workflows/hyperresearch-pipeline.md`](./workflows/hyperresearch-pipeline.md) |
 | **MODE 10: ELEPHANT-GOLDFISH** | Auditoria adversarial pura com contexto zero e mutacao | **3 Goldfish** | Auditoria Cega | [`workflows/elephant-goldfish-adversarial.md`](./workflows/elephant-goldfish-adversarial.md) |
+| **MODE 11: MULTIPOLAR EXCAVATION** | Clean-Room, Cui Bono, Small Web, 15+ paises/Sul Global, Graus A-D e Steelman | **3 a 5 / onda** | Lanes A-E (Poliglota) | [`workflows/multipolar-excavation.md`](./workflows/multipolar-excavation.md) |
 
 ---
 
 ## 3. Pipeline Universal (Advisor -> Executor + Mutation Gates + Vault)
 
 1. **FASE 1 (Intent & Harness² Tool Pruning):** Extraia objetivo, recorte temporal e pode conectores/skills fora de escopo ([references/google-harness-loop.md](./references/google-harness-loop.md)).
-2. **FASE 2 (Research Planning & Vault Search):** Consulte [`scripts/vault.mjs`](./scripts/vault.mjs) `search` para resgatar notas de sessoes anteriores antes de buscar na web; estruture o plano em [`templates/research-plan.md`](./templates/research-plan.md) / [`schemas/research-plan.schema.json`](./schemas/research-plan.schema.json).
-3. **FASE 3 (Query Engineering):** Consulte [`references/perplexity-prompting.md`](./references/perplexity-prompting.md) com substantivos tecnicos exatos e zero few-shot.
-4. **FASE 4 (Source Discovery & OA Recovery):** Exija diversidade entre fontes primarias e use recuperacao Open-Access (Europe PMC / Unpaywall) para papers bloqueados.
+2. **FASE 2 (Research Planning & Vault Search):** Consulte [`scripts/vault.mjs`](./scripts/vault.mjs) `search` (ou `--clean-room` no Modo 11 para zerar vies de memoria) e estruture o plano (incluindo `1 Dominante + 2 Rivais + Lexico Nativo`) em [`templates/research-plan.md`](./templates/research-plan.md) / [`schemas/research-plan.schema.json`](./schemas/research-plan.schema.json).
+3. **FASE 3 (Query Engineering):** Consulte [`references/perplexity-prompting.md`](./references/perplexity-prompting.md) e `deslop excavate` para dorks Small Web (`tumblr.com`, `blogspot.com`, `web.archive.org`) e 15+ jurisdicoes nativas + Sul Global + mundo arabe.
+4. **FASE 4 (Source Discovery, Cui Bono & OA Recovery):** Mapeie quem sustenta e quem lucra (`Cui Bono`), cheque financiamento/retratacoes e recupere papers em Acesso Aberto (Europe PMC / Unpaywall).
 5. **FASE 5 (Deslop Processing):** Aplique [`references/deslop-methodology.md`](./references/deslop-methodology.md) e [`references/temporal-research.md`](./references/temporal-research.md).
 6. **FASE 6 (Parallel Investigation & Vault Ingestion):** Subagentes salvam notas estruturadas no cofre via `node scripts/vault.mjs store` usando [`templates/source-audit.md`](./templates/source-audit.md).
-7. **FASE 7 (Evidence Triangulation):** Preencha [`templates/evidence-matrix.md`](./templates/evidence-matrix.md) conforme [`references/source-credibility.md`](./references/source-credibility.md), dedupando `origin_fingerprint`.
-8. **FASE 8 (Epistemic Audit & Cite-Check):** Valide com [`references/citation-verification.md`](./references/citation-verification.md), [`schemas/evidence.schema.json`](./schemas/evidence.schema.json) e `node scripts/vault.mjs citecheck`. Proibido `[VERIFICADA]` sem `entailment_checked: true`.
-9. **FASE 9 (Adversarial Stress & Claim Mutation - Cardume Goldfish):** Purgue contexto conforme [`references/elephant-goldfish-architecture.md`](./references/elephant-goldfish-architecture.md) e despache 3 Goldfish aplicando [`references/uncle-bob-verification-gates.md`](./references/uncle-bob-verification-gates.md) (mutacao de numeros/polaridade, normas revogadas e advogado do diabo).
-10. **FASE 10 (Final Synthesis, Ship Gate & ReasoningBank):** Emita relatorio ([templates/final-report.md](./templates/final-report.md) / [schemas/report.schema.json](./schemas/report.schema.json)), grave notas consolidadas no cofre e licoes permanentes no `claude-mem`.
+7. **FASE 7 (Evidence Triangulation & Tripartition):** Preencha [`templates/evidence-matrix.md`](./templates/evidence-matrix.md) conforme [`references/source-credibility.md`](./references/source-credibility.md), dedupando `origin_fingerprint`, separando `FATO | INTERPRETACAO | RELATO` (`A-D`) e anexando `[Trecho Original + Traducao]`.
+8. **FASE 8 (Epistemic Audit & Cite-Check):** Valide com [`references/citation-verification.md`](./references/citation-verification.md), [`schemas/evidence.schema.json`](./schemas/evidence.schema.json), `validate-schemas.mjs report-multipolar` e `citecheck`. Proibido `[VERIFICADA]` sem `entailment_checked: true` ou em fonte retratada.
+9. **FASE 9 (Adversarial Stress & Claim Mutation - Cardume Goldfish):** Purgue contexto conforme [`references/elephant-goldfish-architecture.md`](./references/elephant-goldfish-architecture.md) e despache 3 Goldfish aplicando [`references/uncle-bob-verification-gates.md`](./references/uncle-bob-verification-gates.md) e o *Steelman* da posicao minoritaria.
+10. **FASE 10 (Final Synthesis, Ship Gate & ReasoningBank):** Aplique o gate de entrega (`sem fonte -> remova`, `vies EUA -> corrija`, `personalizacao -> apague`), emita o relatorio ([templates/final-report.md](./templates/final-report.md) / [schemas/report.schema.json](./schemas/report.schema.json)) com secao "O Que Muda Fora dos EUA" e grave licoes permanentes no `claude-mem`.
 
 ---
 

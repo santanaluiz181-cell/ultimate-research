@@ -1,5 +1,6 @@
 import { SlopClassifier } from "./classifier.js";
 import { sanitizeRawQuery, TemporalDorkEngine } from "./dorks.js";
+import { buildMultipolarExcavationPlan } from "./multipolar.js";
 import { CommunityRouter } from "./router.js";
 import {
   analyzeHorizonDifferential,
@@ -15,6 +16,8 @@ import type {
   DorkOptions,
   FilterBatchReport,
   FilteredSearchResult,
+  MultipolarExcavationOptions,
+  MultipolarExcavationPlan,
   RawSearchResult,
   SlopClassification,
   SplitHorizonQueryPlan,
@@ -118,6 +121,13 @@ export class DeslopSearch {
     cutoffYear = 2023
   ): SplitHorizonQueryPlan {
     return buildSplitHorizonQueryPlan(query, this.dorks, this.router, options, cutoffYear);
+  }
+
+  public excavateMultipolar(
+    query: string,
+    options: MultipolarExcavationOptions = {}
+  ): MultipolarExcavationPlan {
+    return buildMultipolarExcavationPlan(query, options, this.dorks);
   }
 
   public buildRoutes(query: string, options: DorkOptions = {}): VerticalRoute[] {
@@ -561,6 +571,13 @@ export function deslopSplitHorizon(
   cutoffYear = 2023
 ): SplitHorizonQueryPlan {
   return defaultInstance.compileSplitHorizon(query, options, cutoffYear);
+}
+
+export function deslopExcavate(
+  query: string,
+  options: MultipolarExcavationOptions = {}
+): MultipolarExcavationPlan {
+  return defaultInstance.excavateMultipolar(query, options);
 }
 
 export function classifySlop(input: ClassifyInput): SlopClassification {

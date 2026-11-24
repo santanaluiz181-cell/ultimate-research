@@ -2,6 +2,8 @@ import { DeslopSearch } from "./pipeline.js";
 import type {
   CommunityProfile,
   DorkOptions,
+  MultipolarExcavationOptions,
+  MultipolarJurisdictionCode,
   RawSearchResult,
   SearchEngine,
   TemporalEra
@@ -35,7 +37,7 @@ export const DESLOP_AGENT_TOOLS: readonly AgentToolDefinition[] = [
         },
         profile: {
           type: "string",
-          enum: ["none", "all_community", "discussions", "qa", "code", "blogs", "forums"],
+          enum: ["none", "all_community", "discussions", "qa", "code", "blogs", "forums", "small_web"],
           default: "none"
         },
         engine: {
@@ -131,6 +133,34 @@ export const DESLOP_AGENT_TOOLS: readonly AgentToolDefinition[] = [
         maxSlopScore: { type: "number", default: 0.59 }
       },
       required: ["results"]
+    }
+  },
+  {
+    name: "deslop_multipolar_excavate",
+    description:
+      "Builds a Clean-Room 6-stratum Multipolar Polyglot & Small-Web Deep Excavation Plan covering surface dominant/Cui Bono, forensic science/retractions, communities, Tumblr/Blogger/Wayback small web, and 15+ native-language non-US/Global South/Arabic jurisdictions.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        query: { type: "string", description: "Investigation question or topic." },
+        use_case: { type: "string", description: "Decision or operational use case." },
+        period_years: { type: "number", default: 5 },
+        clean_room: { type: "boolean", default: true },
+        jurisdictions: {
+          type: "array",
+          items: { type: "string" }
+        },
+        native_terms_by_lang: {
+          type: "object",
+          additionalProperties: { type: "string" }
+        },
+        engine: {
+          type: "string",
+          enum: ["google", "duckduckgo", "brave", "kagi", "searxng", "bing"],
+          default: "google"
+        }
+      },
+      required: ["query"]
     }
   }
 ];
@@ -240,6 +270,38 @@ export function executeDeslopTool(toolName: string, rawArgs: unknown): unknown {
       const maxSlopScore =
         typeof rawArgs["maxSlopScore"] === "number" ? rawArgs["maxSlopScore"] : 0.59;
       return engineInstance.filterResults(parsedResults, { maxSlopScore });
+    }
+
+    case "deslop_multipolar_excavate": {
+      const query = typeof rawArgs["query"] === "string" ? rawArgs["query"] : "";
+      const opts: MultipolarExcavationOptions = {};
+      if (typeof rawArgs["use_case"] === "string") {
+        opts.useCase = rawArgs["use_case"];
+      }
+      if (typeof rawArgs["period_years"] === "number") {
+        opts.periodYears = rawArgs["period_years"];
+      }
+      if (typeof rawArgs["clean_room"] === "boolean") {
+        opts.cleanRoom = rawArgs["clean_room"];
+      }
+      if (Array.isArray(rawArgs["jurisdictions"])) {
+        opts.jurisdictions = rawArgs["jurisdictions"].map((j) =>
+          String(j).trim().toUpperCase()
+        ) as MultipolarJurisdictionCode[];
+      }
+      if (isRecord(rawArgs["native_terms_by_lang"])) {
+        const nativeMap: Record<string, string> = {};
+        for (const [k, v] of Object.entries(rawArgs["native_terms_by_lang"])) {
+          if (typeof v === "string") {
+            nativeMap[k] = v;
+          }
+        }
+        opts.nativeTermsByLang = nativeMap;
+      }
+      if (typeof rawArgs["engine"] === "string") {
+        opts.engine = rawArgs["engine"] as SearchEngine;
+      }
+      return engineInstance.excavateMultipolar(query, opts);
     }
 
     default:

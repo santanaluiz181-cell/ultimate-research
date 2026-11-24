@@ -6,7 +6,8 @@
 **Matriz de Evidências:** `[UR-EVMAT-YYYYMMDD-XXXX]`  
 **Certificado ARS de Auditoria:** `[UR-ARS-YYYYMMDD-XXXX]`  
 **Data de Emissão:** `[AAAA-MM-DD]`  
-**Classificação do Modo:** `[MODE 1: QUICK | MODE 2: DEEP | MODE 3: ACADEMIC | MODE 4: JOURNALISTIC | MODE 5: TECHNICAL | MODE 6: MARKET / CI | MODE 7: LEGAL | MODE 8: FACT-CHECKING]`  
+**Classificação do Modo:** `[MODE 1..11 | MULTIPOLAR_EXCAVATION]`  
+**Isolamento Clean-Room:** `[ATIVADO | DESATIVADO]`  
 **Status de Auditoria:** `[APROVADO INTEGRALMENTE | APROVADO COM RESSALVAS]`
 
 ---
@@ -60,6 +61,26 @@ A análise dos artefatos primários revela que:
 | `[Ex: Eficiência de Memória]` | `Alocação em pool estático reduz latência` | `Pool dinâmico evita fragmentação` | `EV-002 (Tier 1)` vs `EV-006 (Tier 2)` | Varia com o padrão de carga; ausência de consenso absoluto. |
 | `[Ex: Aplicação de Multa]` | `Multa imediata conforme art. 537 CPC` | `Exigência de intimação pessoal prévia` | `EV-001 (STJ Súmula 410)` vs `EV-007 (TJTO)` | Prevalece a Súmula 410 até modulação expressa. |
 
+### 4.1 Visão Dominante & Auditoria `Cui Bono` (Quem Sustenta e Quem Lucra)
+- **Quem Sustenta o Consenso:** `[Órgãos oficiais, associações, mídia principal]`
+- **Quem Lucra / Conflitos de Interesse:** `[Financiadores, patrocinadores, incentivos comerciais ou regulatórios]`
+
+### 4.2 O Que Muda Fora dos EUA (Delta Multipolar, Mundo Árabe & Sul Global)
+- **Jurisdições Cobertas (`[N]`):** `[DE, IT, FR, CN, JP, KR, SG, IN, MX, BR, TR, NO, DK, ARAB, GLOBAL_SOUTH]`
+- **O Que Acrescentam / Questionam / Ignoram frente aos EUA (e Por Quê):** `[Síntese comparativa explicando lacunas do consenso anglófono e especificidades do Sul Global]`
+
+### 4.3 Teste das Hipóteses & *Steelman* da Posição Minoritária
+- **Veredito `H-DOM` / `H-RIV-1` / `H-RIV-2`:** `[SUPPORTED | WEAKENED | REFUTED | INCONCLUSIVE]`
+- **Melhor Argumento da Posição Minoritária (*Steelman*):** `[Formulação mais forte, honesta e bem fundamentada da tese minoritária]`
+
+### 4.4 Tabela Consolidada: Afirmação | Tipo (`FATO/INTERP/RELATO`) | Grau (`A-D`) | Fonte
+
+| Afirmação | Tipo Ontológico | Grau de Evidência | Fonte (`[F#]` + Data) |
+|---|---|---|---|
+| `[Afirmação 1]` | `FATO` | `A` | `[F1] (2025-08-14)` |
+| `[Afirmação 2]` | `INTERPRETACAO` | `B` | `[F2] (2025-04-02)` |
+| `[Afirmação 3]` | `RELATO` | `C` | `[F3] (2022-11-19)` |
+
 ---
 
 ## 5. Limitações Metodológicas e Lacunas Remanescentes
@@ -78,10 +99,16 @@ A análise dos artefatos primários revela que:
 *Selecione um dos 6 vereditos canônicos:*  
 `[ ] CONFIRMADO` | `[ ] PARCIALMENTE CONFIRMADO` | `[ ] ENGANOSO` | `[ ] FALSO` | `[ ] NÃO COMPROVADO` | `[ ] INCONCLUSIVO`
 
-### 6.2 Proposições de Ação / Recomendações Técnicas
-1. **Ação Imediata 1:** `[Recomendação técnica ou jurídica proporcional à força da evidência Tier 1]`
-2. **Ação Condicional 2:** `[Medida preventiva contra os riscos apontados em Dissent]`
-3. **Monitoramento 3:** `[Acompanhamento contínuo da lacuna identificada L-01]`
+### 6.2 Proposições de Ação / Recomendações Técnicas, Insights Únicos & Perguntas em Aberto
+1. **Ação Imediata / Implicação Prática 1:** `[Recomendação técnica ou jurídica proporcional à força da evidência Tier 1]`
+2. **Ação Condicional / Implicação Prática 2:** `[Medida preventiva contra os riscos apontados em Dissent]`
+3. **Insights Únicos (Fora da Bolha Mainstream):** `[Achados resgatados via Small Web / fontes nativas]`
+4. **Perguntas em Aberto:** `[Pontos que permanecem sem evidência conclusiva]`
+
+### 6.3 Checklist Pré-Entrega (3 Portões Invioláveis)
+- `[x]` Sem fonte verificável -> afirmação removida (`"não encontrado"` onde faltou dado).
+- `[x]` Viés americano/anglófono -> corrigido com fontes nativas, mundo árabe e Sul Global.
+- `[x]` Personalização ou memória prévia -> apagada (`Clean-Room Isolation`).
 
 ---
 

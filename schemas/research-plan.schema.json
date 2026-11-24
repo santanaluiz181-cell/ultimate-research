@@ -37,7 +37,10 @@
         "TECHNICAL_RESEARCH",
         "MARKET_RESEARCH",
         "LEGAL_RESEARCH",
-        "FACT_CHECKING"
+        "FACT_CHECKING",
+        "MULTIPOLAR_EXCAVATION",
+        "HYPERRESEARCH_DRACO",
+        "ELEPHANT_GOLDFISH"
       ]
     },
     "workflow_variant": {
@@ -51,7 +54,10 @@
         "market-research",
         "legal-research",
         "fact-checking",
-        "competitive-intelligence"
+        "competitive-intelligence",
+        "multipolar-excavation",
+        "hyperresearch-pipeline",
+        "elephant-goldfish-adversarial"
       ]
     },
     "intent": {
@@ -89,7 +95,9 @@
               "source_code_or_rfc",
               "editorial_journalism",
               "market_filing",
-              "technical_community"
+              "technical_community",
+              "small_web_archaeology",
+              "multipolar_local_source"
             ]
           }
         }
@@ -106,7 +114,13 @@
           "uniqueItems": true,
           "items": {
             "type": "string",
-            "enum": ["LANE_A_HISTORICAL", "LANE_B_CONTEMPORARY", "LANE_C_OFFICIAL_VALIDATION"]
+            "enum": [
+              "LANE_A_HISTORICAL",
+              "LANE_B_CONTEMPORARY",
+              "LANE_C_OFFICIAL_VALIDATION",
+              "LANE_D_SMALL_WEB_ARCHAEOLOGY",
+              "LANE_E_MULTIPOLAR_POLYGLOT"
+            ]
           }
         },
         "cutoff_applied": {
@@ -138,7 +152,18 @@
           "id": { "type": "string", "pattern": "^SQ-[0-9]{2}$" },
           "question": { "type": "string", "minLength": 10 },
           "priority_tier": { "type": "string", "enum": ["TIER_1", "TIER_2", "TIER_3", "TIER_4"] },
-          "perspective": { "type": "string", "enum": ["baseline", "primary_official", "academic", "adversarial_dissent", "community_edge_cases"] },
+          "perspective": {
+            "type": "string",
+            "enum": [
+              "baseline",
+              "primary_official",
+              "academic",
+              "adversarial_dissent",
+              "community_edge_cases",
+              "small_web_firsthand",
+              "multipolar_non_us"
+            ]
+          },
           "queries": {
             "type": "array",
             "minItems": 1,
@@ -189,6 +214,37 @@
         "max_waves": { "type": "integer", "minimum": 1, "maximum": 6 },
         "use_ars_verifier": { "type": "boolean" },
         "use_deslop_classifier": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "clean_room_isolation": {
+      "type": "boolean"
+    },
+    "hypothesis_matrix": {
+      "type": "object",
+      "required": ["dominant", "rivals"],
+      "properties": {
+        "dominant": { "type": "string", "minLength": 5 },
+        "rivals": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 5 }
+        }
+      },
+      "additionalProperties": false
+    },
+    "multipolar_config": {
+      "type": "object",
+      "required": ["jurisdictions", "include_arabic", "include_global_south"],
+      "properties": {
+        "jurisdictions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "include_arabic": { "type": "boolean" },
+        "include_global_south": { "type": "boolean" },
+        "native_terms_by_lang": { "type": "object" }
       },
       "additionalProperties": false
     }

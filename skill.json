@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "ultimate-research",
-  "version": "2.2.0",
-  "displayName": "Ultimate Research: DRACO #1 Deep Research, Hyperresearch Vault, Elephant-Goldfish & 5 MCP Connectors",
-  "description": "The Ultimate Research Engine: Intercepts search queries with temporal bounds and anti-slop filters, executes DRACO #1 16-step deep research, maintains persistent Zettelkasten research vaults, performs ARS citation verification, zero-context Elephant-Goldfish adversarial attacks, and Google Research Harness² recursive optimization.",
+  "version": "2.3.0",
+  "displayName": "Ultimate Research SUPERUPGRADE: Multipolar Polyglot Excavation, DRACO #1, Hyperresearch Vault, Elephant-Goldfish & 5 MCP Connectors",
+  "description": "The Ultimate Research Engine: Intercepts search queries with temporal bounds and anti-slop filters, executes 6-stratum Clean-Room Multipolar Polyglot & Small-Web Deep Excavation (15+ jurisdictions, Arabic & Global South), DRACO #1 16-step deep research, persistent Zettelkasten research vaults, ARS citation verification, zero-context Elephant-Goldfish adversarial attacks, and Google Research Harness² recursive optimization.",
   "license": "MIT",
   "author": "Antigravity Engineering / Ultimate Research Contributors",
   "homepage": "https://github.com/santanaluiz181-cell/ultimate-research",
@@ -29,7 +29,8 @@
   "dataFiles": {
     "blocklist": "./data/blocklist.json",
     "sources": "./data/sources.json",
-    "slopLexicon": "./data/slop-lexicon.json"
+    "slopLexicon": "./data/slop-lexicon.json",
+    "multipolarJurisdictions": "./data/multipolar-jurisdictions.json"
   },
   "tools": [
     {
@@ -68,7 +69,8 @@
               "qa",
               "code",
               "blogs",
-              "forums"
+              "forums",
+              "small_web"
             ],
             "default": "none",
             "description": "Optional curated human community routing profile."
@@ -264,6 +266,55 @@
         "required": [
           "claim",
           "evidence"
+        ]
+      }
+    },
+    {
+      "name": "deslop_multipolar_excavate",
+      "description": "Builds a Clean-Room 6-stratum Multipolar Polyglot & Small-Web Deep Excavation Plan covering surface dominant/Cui Bono, forensic science/retractions, communities, Tumblr/Blogger/Wayback small web, and 15+ native-language non-US/Global South/Arabic jurisdictions.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Investigation question or topic."
+          },
+          "use_case": {
+            "type": "string",
+            "description": "Decision or operational use case."
+          },
+          "period_years": {
+            "type": "integer",
+            "default": 5
+          },
+          "clean_room": {
+            "type": "boolean",
+            "default": true
+          },
+          "jurisdictions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "native_terms_by_lang": {
+            "type": "object"
+          },
+          "engine": {
+            "type": "string",
+            "enum": [
+              "google",
+              "duckduckgo",
+              "brave",
+              "kagi",
+              "searxng",
+              "bing"
+            ],
+            "default": "google"
+          }
+        },
+        "required": [
+          "query"
         ]
       }
     }

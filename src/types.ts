@@ -20,7 +20,8 @@ export type CommunityProfile =
   | "qa"
   | "code"
   | "blogs"
-  | "forums";
+  | "forums"
+  | "small_web";
 
 export type CommunityChannelName =
   | "reddit"
@@ -28,7 +29,8 @@ export type CommunityChannelName =
   | "github"
   | "hackernews"
   | "indie_forums"
-  | "engineering_blogs";
+  | "engineering_blogs"
+  | "small_web";
 
 export interface DorkOptions {
   era?: TemporalEra;
@@ -364,5 +366,140 @@ export interface VerifierOptions {
   strict?: boolean | undefined;
   timeoutMs?: number | undefined;
   adapter?: SourceCheckAdapter | undefined;
+}
+
+export type ExcavationStratum =
+  | "surface_dominant"
+  | "science_forensic"
+  | "communities"
+  | "small_web_archaeology"
+  | "multipolar_local"
+  | "cross_synthesis";
+
+export type OntologicalClaimType = "FATO" | "INTERPRETACAO" | "RELATO";
+
+export type EvidenceGrade = "A" | "B" | "C" | "D";
+
+export type MultipolarJurisdictionCode =
+  | "DE"
+  | "IT"
+  | "FR"
+  | "CN"
+  | "JP"
+  | "KR"
+  | "SG"
+  | "IN"
+  | "MX"
+  | "BR"
+  | "TR"
+  | "NO"
+  | "DK"
+  | "ARAB"
+  | "GLOBAL_SOUTH";
+
+export interface MultipolarJurisdictionConfig {
+  code: MultipolarJurisdictionCode;
+  countryOrRegion: string;
+  language: string;
+  isGlobalSouth: boolean;
+  siteHints: string[];
+  cuiBonoKeywords: string[];
+}
+
+export interface MultipolarData {
+  version: string;
+  description: string;
+  smallWebSites: string[];
+  jurisdictions: MultipolarJurisdictionConfig[];
+}
+
+export interface MultipolarExcavationOptions {
+  useCase?: string | undefined;
+  periodYears?: number | undefined;
+  cleanRoom?: boolean | undefined;
+  jurisdictions?: readonly MultipolarJurisdictionCode[] | undefined;
+  nativeTermsByLang?: Readonly<Record<string, string>> | undefined;
+  engine?: SearchEngine | undefined;
+}
+
+export interface MultipolarJurisdictionQuery {
+  code: MultipolarJurisdictionCode;
+  countryOrRegion: string;
+  language: string;
+  isGlobalSouth: boolean;
+  nativeTermsUsed: string;
+  compiledQuery: string;
+  searchUrl: string;
+  translationRequired: true;
+  usDeltaPrompt: string;
+}
+
+export interface ExcavationStratumPlan {
+  stratum: ExcavationStratum;
+  order: number;
+  title: string;
+  objective: string;
+  queries: CompiledQuery[];
+  auditChecks: string[];
+}
+
+export interface MultipolarExcavationPlan {
+  protocolVersion: "2.3.0";
+  cleanRoomIsolation: boolean;
+  isolationDirective: string;
+  mission: {
+    question: string;
+    useCase: string;
+    periodYears: number;
+  };
+  subQuestions: string[];
+  dominantHypothesis: string;
+  rivalHypotheses: [string, string];
+  strata: ExcavationStratumPlan[];
+  multipolarQueries: MultipolarJurisdictionQuery[];
+  epistemicGates: string[];
+  preShipChecklist: string[];
+}
+
+export interface EvidenceGradeInput {
+  ontologicalType: OntologicalClaimType;
+  independentOrigins: number;
+  entailmentChecked: boolean;
+  retracted?: boolean | undefined;
+  hasUnmitigatedConflictOfInterest?: boolean | undefined;
+  marketingOrRumor?: boolean | undefined;
+  replicated?: boolean | undefined;
+  primarySourceBacked?: boolean | undefined;
+}
+
+export interface EvidenceGradeResult {
+  ontologicalType: OntologicalClaimType;
+  grade: EvidenceGrade;
+  rationale: string;
+  downgradeReasons: string[];
+}
+
+export interface MultipolarAuditSourceItem {
+  jurisdiction: string;
+  language: string;
+  originalExcerpt?: string | undefined;
+  translatedExcerpt?: string | undefined;
+}
+
+export interface MultipolarCoverageAuditInput {
+  cleanRoomIsolation: boolean;
+  sources: readonly MultipolarAuditSourceItem[];
+  whatChangesOutsideUs: string;
+  minoritySteelman: string;
+  cuiBonoAudited: boolean;
+  rivalHypothesesTested: number;
+}
+
+export interface MultipolarCoverageAuditResult {
+  valid: boolean;
+  violations: string[];
+  nonUsJurisdictionsCount: number;
+  globalSouthIncluded: boolean;
+  arabicIncluded: boolean;
 }
 

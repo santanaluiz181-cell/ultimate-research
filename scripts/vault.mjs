@@ -29,7 +29,7 @@ export function initVault() {
   if (!existsSync(VAULT_DIR)) mkdirSync(VAULT_DIR, { recursive: true });
   if (!existsSync(RUNS_DIR)) mkdirSync(RUNS_DIR, { recursive: true });
   if (!existsSync(INDEX_FILE)) {
-    writeFileSync(INDEX_FILE, JSON.stringify({ version: "2.2.0", notes: [] }, null, 2), "utf-8");
+    writeFileSync(INDEX_FILE, JSON.stringify({ version: "2.3.0", notes: [] }, null, 2), "utf-8");
   }
   return { vaultDir: VAULT_DIR, runsDir: RUNS_DIR, indexFile: INDEX_FILE };
 }
@@ -39,7 +39,7 @@ export function loadIndex() {
   try {
     return JSON.parse(readFileSync(INDEX_FILE, "utf-8"));
   } catch {
-    return { version: "2.2.0", notes: [] };
+    return { version: "2.3.0", notes: [] };
   }
 }
 
@@ -56,7 +56,12 @@ export function storeNote({
   published = "",
   oaStatus = "unknown",
   originFingerprint = "",
-  tags = []
+  tags = [],
+  jurisdiction = "",
+  sourceLanguage = "",
+  ontologicalType = "",
+  evidenceGrade = "",
+  excavationStratum = ""
 }) {
   initVault();
   const slug = slugify(title || doi || url || "note");
@@ -66,7 +71,7 @@ export function storeNote({
 
   const cleanTags = Array.isArray(tags) ? tags : String(tags || "").split(",").map((t) => t.trim()).filter(Boolean);
 
-  const frontmatter = [
+  const frontmatterLines = [
     "---",
     `id: "${id}"`,
     `title: "${(title || "").replace(/"/g, '\\"')}"`,
@@ -76,7 +81,16 @@ export function storeNote({
     `published: "${published || ""}"`,
     `oa_status: "${oaStatus}"`,
     `origin_fingerprint: "${originFingerprint || ""}"`,
-    `tags: [${cleanTags.map((t) => `"${t}"`).join(", ")}]`,
+    `tags: [${cleanTags.map((t) => `"${t}"`).join(", ")}]`
+  ];
+  if (jurisdiction) frontmatterLines.push(`jurisdiction: "${jurisdiction}"`);
+  if (sourceLanguage) frontmatterLines.push(`source_language: "${sourceLanguage}"`);
+  if (ontologicalType) frontmatterLines.push(`ontological_type: "${ontologicalType}"`);
+  if (evidenceGrade) frontmatterLines.push(`evidence_grade: "${evidenceGrade}"`);
+  if (excavationStratum) frontmatterLines.push(`excavation_stratum: "${excavationStratum}"`);
+
+  const frontmatter = [
+    ...frontmatterLines,
     `saved_at: "${new Date().toISOString()}"`,
     "---",
     "",
@@ -101,6 +115,11 @@ export function storeNote({
     oaStatus,
     originFingerprint,
     tags: cleanTags,
+    ...(jurisdiction ? { jurisdiction } : {}),
+    ...(sourceLanguage ? { sourceLanguage } : {}),
+    ...(ontologicalType ? { ontologicalType } : {}),
+    ...(evidenceGrade ? { evidenceGrade } : {}),
+    ...(excavationStratum ? { excavationStratum } : {}),
     filename,
     charCount: content ? content.length : 0,
     savedAt: new Date().toISOString()
@@ -116,7 +135,15 @@ export function storeNote({
   return { success: true, id, filename, path: filePath, record };
 }
 
-export function searchVault(query) {
+export function searchVault(query, options = {}) {
+  if (options.cleanRoom === true) {
+    return {
+      cleanRoomIsolation: true,
+      skippedVaultLookup: true,
+      results: [],
+      note: "Clean-Room Isolation active: prior vault memory ignored to prevent anchoring/personalization bias."
+    };
+  }
   initVault();
   const idx = loadIndex();
   const terms = String(query || "")
@@ -232,8 +259,10 @@ if (invokedDirectly) {
     const res = listVault();
     process.stdout.write(`${JSON.stringify(res, null, 2)}\n`);
   } else if (cmd === "search") {
-    const q = process.argv.slice(3).join(" ");
-    const res = searchVault(q);
+    const rawArgs = process.argv.slice(3);
+    const cleanRoom = rawArgs.includes("--clean-room");
+    const q = rawArgs.filter((a) => a !== "--clean-room").join(" ");
+    const res = searchVault(q, { cleanRoom });
     process.stdout.write(`${JSON.stringify(res, null, 2)}\n`);
   } else if (cmd === "citecheck") {
     const f = process.argv[3];

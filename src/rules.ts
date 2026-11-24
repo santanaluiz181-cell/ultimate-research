@@ -1,12 +1,13 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
-import type { BlocklistData, SlopLexiconData, SourcesData } from "./types.js";
+import type { BlocklistData, MultipolarData, SlopLexiconData, SourcesData } from "./types.js";
 
 export interface LoadedRules {
   blocklist: BlocklistData;
   sources: SourcesData;
   slopLexicon: SlopLexiconData;
+  multipolar: MultipolarData;
   allBlockedDomains: string[];
   allTrustedDomains: string[];
 }
@@ -32,6 +33,7 @@ export function loadRules(forceReload = false): LoadedRules {
   const blocklist = readJsonFile<BlocklistData>(resolve(dataDir, "blocklist.json"));
   const sources = readJsonFile<SourcesData>(resolve(dataDir, "sources.json"));
   const slopLexicon = readJsonFile<SlopLexiconData>(resolve(dataDir, "slop-lexicon.json"));
+  const multipolar = readJsonFile<MultipolarData>(resolve(dataDir, "multipolar-jurisdictions.json"));
 
   const blockedSet = new Set<string>();
   for (const category of Object.values(blocklist.categories)) {
@@ -54,6 +56,7 @@ export function loadRules(forceReload = false): LoadedRules {
     blocklist,
     sources,
     slopLexicon,
+    multipolar,
     allBlockedDomains: Array.from(blockedSet),
     allTrustedDomains: Array.from(trustedSet)
   };

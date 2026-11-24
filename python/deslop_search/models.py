@@ -6,7 +6,7 @@ from typing import Any, Literal
 SearchEngine = Literal["google", "duckduckgo", "brave", "kagi", "searxng", "bing"]
 TemporalEra = Literal["human-classic", "pre-gpt4", "archival", "modern-curated", "none"]
 CommunityProfile = Literal[
-    "none", "all_community", "discussions", "qa", "code", "blogs", "forums"
+    "none", "all_community", "discussions", "qa", "code", "blogs", "forums", "small_web"
 ]
 CommunityChannelName = Literal[
     "reddit",
@@ -15,8 +15,36 @@ CommunityChannelName = Literal[
     "hackernews",
     "indie_forums",
     "engineering_blogs",
+    "small_web",
 ]
 SlopVerdict = Literal["AUTHENTIC", "SUSPICIOUS", "SLOP"]
+ExcavationStratum = Literal[
+    "surface_dominant",
+    "science_forensic",
+    "communities",
+    "small_web_archaeology",
+    "multipolar_local",
+    "cross_synthesis",
+]
+OntologicalClaimType = Literal["FATO", "INTERPRETACAO", "RELATO"]
+EvidenceGrade = Literal["A", "B", "C", "D"]
+MultipolarJurisdictionCode = Literal[
+    "DE",
+    "IT",
+    "FR",
+    "CN",
+    "JP",
+    "KR",
+    "SG",
+    "IN",
+    "MX",
+    "BR",
+    "TR",
+    "NO",
+    "DK",
+    "ARAB",
+    "GLOBAL_SOUTH",
+]
 
 
 @dataclass(frozen=True)
@@ -213,4 +241,154 @@ class SplitHorizonSearchReport:
             "contemporaryPost2023": self.contemporary_post_2023,
             "differential": self.differential.to_dict(),
             "formattedReport": self.formatted_report,
+        }
+
+
+@dataclass(frozen=True)
+class MultipolarExcavationOptions:
+    use_case: str | None = None
+    period_years: int | None = None
+    clean_room: bool = True
+    jurisdictions: tuple[MultipolarJurisdictionCode, ...] = ()
+    native_terms_by_lang: dict[str, str] = field(default_factory=dict)
+    engine: SearchEngine = "google"
+
+
+@dataclass(frozen=True)
+class MultipolarJurisdictionQuery:
+    code: MultipolarJurisdictionCode
+    country_or_region: str
+    language: str
+    is_global_south: bool
+    native_terms_used: str
+    compiled_query: str
+    search_url: str
+    us_delta_prompt: str
+    translation_required: bool = True
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "code": self.code,
+            "countryOrRegion": self.country_or_region,
+            "language": self.language,
+            "isGlobalSouth": self.is_global_south,
+            "nativeTermsUsed": self.native_terms_used,
+            "compiledQuery": self.compiled_query,
+            "searchUrl": self.search_url,
+            "translationRequired": self.translation_required,
+            "usDeltaPrompt": self.us_delta_prompt,
+        }
+
+
+@dataclass(frozen=True)
+class ExcavationStratumPlan:
+    stratum: ExcavationStratum
+    order: int
+    title: str
+    objective: str
+    queries: list[CompiledQuery]
+    audit_checks: list[str]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "stratum": self.stratum,
+            "order": self.order,
+            "title": self.title,
+            "objective": self.objective,
+            "queries": [q.to_dict() for q in self.queries],
+            "auditChecks": list(self.audit_checks),
+        }
+
+
+@dataclass(frozen=True)
+class MultipolarExcavationPlan:
+    protocol_version: str
+    clean_room_isolation: bool
+    isolation_directive: str
+    mission: dict[str, Any]
+    sub_questions: list[str]
+    dominant_hypothesis: str
+    rival_hypotheses: tuple[str, str]
+    strata: list[ExcavationStratumPlan]
+    multipolar_queries: list[MultipolarJurisdictionQuery]
+    epistemic_gates: list[str]
+    pre_ship_checklist: list[str]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "protocolVersion": self.protocol_version,
+            "cleanRoomIsolation": self.clean_room_isolation,
+            "isolationDirective": self.isolation_directive,
+            "mission": dict(self.mission),
+            "subQuestions": list(self.sub_questions),
+            "dominantHypothesis": self.dominant_hypothesis,
+            "rivalHypotheses": list(self.rival_hypotheses),
+            "strata": [s.to_dict() for s in self.strata],
+            "multipolarQueries": [mq.to_dict() for mq in self.multipolar_queries],
+            "epistemicGates": list(self.epistemic_gates),
+            "preShipChecklist": list(self.pre_ship_checklist),
+        }
+
+
+@dataclass(frozen=True)
+class EvidenceGradeInput:
+    ontological_type: OntologicalClaimType
+    independent_origins: int
+    entailment_checked: bool
+    retracted: bool = False
+    has_unmitigated_conflict_of_interest: bool = False
+    marketing_or_rumor: bool = False
+    replicated: bool | None = None
+    primary_source_backed: bool = False
+
+
+@dataclass(frozen=True)
+class EvidenceGradeResult:
+    ontological_type: OntologicalClaimType
+    grade: EvidenceGrade
+    rationale: str
+    downgrade_reasons: list[str]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ontologicalType": self.ontological_type,
+            "grade": self.grade,
+            "rationale": self.rationale,
+            "downgradeReasons": list(self.downgrade_reasons),
+        }
+
+
+@dataclass(frozen=True)
+class MultipolarAuditSourceItem:
+    jurisdiction: str
+    language: str
+    original_excerpt: str = ""
+    translated_excerpt: str = ""
+
+
+@dataclass(frozen=True)
+class MultipolarCoverageAuditInput:
+    clean_room_isolation: bool
+    sources: list[MultipolarAuditSourceItem]
+    what_changes_outside_us: str
+    minority_steelman: str
+    cui_bono_audited: bool
+    rival_hypotheses_tested: int
+
+
+@dataclass(frozen=True)
+class MultipolarCoverageAuditResult:
+    valid: bool
+    violations: list[str]
+    non_us_jurisdictions_count: int
+    global_south_included: bool
+    arabic_included: bool
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "valid": self.valid,
+            "violations": list(self.violations),
+            "nonUsJurisdictionsCount": self.non_us_jurisdictions_count,
+            "globalSouthIncluded": self.global_south_included,
+            "arabicIncluded": self.arabic_included,
         }

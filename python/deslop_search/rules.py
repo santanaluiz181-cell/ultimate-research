@@ -12,6 +12,7 @@ class LoadedRules:
     blocklist: dict[str, Any]
     sources: dict[str, Any]
     slop_lexicon: dict[str, Any]
+    multipolar: dict[str, Any]
     all_blocked_domains: tuple[str, ...]
     all_trusted_domains: tuple[str, ...]
 
@@ -47,6 +48,7 @@ def load_rules(force_reload: bool = False) -> LoadedRules:
     blocklist = _read_json(data_dir / "blocklist.json")
     sources = _read_json(data_dir / "sources.json")
     slop_lexicon = _read_json(data_dir / "slop-lexicon.json")
+    multipolar = _read_json(data_dir / "multipolar-jurisdictions.json")
 
     blocked: list[str] = []
     seen_blocked: set[str] = set()
@@ -75,6 +77,7 @@ def load_rules(force_reload: bool = False) -> LoadedRules:
         blocklist=blocklist,
         sources=sources,
         slop_lexicon=slop_lexicon,
+        multipolar=multipolar,
         all_blocked_domains=tuple(blocked),
         all_trusted_domains=tuple(trusted),
     )

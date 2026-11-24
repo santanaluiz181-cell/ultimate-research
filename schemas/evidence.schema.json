@@ -94,7 +94,9 @@
               "technical",
               "specialized_community",
               "independent",
-              "critical_or_dissenting"
+              "critical_or_dissenting",
+              "small_web_archive",
+              "multipolar_local"
             ]
           },
           "supporting_excerpt": {
@@ -143,7 +145,42 @@
               "EXISTENCIA_CONFIRMADA_SEM_ENTAILMENT",
               "NAO_COMPROVADA"
             ]
-          }
+          },
+          "ontological_type": {
+            "type": "string",
+            "enum": ["FATO", "INTERPRETACAO", "RELATO"]
+          },
+          "evidence_grade": {
+            "type": "string",
+            "enum": ["A", "B", "C", "D"]
+          },
+          "excavation_stratum": {
+            "type": "string",
+            "enum": [
+              "surface_dominant",
+              "science_forensic",
+              "communities",
+              "small_web_archaeology",
+              "multipolar_local"
+            ]
+          },
+          "jurisdiction": { "type": "string" },
+          "source_language": { "type": "string" },
+          "original_excerpt": { "type": "string" },
+          "translated_excerpt": { "type": "string" },
+          "conflict_of_interest": { "type": "string" },
+          "funding_source": { "type": "string" },
+          "retraction_status": {
+            "type": "string",
+            "enum": [
+              "NONE_FOUND",
+              "EXPRESSION_OF_CONCERN",
+              "CORRIGENDUM",
+              "RETRACTED",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "cui_bono": { "type": "string" }
         },
         "additionalProperties": false
       }

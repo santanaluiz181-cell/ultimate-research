@@ -3,7 +3,8 @@
 **Identificador do Plano:** `UR-PLAN-[DATA]-[ID_CURTO]`  
 **Data de Criação:** `[AAAA-MM-DD]`  
 **Orquestrador:** Queen Orchestrator (Antigravity Runtime)  
-**Modo Operacional Ativo:** `[MODE 1: QUICK | MODE 2: DEEP | MODE 3: ACADEMIC | MODE 4: JOURNALISTIC | MODE 5: TECHNICAL | MODE 6: MARKET / CI | MODE 7: LEGAL | MODE 8: FACT-CHECKING]`  
+**Modo Operacional Ativo:** `[MODE 1: QUICK | MODE 2: DEEP | MODE 3: ACADEMIC | MODE 4: JOURNALISTIC | MODE 5: TECHNICAL | MODE 6: MARKET / CI | MODE 7: LEGAL | MODE 8: FACT-CHECKING | MODE 9: HYPERRESEARCH | MODE 10: ELEPHANT-GOLDFISH | MODE 11: MULTIPOLAR EXCAVATION]`  
+**Clean-Room Isolation (`--clean-room`):** `[ATIVADO (ignora memoria/perfil previo) | DESATIVADO]`  
 **Orçamento de Subagentes:** `[Ex: 3 subagentes flash_lite em 2 ondas]`  
 **Status do Plano:** `[RASCUNHO | APROVADO | EM_EXECUCAO | CONCLUIDO]`
 
@@ -40,6 +41,8 @@
 | **Lane A: Histórico / Canônico** | `[ATIVADA | DESATIVADA]` | `[Ex: 2018 - 2023]` | Fundamentos teóricos, RFCs, jurisprudência consolidada, baseline arquitetural. |
 | **Lane B: Contemporâneo / Vigente** | `[ATIVADA | DESATIVADA]` | `[Ex: 2024 - PRESENTE]` | Versões ativas de software, decisões recentes, conjuntura de mercado. |
 | **Lane C: Validação Oficial** | `[ATIVADA | DESATIVADA]` | `[Ex: Vigência imediata]` | Diário de Justiça, DOU, repositórios oficiais, erratas, atos revogatórios. |
+| **Lane D: Garimpo Small Web** | `[ATIVADA | DESATIVADA]` | `[Ex: Pré-SEO / Arquivo]` | Tumblr, Blogger, Wayback Machine, Neocities, Bearblog e canais esquecidos. |
+| **Lane E: Multipolo Poliglota** | `[ATIVADA | DESATIVADA]` | `[Ex: Últimos X anos]` | Fontes nativas (DE, IT, FR, CN, JP, KR, SG, IN, MX, BR, TR, NO, DK, Árabe e Sul Global). |
 
 ### 2.2 Data de Corte e Justificativa de Marco Temporal
 - **Data de Corte Específica:** `[AAAA-MM-DD]`
@@ -55,6 +58,17 @@
 | **H-01** | `[Hipótese central 1]` | `[Evidência empírica ou normativa que invalida H-01]` | `[Viés de seleção / viés de autoridade]` |
 | **H-02** | `[Hipótese alternativa 2]` | `[Evidência empírica ou normativa que invalida H-02]` | `[Anacronismo / documentação defasada]` |
 | **H-03** | `[Hipótese contra-intuitiva]` | `[Evidência necessária para sustentá-la]` | `[Suposição não testada de mercado]` |
+
+### 3.1 Matriz Dominante + 2 Rivais & Léxico Nativo Poliglota (Modo 11)
+- **Hipótese Dominante (`H-DOM`):** `[Consenso mainstream atual e quem o sustenta]`
+- **Hipótese Rival 1 (`H-RIV-1`):** `[Explicação alternativa ligada a incentivos, financiamento ou viés EUA]`
+- **Hipótese Rival 2 (`H-RIV-2`):** `[Explicação alternativa emergente de fontes locais, Sul Global ou Small Web]`
+
+| Jurisdição | Idioma | Termos Nativos de Busca | Foco Local / Sul Global |
+|---|---|---|---|
+| `DE / IT / FR / NO / DK` | `de / it / fr / no / da` | `[termos técnicos originais]` | Consenso regulatório e científico europeu |
+| `CN / JP / KR / SG` | `zh / ja / ko / en-zh` | `[termos técnicos originais]` | Literatura e regulação asiática |
+| `BR / MX / IN / TR / ARAB / GLOBAL_SOUTH` | `pt-BR / es / hi / tr / ar` | `[termos técnicos originais]` | Impacto e críticas no Sul Global e mundo árabe |
 
 ---
 

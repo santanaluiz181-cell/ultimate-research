@@ -11,13 +11,12 @@
 
 ## 1. Tabela Panorâmica de Evidências
 
-| ID | Natureza da Afirmação | Resumo da Alegação | Tier | Origin Fingerprint | Triangulação | Confiança | Status Entailment |
+| ID | Natureza (`FATO/INTERP/RELATO`) | Grau (`A-D`) | Resumo da Alegação | Tier & Estrato | Jurisdição / Idioma | Triangulação | Status Entailment |
 |---|---|---|---|---|---|---|---|
-| **EV-001** | `[Fato Observado]` | `[Descrição sucinta da alegação fática]` | Tier 1 | `[dominio-primario.org]` | `[Triangulada / 2 fontes]` | Alta | `[VERIFICADA]` |
-| **EV-002** | `[Alegação Atribuída]` | `[Declaração atribuída a porta-voz ou réu]` | Tier 2 | `[portal-jornalistico.com]` | `[single-source]` | Média | `[VERIFICADA]` |
-| **EV-003** | `[Opinião]` | `[Parecer doutrinário ou análise de mercado]` | Tier 2 | `[instituto-pesquisa.org]` | `[Convergente com EV-004]` | Média | `[VERIFICADA]` |
-| **EV-004** | `[Hipótese]` | `[Causa provável de falha de concorrência]` | Tier 3 | `[github.com/org/repo]` | `[Em validação]` | Baixa | `[EXISTÊNCIA CONFIRMADA SEM ENTAILMENT]` |
-| **EV-005** | `[Projeção]` | `[Estimativa de redução de custos em 2027]` | Tier 4 | `[relatorio-consultoria.com]` | `[single-source]` | Baixa | `[NÃO COMPROVADA]` |
+| **EV-001** | `FATO` (`observed_fact`) | `A` | `[Descrição sucinta da alegação fática]` | Tier 1 / Surface | `BR / pt-BR` | `[Triangulada / 2 fontes]` | `[VERIFICADA]` |
+| **EV-002** | `INTERPRETACAO` (`expert_opinion`) | `B` | `[Análise causal fundamentada]` | Tier 2 / Science | `DE / de` | `[2 origens independentes]` | `[VERIFICADA]` |
+| **EV-003** | `RELATO` (`specialized_community`) | `C` | `[Relato humano em comunidade ou Small Web]` | Tier 3 / Small Web | `JP / ja` | `[single-source]` | `[VERIFICADA]` |
+| **EV-004** | `FATO` (`hypothesis`) | `D` | `[Estudo retratado ou peça promocional]` | Tier 4 / Science | `US / en` | `[Retratado / Marketing]` | `[ALUCINAÇÃO DETECTADA]` |
 
 ---
 
@@ -45,6 +44,12 @@
   - `[TIER 4]` Blog comercial, portal agregador de SEO, assessoria de imprensa corporativa.
 - **Trecho / Dado Comprobatório Literal:**
   > `"Trecho exato extraído do documento original contendo o dado, artigo ou conclusão citada."`
+- **Campos Multipolares & Forenses (Modo 11):**
+  - **Classificação Tripartida & Grau:** `[FATO | INTERPRETACAO | RELATO]` · **Grau:** `[A | B | C | D]`
+  - **Estrato de Escavação:** `[surface_dominant | science_forensic | communities | small_web_archaeology | multipolar_local]`
+  - **Jurisdição & Idioma Original:** `[Ex: DE / de | BR / pt-BR | ARAB / ar]`
+  - **Trecho Original + Tradução (se estrangeiro):** `[Original: "..."] -> [Tradução: "..."]`
+  - **Auditoria Forense & Cui Bono:** **Financiador:** `[...]` · **Conflito de Interesse:** `[...]` · **Retratação:** `[NONE_FOUND | EXPRESSION_OF_CONCERN | CORRIGENDUM | RETRACTED | NOT_APPLICABLE]` · **Quem Lucra (`Cui Bono`):** `[...]`
 - **Origin Fingerprint (Anti-Eco e Independência Editorial):**
   - **Entidade Emissora Raiz:** `[Identificador do produtor original do dado]`
   - **Detecção de Agência de Notícias / Wire Syndication:** `[NÃO - Conteúdo autoral primário | SIM - Texto distribuído por Reuters/Agência Brasil/PR Newswire]`

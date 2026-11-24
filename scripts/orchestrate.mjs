@@ -67,6 +67,16 @@ const MARKET_TRIGGERS = [
   "inteligencia competitiva", "competitive intelligence", "go-to-market"
 ];
 
+const MULTIPOLAR_TRIGGERS = [
+  "multipolar", "sul global", "global south", "fora dos eua", "idiomas originais",
+  "small web", "tumblr", "blogger", "garimpo", "wayback", "visao dominante",
+  "cui bono", "vies americano", "escavacao", "excavation", "clean-room", "mundo arabe"
+];
+
+const CANONICAL_MULTIPOLAR_JURISDICTIONS = [
+  "DE", "IT", "FR", "CN", "JP", "KR", "SG", "IN", "MX", "BR", "TR", "NO", "DK", "ARAB", "GLOBAL_SOUTH"
+];
+
 const QUICK_QUESTION_STARTERS = [
   /^(qual|quais|quando|quem|onde|quanto|what|which|when|who|where)\b/i
 ];
@@ -92,6 +102,11 @@ export function detectResearchMode(rawPrompt, explicitMode) {
   const legalHits = JUDICIAL_TRIGGERS.filter((t) => matchesTerm(norm, t)).length;
   if (legalHits >= 1 && !norm.includes("politica publica")) {
     return { mode: "LEGAL_RESEARCH", workflowVariant: "legal-research" };
+  }
+
+  const multipolarHits = MULTIPOLAR_TRIGGERS.filter((t) => matchesTerm(norm, t)).length;
+  if (multipolarHits >= 2) {
+    return { mode: "MULTIPOLAR_EXCAVATION", workflowVariant: "multipolar-excavation" };
   }
 
   const academicHits = ACADEMIC_TRIGGERS.filter((t) => matchesTerm(norm, t)).length;
@@ -246,6 +261,21 @@ export function computeTemporalStrategy(rawPrompt, mode) {
       cutoff_applied: false,
       cutoff_justification:
         "Checagem factual exige rastrear a data exata de origem da alegação (Lane A) e confrontá-la com bases primárias atualizadas (Lane B/C) para evitar anacronismo."
+    };
+  }
+
+  if (mode === "MULTIPOLAR_EXCAVATION") {
+    return {
+      lanes_enabled: [
+        "LANE_A_HISTORICAL",
+        "LANE_B_CONTEMPORARY",
+        "LANE_C_OFFICIAL_VALIDATION",
+        "LANE_D_SMALL_WEB_ARCHAEOLOGY",
+        "LANE_E_MULTIPOLAR_POLYGLOT"
+      ],
+      cutoff_applied: false,
+      cutoff_justification:
+        "Escavacao Multipolar e Small-Web exige todas as 5 trilhas: consenso contemporaneo, ciencia forense, comunidades, arqueologia pré-SEO e fontes locais em 15+ idiomas originais."
     };
   }
 
@@ -482,6 +512,55 @@ function buildSubQuestions(cleanTopic, mode, geoScope, currentYear, temporalStra
         }
       ];
 
+    case "MULTIPOLAR_EXCAVATION":
+      return [
+        {
+          id: "SQ-01",
+          question: `Qual e a visao dominante na midia/fontes oficiais sobre ${cleanTopic}, quem a sustenta e quem lucra (Cui Bono)?`,
+          priority_tier: "TIER_1",
+          perspective: "baseline",
+          queries: [
+            { query: `${cleanTopic} official consensus funding sponsor conflict of interest`, channel: "surface_dominant" }
+          ]
+        },
+        {
+          id: "SQ-02",
+          question: `O que estudos cientificos, white papers, checagens de financiamento, replicacao e retratacoes revelam sobre ${cleanTopic}?`,
+          priority_tier: "TIER_1",
+          perspective: "academic",
+          queries: [
+            { query: `${cleanTopic} study sample replication retraction conflict of interest`, channel: "science_forensic" }
+          ]
+        },
+        {
+          id: "SQ-03",
+          question: `Que padroes independentes, bugs ou contestacoes emergem no Reddit, GitHub, Hacker News e foruns tecnicos sobre ${cleanTopic}?`,
+          priority_tier: "TIER_2",
+          perspective: "community_edge_cases",
+          queries: [
+            { query: `${cleanTopic} site:reddit.com OR site:github.com OR site:news.ycombinator.com`, channel: "communities" }
+          ]
+        },
+        {
+          id: "SQ-04",
+          question: `Que relatos humanos de primeira mao e vozes dissidentes existem no Tumblr, Blogger, Wayback Machine e canais esquecidos sobre ${cleanTopic}?`,
+          priority_tier: "TIER_3",
+          perspective: "small_web_firsthand",
+          queries: [
+            { query: `${cleanTopic} site:tumblr.com OR site:blogspot.com OR site:web.archive.org`, channel: "small_web_archaeology" }
+          ]
+        },
+        {
+          id: "SQ-05",
+          question: `O que fontes locais em idiomas originais (DE, IT, FR, CN, JP, KR, SG, IN, MX, BR, TR, NO, DK, mundo arabe e Sul Global) acrescentam ou questionam frente aos EUA sobre ${cleanTopic}?`,
+          priority_tier: "TIER_1",
+          perspective: "multipolar_non_us",
+          queries: [
+            { query: `${cleanTopic} site:.de OR site:.fr OR site:.br OR site:.cn OR site:.jp OR site:.in`, channel: "multipolar_local" }
+          ]
+        }
+      ];
+
     case "DEEP_RESEARCH":
     default:
       return [
@@ -559,10 +638,14 @@ export async function buildResearchPlan(rawPrompt, options = {}) {
     // Graceful fallback if Super Deslop SDK is unavailable
   }
 
-  const isMultiWave = mode === "DEEP_RESEARCH" || mode === "JOURNALISTIC_INVESTIGATION";
+  const isMultiWave =
+    mode === "DEEP_RESEARCH" ||
+    mode === "JOURNALISTIC_INVESTIGATION" ||
+    mode === "MULTIPOLAR_EXCAVATION";
   const usesParallelAgents =
     mode === "DEEP_RESEARCH" ||
     mode === "JOURNALISTIC_INVESTIGATION" ||
+    mode === "MULTIPOLAR_EXCAVATION" ||
     (mode !== "QUICK_RESEARCH" && subQuestions.length >= 3 && options.allowParallel !== false);
 
   const requiredEvidenceMap = {
@@ -573,12 +656,27 @@ export async function buildResearchPlan(rawPrompt, options = {}) {
     TECHNICAL_RESEARCH: ["official_documentation", "source_code_or_rfc", "technical_community"],
     MARKET_RESEARCH: ["market_filing", "primary_document", "editorial_journalism"],
     LEGAL_RESEARCH: ["legislation", "jurisprudence", "official_registry"],
-    FACT_CHECKING: ["primary_document", "official_registry", "peer_reviewed_study"]
+    FACT_CHECKING: ["primary_document", "official_registry", "peer_reviewed_study"],
+    MULTIPOLAR_EXCAVATION: [
+      "primary_document",
+      "peer_reviewed_study",
+      "technical_community",
+      "small_web_archaeology",
+      "multipolar_local_source"
+    ]
   };
+
+  const cleanRoomIsolation =
+    options.cleanRoom === true || mode === "MULTIPOLAR_EXCAVATION";
+  const parsedJurisdictions = Array.isArray(options.jurisdictions)
+    ? options.jurisdictions.map((j) => String(j).trim().toUpperCase()).filter(Boolean)
+    : typeof options.jurisdictions === "string" && options.jurisdictions.trim().length > 0
+      ? options.jurisdictions.split(",").map((j) => j.trim().toUpperCase()).filter(Boolean)
+      : [...CANONICAL_MULTIPOLAR_JURISDICTIONS];
 
   const planId = `UR-PLAN-${Date.now().toString(36).toUpperCase()}`;
 
-  return {
+  const plan = {
     plan_id: planId,
     created_at: new Date().toISOString(),
     mode,
@@ -606,7 +704,9 @@ export async function buildResearchPlan(rawPrompt, options = {}) {
         ? ["planalto.gov.br", "lexml.gov.br", "cnj.jus.br", "stf.jus.br", "stj.jus.br", "tjto.jus.br"]
         : mode === "ACADEMIC_RESEARCH"
           ? ["api.crossref.org", "api.openalex.org", "scielo.br", "arxiv.org"]
-          : ["Documentação Oficial Primária", "Repositórios Institucionais", "Bases Públicas Verificáveis"],
+          : mode === "MULTIPOLAR_EXCAVATION"
+            ? ["retractionwatch.com", "tumblr.com", "blogspot.com", "web.archive.org", "15+ Jurisdicoes Nativas & Sul Global"]
+            : ["Documentação Oficial Primária", "Repositórios Institucionais", "Bases Públicas Verificáveis"],
     inclusion_criteria: [
       "Fontes com autoria/instituição identificável, URL verificável e data explícita ou inferível por registro oficial.",
       "Corroboração por no mínimo 2 origens editoriais independentes para afirmações materiais (ou marcação explícita [single-source])."
@@ -628,10 +728,37 @@ export async function buildResearchPlan(rawPrompt, options = {}) {
       use_parallel_agents: mode === "QUICK_RESEARCH" ? false : usesParallelAgents,
       max_agents_per_wave: mode === "QUICK_RESEARCH" ? 0 : Math.min(subQuestions.length, 5),
       max_waves: mode === "QUICK_RESEARCH" ? 1 : isMultiWave ? 3 : 2,
-      use_ars_verifier: ["ACADEMIC_RESEARCH", "LEGAL_RESEARCH", "FACT_CHECKING", "DEEP_RESEARCH", "JOURNALISTIC_INVESTIGATION"].includes(mode),
+      use_ars_verifier: [
+        "ACADEMIC_RESEARCH",
+        "LEGAL_RESEARCH",
+        "FACT_CHECKING",
+        "DEEP_RESEARCH",
+        "JOURNALISTIC_INVESTIGATION",
+        "MULTIPOLAR_EXCAVATION"
+      ].includes(mode),
       use_deslop_classifier: true
     }
   };
+
+  if (mode === "MULTIPOLAR_EXCAVATION" || cleanRoomIsolation) {
+    plan.clean_room_isolation = cleanRoomIsolation;
+    plan.hypothesis_matrix = {
+      dominant: `H-DOM: O consenso predominante em lingua inglesa descreve adequadamente "${cleanPrompt}" sem omissoes materiais.`,
+      rivals: [
+        `H-RIV-1: O consenso dominante sobre "${cleanPrompt}" reflete incentivos financeiros ou vies regulatorio dos EUA.`,
+        `H-RIV-2: Fontes em idiomas nativos, Sul Global e Small Web expoem divergencias criticas ausentes na midia anglofona sobre "${cleanPrompt}".`
+      ]
+    };
+    plan.multipolar_config = {
+      jurisdictions: parsedJurisdictions,
+      include_arabic: parsedJurisdictions.includes("ARAB"),
+      include_global_south: parsedJurisdictions.some((j) =>
+        ["BR", "MX", "IN", "CN", "TR", "ARAB", "GLOBAL_SOUTH"].includes(j)
+      )
+    };
+  }
+
+  return plan;
 }
 
 const invokedDirectly =
@@ -645,13 +772,15 @@ if (invokedDirectly) {
       mode: { type: "string" },
       audience: { type: "string" },
       geo: { type: "string" },
+      "clean-room": { type: "boolean", default: false },
+      jurisdictions: { type: "string" },
       help: { type: "boolean", short: "h", default: false }
     }
   });
 
   if (values.help || positionals.length === 0) {
     process.stdout.write(
-      "Usage: node scripts/orchestrate.mjs [plan|detect] \"<research prompt>\" [--mode QUICK_RESEARCH|DEEP_RESEARCH|...]\n"
+      "Usage: node scripts/orchestrate.mjs [plan|detect] \"<research prompt>\" [--mode QUICK_RESEARCH|DEEP_RESEARCH|MULTIPOLAR_EXCAVATION|...] [--clean-room] [--jurisdictions DE,BR,...]\n"
     );
     process.exitCode = values.help ? 0 : 1;
   } else {
@@ -666,7 +795,9 @@ if (invokedDirectly) {
       const plan = await buildResearchPlan(rawPromptArg, {
         mode: values.mode,
         audience: values.audience,
-        geographicScope: values.geo
+        geographicScope: values.geo,
+        cleanRoom: values["clean-room"],
+        jurisdictions: values.jurisdictions
       });
       process.stdout.write(`${JSON.stringify(plan, null, 2)}\n`);
     }

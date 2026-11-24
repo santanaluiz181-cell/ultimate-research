@@ -1,16 +1,31 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const bridgePath = resolve(__dirname, "../scripts/deslop-bridge.mjs");
+const validatorPath = resolve(__dirname, "../scripts/validate-schemas.mjs");
+const orchestratePath = resolve(__dirname, "../scripts/orchestrate.mjs");
+const vaultPath = resolve(__dirname, "../scripts/vault.mjs");
 const {
   loadDeslopSdk,
   executeDeslopMcpTool,
   auditEpistemicEvidence,
   applyEpistemicCitationGuardrails
 } = await import(pathToFileURL(bridgePath).href);
+const {
+  auditEvidenceEpistemics,
+  auditMultipolarReport,
+  validateJsonAgainstSchema,
+  loadNamedSchema
+} = await import(pathToFileURL(validatorPath).href);
+const {
+  detectResearchMode,
+  buildResearchPlan
+} = await import(pathToFileURL(orchestratePath).href);
+const { searchVault } = await import(pathToFileURL(vaultPath).href);
 
 function makeCnj(n, a, j, tr, o) {
   const nStr = String(n).padStart(7, "0");
@@ -217,5 +232,193 @@ describe("Auditoria 2.3 - Seção 4: Bateria de 10 Testes Negativos Adicionais",
     );
     assert.equal(evaluation.verdict, "DIVERGÊNCIA DE TESE");
     assert.ok(evaluation.divergenceReason && evaluation.divergenceReason.length > 5);
+  });
+});
+
+function makeBaseEvidenceLedger(itemOverrides = {}) {
+  return {
+    ledger_id: "UR-EVD-LEDGER-TEST01",
+    plan_id: "UR-PLAN-TEST01",
+    items: [
+      {
+        id: "EV-001",
+        claim: "Observed regulatory intervention documented in primary filing.",
+        claim_nature: "observed_fact",
+        source_title: "Primary Regulatory Filing",
+        url: "https://example.org/primary-filing",
+        author_or_institution: "Federal Institute",
+        publication_date: "2025-05-10",
+        source_tier: "TIER_1",
+        source_category: "primary",
+        supporting_excerpt: "The institute recorded statistically significant outcomes.",
+        origin_fingerprint: "federal-institute-2025",
+        independent_from_peers: true,
+        limitations: "Regional sample only.",
+        confidence: "HIGH",
+        entailment_checked: true,
+        verification_status: "VERIFICADA",
+        ...itemOverrides
+      }
+    ],
+    triangulation_summary: {
+      total_items: 1,
+      distinct_urls: 1,
+      distinct_independent_origins: 1,
+      single_source_claims_count: 1,
+      contradictions_count: 0
+    }
+  };
+}
+
+function makeBaseMultipolarReport(overrides = {}) {
+  return {
+    report_id: "UR-REP-MULTIPOLAR01",
+    plan_id: "UR-PLAN-TEST01",
+    mode: "MULTIPOLAR_EXCAVATION",
+    generated_at: "2026-11-23T12:00:00Z",
+    central_answer: "Multipolar comparison reveals regulatory divergence across jurisdictions outside US consensus.",
+    key_findings: [
+      {
+        statement: "Brazilian and European regulators enforce stricter precautionary limits.",
+        evidence_ids: ["EV-001"],
+        confidence: "HIGH",
+        ontological_type: "FATO",
+        evidence_grade: "A"
+      }
+    ],
+    evidence_citations: ["EV-001"],
+    contradictions_and_dissent: [
+      {
+        topic: "Risk threshold",
+        position_a: "US consensus favors voluntary labeling",
+        position_b: "EU and Global South favor mandatory restrictions",
+        resolution_or_status: "Divergent regulatory frameworks"
+      }
+    ],
+    limitations_and_gaps: ["Long-term longitudinal data in Arabic sources remains sparse."],
+    convergence_audit: {
+      waves_executed: 2,
+      verified_claims_count: 3,
+      distinct_independent_origins: 4,
+      unanswered_questions_count: 0,
+      novelty_rate_last_wave: 0.1,
+      converged: true,
+      stop_reason: "Multipolar saturation across 4 jurisdictions."
+    },
+    conclusions: "Non-US jurisdictions and Global South data alter key risk conclusions.",
+    references: [
+      {
+        ref_id: "EV-001",
+        title: "Primary Regulatory Filing",
+        url: "https://example.org/primary-filing",
+        tier: "TIER_1",
+        verification_status: "VERIFICADA"
+      }
+    ],
+    clean_room_isolation: true,
+    cui_bono_analysis: {
+      who_sustains: ["Industry association"],
+      who_profits: ["Large processors"],
+      funding_and_conflicts: ["Disclosed trade funding"]
+    },
+    what_changes_outside_us: {
+      summary: "Brazil, Germany, and Arabic public health bodies document stronger precautionary bans.",
+      jurisdictions_covered: ["DE", "BR", "ARAB", "GLOBAL_SOUTH"],
+      global_south_delta: "Global South studies highlight affordability and supply chain distortion."
+    },
+    hypothesis_verdicts: [
+      { hypothesis_role: "DOMINANT", statement: "US view is complete", status: "WEAKENED", evidence_ids: ["EV-001"] },
+      { hypothesis_role: "RIVAL_1", statement: "Commercial incentives bias US framing", status: "SUPPORTED", evidence_ids: ["EV-001"] },
+      { hypothesis_role: "RIVAL_2", statement: "Global South data reveals omissions", status: "SUPPORTED", evidence_ids: ["EV-001"] }
+    ],
+    minority_steelman: "Critics emphasize observational confounding and socioeconomic variables before mandating bans.",
+    ...overrides
+  };
+}
+
+describe("Auditoria 2.3 SUPERUPGRADE - Portoes Multipolares, Small Web & Clean-Room", () => {
+  it("Cenário 11: Estudo retratado (RETRACTED) marcado como VERIFICADA ou Grau A deve ser rejeitado", () => {
+    const ledger = makeBaseEvidenceLedger({
+      retraction_status: "RETRACTED",
+      verification_status: "VERIFICADA",
+      evidence_grade: "A",
+      ontological_type: "FATO"
+    });
+    const res = auditEvidenceEpistemics(ledger);
+    assert.equal(res.valid, false);
+    assert.ok(res.epistemicViolations.some((v) => v.includes("retracted")));
+  });
+
+  it("Cenário 12: Fonte em idioma estrangeiro (de/ar) sem original_excerpt ou translated_excerpt deve falhar", () => {
+    const ledgerMissingOriginal = makeBaseEvidenceLedger({
+      excavation_stratum: "multipolar_local",
+      jurisdiction: "DE",
+      source_language: "de",
+      original_excerpt: "",
+      translated_excerpt: "German agency report translation."
+    });
+    const res = auditEvidenceEpistemics(ledgerMissingOriginal);
+    assert.equal(res.valid, false);
+    assert.ok(res.epistemicViolations.some((v) => v.includes("original_excerpt")));
+  });
+
+  it("Cenário 13: RELATO individual graduado como Grau A deve ser rejeitado pelo auditor", () => {
+    const ledger = makeBaseEvidenceLedger({
+      source_category: "small_web_archive",
+      excavation_stratum: "small_web_archaeology",
+      ontological_type: "RELATO",
+      evidence_grade: "A"
+    });
+    const res = auditEvidenceEpistemics(ledger);
+    assert.equal(res.valid, false);
+    assert.ok(res.epistemicViolations.some((v) => v.includes("RELATO")));
+  });
+
+  it("Cenário 14: Relatório MULTIPOLAR_EXCAVATION sem delta fora dos EUA ou sem Steelman falha; completo passa", () => {
+    const incomplete = makeBaseMultipolarReport({
+      clean_room_isolation: false,
+      what_changes_outside_us: {
+        summary: "Only one country checked outside US.",
+        jurisdictions_covered: ["DE"],
+        global_south_delta: "Missing Global South."
+      },
+      minority_steelman: "Too short"
+    });
+    const badRes = auditMultipolarReport(incomplete);
+    assert.equal(badRes.valid, false);
+    assert.ok(badRes.multipolarViolations.length >= 2);
+
+    const complete = makeBaseMultipolarReport();
+    const goodRes = auditMultipolarReport(complete);
+    assert.equal(goodRes.valid, true);
+    assert.deepEqual(goodRes.schemaErrors, []);
+    assert.deepEqual(goodRes.multipolarViolations, []);
+  });
+
+  it("Cenário 15: Orchestrate roteia para MULTIPOLAR_EXCAVATION válido e vault --clean-room isola memória sem tocar disco", async () => {
+    const detected = detectResearchMode(
+      "investigue em idiomas originais, small web e sul global os impactos de ultraprocessados"
+    );
+    assert.equal(detected.mode, "MULTIPOLAR_EXCAVATION");
+    assert.equal(detected.workflowVariant, "multipolar-excavation");
+
+    const plan = await buildResearchPlan(
+      "investigue em idiomas originais, small web e sul global os impactos de ultraprocessados",
+      { cleanRoom: true }
+    );
+    const schemaErrors = validateJsonAgainstSchema(plan, loadNamedSchema("research-plan"));
+    assert.deepEqual(schemaErrors, []);
+    assert.equal(plan.clean_room_isolation, true);
+    assert.equal(plan.multipolar_config.include_arabic, true);
+    assert.equal(plan.multipolar_config.include_global_south, true);
+
+    const vaultExistedBefore = existsSync(resolve(__dirname, "../research/vault-index.json"));
+    const vaultRes = searchVault("ultraprocessados", { cleanRoom: true });
+    assert.equal(vaultRes.cleanRoomIsolation, true);
+    assert.equal(vaultRes.skippedVaultLookup, true);
+    assert.deepEqual(vaultRes.results, []);
+    if (!vaultExistedBefore) {
+      assert.equal(existsSync(resolve(__dirname, "../research/vault-index.json")), false);
+    }
   });
 });

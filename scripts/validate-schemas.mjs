@@ -139,6 +139,36 @@ export function auditEvidenceEpistemics(ledger) {
         seenOrigins.set(fp, item.id);
       }
     }
+
+    if (
+      item.retraction_status === "RETRACTED" &&
+      (item.verification_status === "VERIFICADA" ||
+        (item.evidence_grade && item.evidence_grade !== "D"))
+    ) {
+      epistemicViolations.push(
+        `${item.id}: retracted source cannot receive VERIFICADA or evidence_grade other than "D".`
+      );
+    }
+
+    const lang = String(item.source_language || "").trim().toLowerCase();
+    const isForeign =
+      item.excavation_stratum === "multipolar_local" ||
+      (lang.length > 0 && !["en", "pt", "pt-br"].includes(lang));
+    if (
+      isForeign &&
+      (!String(item.original_excerpt || "").trim() ||
+        !String(item.translated_excerpt || "").trim())
+    ) {
+      epistemicViolations.push(
+        `${item.id}: foreign/multipolar source (${lang || "unspecified"}) requires both original_excerpt and translated_excerpt.`
+      );
+    }
+
+    if (item.ontological_type === "RELATO" && item.evidence_grade === "A") {
+      epistemicViolations.push(
+        `${item.id}: ontological_type "RELATO" cannot be assigned evidence_grade "A".`
+      );
+    }
   }
 
   const trueIndependentOriginsCount = seenOrigins.size;
@@ -160,6 +190,62 @@ export function auditEvidenceEpistemics(ledger) {
       distinctHosts: distinctHosts.size,
       distinctIndependentOrigins: trueIndependentOriginsCount
     }
+  };
+}
+
+/**
+ * Audits a final report against report.schema.json plus Layer 8 Multipolar rules.
+ */
+export function auditMultipolarReport(report) {
+  const schema = loadNamedSchema("report");
+  const schemaErrors = validateJsonAgainstSchema(report, schema);
+  const multipolarViolations = [];
+
+  if (report?.mode === "MULTIPOLAR_EXCAVATION") {
+    if (report.clean_room_isolation !== true) {
+      multipolarViolations.push("MULTIPOLAR_EXCAVATION requires clean_room_isolation === true.");
+    }
+    if (
+      !report.cui_bono_analysis ||
+      !Array.isArray(report.cui_bono_analysis.who_sustains) ||
+      !Array.isArray(report.cui_bono_analysis.who_profits)
+    ) {
+      multipolarViolations.push(
+        "MULTIPOLAR_EXCAVATION requires cui_bono_analysis (who_sustains & who_profits)."
+      );
+    }
+    const outside = report.what_changes_outside_us;
+    const nonUs = Array.isArray(outside?.jurisdictions_covered)
+      ? outside.jurisdictions_covered.filter(
+          (j) => !["US", "USA", "UNITED STATES"].includes(String(j).trim().toUpperCase())
+        )
+      : [];
+    if (!outside || nonUs.length < 3) {
+      multipolarViolations.push(
+        `MULTIPOLAR_EXCAVATION requires what_changes_outside_us covering >= 3 non-US jurisdictions (found ${nonUs.length}).`
+      );
+    }
+    if (typeof report.minority_steelman !== "string" || report.minority_steelman.trim().length < 20) {
+      multipolarViolations.push("MULTIPOLAR_EXCAVATION requires minority_steelman (>= 20 chars).");
+    }
+    const roles = new Set(
+      Array.isArray(report.hypothesis_verdicts)
+        ? report.hypothesis_verdicts.map((h) => h?.hypothesis_role)
+        : []
+    );
+    for (const requiredRole of ["DOMINANT", "RIVAL_1", "RIVAL_2"]) {
+      if (!roles.has(requiredRole)) {
+        multipolarViolations.push(
+          `MULTIPOLAR_EXCAVATION hypothesis_verdicts missing required role "${requiredRole}".`
+        );
+      }
+    }
+  }
+
+  return {
+    valid: schemaErrors.length === 0 && multipolarViolations.length === 0,
+    schemaErrors,
+    multipolarViolations
   };
 }
 
@@ -321,6 +407,12 @@ if (invokedDirectly) {
     const file = process.argv[3];
     const data = JSON.parse(readFileSync(resolve(file), "utf-8"));
     const res = auditEvidenceEpistemics(data);
+    process.stdout.write(`${JSON.stringify(res, null, 2)}\n`);
+    process.exitCode = res.valid ? 0 : 1;
+  } else if (cmd === "report-multipolar") {
+    const file = process.argv[3];
+    const data = JSON.parse(readFileSync(resolve(file), "utf-8"));
+    const res = auditMultipolarReport(data);
     process.stdout.write(`${JSON.stringify(res, null, 2)}\n`);
     process.exitCode = res.valid ? 0 : 1;
   }
